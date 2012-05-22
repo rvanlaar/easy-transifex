@@ -1,6 +1,10 @@
 Description
 ===========
 
+.. image:: https://secure.travis-ci.org/rvanlaar/easy-transifex.png?branch=master
+   :target: http://travis-ci.org/rvanlaar/easy-transifex/
+
+
 This is a buildout configuration to install transifex the easy way.
 Mainly for my employer Nelen en Schuurmans.
 
