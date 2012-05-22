@@ -33,6 +33,8 @@ To install transifex run::
 Configuration
 =============
 
+Make the SECRET_KEY unique in ``easy_transifex/settings.py``.
+
 Read ``parts/ommelette/transifex/settings/*.conf`` to see which settings
 are used and can be overridden in easy_transifex.settings.
 
