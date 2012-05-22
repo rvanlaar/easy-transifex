@@ -11,7 +11,7 @@ This buildout can be used to ease the pain.
 It includes gunicorn and uses solr as the haystack backend.
 
 There is probably some configuration needed for your specific installation
-case. nens-transifex is meant to be configurable in an easy way.
+case. easy-transifex is meant to be configurable in an easy way.
 
 Installation
 ============
