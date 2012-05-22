@@ -18,7 +18,7 @@ STATIC_ROOT = os.path.join(VAR_DIR, 'static')
 MEDIA_ROOT = os.path.join(VAR_DIR, 'media')
 
 ## 30-site.conf
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 SERVE_MEDIA = DEBUG
 
