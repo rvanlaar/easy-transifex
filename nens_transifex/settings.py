@@ -13,7 +13,7 @@ SECRET_KEY = '65_ec2u#(!m=&=0oxi73q#9)y#5vfe%vdc_a5g=r%z!wv$)c#-'
 ## Here are the specific nens_transifex overrides.
 
 ## 10-base.conf
-LOG_PATH = os.path.join(VAR_DIR, 'logs')
+LOG_PATH = os.path.join(VAR_DIR, 'log')
 STATIC_ROOT = os.path.join(VAR_DIR, 'static')
 MEDIA_ROOT = os.path.join(VAR_DIR, 'media')
 
@@ -24,6 +24,12 @@ SERVE_MEDIA = DEBUG
 
 ## 40-apps.conf
 SCRATCH_DIR = os.path.join(VAR_DIR, 'scratchdir')
+
+## 50-project.conf
+INSTALLED_APPS += ['gunicorn']
+
+## 55-haystack.conf
+HAYSTACK_SEARCH_ENGINE = 'solr'
 
 ## 80-storage.conf
 STORAGE_DIR = os.path.join(SCRATCH_DIR, 'storage_files')
