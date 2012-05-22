@@ -26,7 +26,7 @@ Configuration
 =============
 
 Read ``parts/ommelette/transifex/settings/*.conf`` to see which settings
-are used and can be overridden in nens_transifex.settings.
+are used and can be overridden in easy_transifex.settings.
 
 Static Media
 ============
