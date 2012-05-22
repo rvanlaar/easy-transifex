@@ -20,6 +20,10 @@ case. easy-transifex is meant to be configurable in an easy way.
 Installation
 ============
 
+The following packages are needed::
+  
+  sudo apt-get install git python-dev openjdk-6-jre-headless
+
 To install transifex run::
 
   python bootstrap.py
