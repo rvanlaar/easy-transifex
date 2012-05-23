@@ -30,6 +30,11 @@ To install transifex run::
   python bootstrap.py
   bin/buildout
   bin/supervisord
+  bin/django syncdb
+  bin/django migrate
+  bin/django txlanguages
+  bin/django txcreatenotivetypes
+  bin/django collectstatic
 
 Configuration
 =============
