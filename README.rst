@@ -5,8 +5,9 @@ Description
    :target: http://travis-ci.org/rvanlaar/easy-transifex/
 
 
-This is a buildout configuration to install transifex the easy way.
-Mainly for my employer Nelen en Schuurmans.
+This is a buildout configuration to install 
+`Transifex <http://www.transifex.net>`_ the easy way.
+Mainly for my employer `Nelen en Schuurmans <http://www.nelen-schuurmans.nl>`_.
 
 Transifex is a translation service and software.
 The Transifex is a bit hard to install and configure.
@@ -33,10 +34,16 @@ To install transifex run::
 Configuration
 =============
 
-Make the SECRET_KEY unique in ``easy_transifex/settings.py``.
+The configuration for easy-transifex is located in 
+``easy_transifex/settings.py``.
+This overrides Transifex defaults settings.
+
+By default Transifex uses a sqlite database. 
+To change the default database and other configuration options read
+the `Django settings documentation <https://docs.djangoproject.com/en/dev/topics/settings/>`_.
 
 Read ``parts/ommelette/transifex/settings/*.conf`` to see which settings
-are used and can be overridden in easy_transifex.settings.
+are used and can be overridden.
 
 Static Media
 ============
