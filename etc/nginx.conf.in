@@ -7,7 +7,7 @@ server {
     access_log ${buildout:directory}/var/log/access.log;
     error_log ${buildout:directory}/var/log/error.log;
 
-    location /site_media/ {
+    location /site_media/static/ {
        alias ${buildout:directory}/var/static/;
        expires 24h;
     }
