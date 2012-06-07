@@ -23,7 +23,7 @@ Installation
 
 The following packages are needed::
   
-  sudo apt-get install git python-dev openjdk-6-jre-headless
+  sudo apt-get install git python-dev openjdk-6-jre-headless gettext
 
 To install transifex run::
 
