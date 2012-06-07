@@ -1,0 +1,26 @@
+server {
+    listen 80;
+    client_max_body_size 1G;
+    server_name ${serverconfig:sitename};
+
+    keepalive_timeout 5;
+    access_log ${buildout:directory}/var/log/access.log;
+    error_log ${buildout:directory}/var/log/error.log;
+
+    location /static_media/ {
+       alias ${buildout:directory}/var/static/;
+       expires max;
+    }
+
+    location /media/ {
+       alias ${buildout:directory}/var/media/;
+       expires 24h;
+    }
+
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://localhost:${serverconfig:gunicorn-port};
+    }
+}
