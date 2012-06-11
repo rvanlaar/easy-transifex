@@ -23,7 +23,7 @@ Installation
 
 The following packages are needed::
   
-  sudo apt-get install git python-dev openjdk-6-jre-headless gettext
+  sudo apt-get install git python-dev openjdk-6-jre-headless gettext intltool
 
 To install transifex run::
 
