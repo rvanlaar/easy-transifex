@@ -33,7 +33,7 @@ To install transifex run::
   bin/django syncdb
   bin/django migrate
   bin/django txlanguages
-  bin/django txcreatenotivetypes
+  bin/django txcreatenoticetypes
   bin/django collectstatic
 
 Configuration
