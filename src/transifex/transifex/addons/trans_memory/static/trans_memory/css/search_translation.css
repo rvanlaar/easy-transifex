@@ -1,0 +1,18 @@
+
+h2.pagetitle sup{
+  color:#666;
+  font-size:0.7em;
+}
+
+div.project_list h3 {
+  border-top: 3px solid #eee;
+  padding-top: 0.5em;
+}
+
+div.project_list div.entry {
+  margin-bottom: 2.5em;
+}
+
+div.project_list div.entry p.comment{
+  margin-top: 0.5em;
+}

@@ -1,0 +1,37 @@
+{% extends "languages/base.html" %}
+{% load i18n %}
+{% load txcommontags %}
+
+{% block body_class %}{{ block.super }} language_list{% endblock %}
+
+{% block title %}{{ block.super }} | {% trans "Languages" %}{% endblock %}
+
+{% block extra_head %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url languages_latest_feed %}" />
+{% endblock %}
+
+{% block breadcrumb %}{% homelink %} &raquo; {% trans "Languages" %}{% endblock %}
+
+{% block content_title %}<h2 class="pagetitle">{% trans "Languages on Transifex" %} {% render_metacount language_list _("languages") %}</h2>{% endblock %}
+
+{% block content_sec %}
+  <a class="simlink" href="{% url languages_latest_feed %}" title="{% trans "Languages feed" %}"><img border="0" src="{{ STATIC_URL }}images/icons/feed.png" /></a>
+{% endblock %}
+
+{% block content_main %}
+  <div class="languages_list multicolumn3">
+    <ul class="simple">
+    {% for language in language_list %}<li class="i16 language name">{% trans language.name %} ({{language.code}})</li>{% endfor %}
+    </ul>
+  </div>
+  {% if not language_list %}
+  <p>{% trans "No languages registered yet. :-(" %}</p>
+  {% endif %}
+{% endblock %}
+
+{% block content_footer %}
+{% url contact_form as contact_form %}
+  <div id="content_footer_center">
+    <p><span class="i16 tip">{% blocktrans %}Couldn't find your language? Please use the feedback form and <a href="http://help.transifex.net/user-guide/faq.html#where-does-the-language-list-come-from-how-can-i-add-my-own">let us know</a>!{% endblocktrans %}</span></p>
+  </div>
+{% endblock %}

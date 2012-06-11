@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body_class %}index{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block content_title %}
+  <h2 class="pagetitle">{% trans "Welcome to Transifex" %}</h2>
+{% endblock %}
+
+{% block content %}
+
+
+<h1>{% trans "About Transifex" %}</h1>
+
+<p>{% trans "Transifex is an upstream-friendly cross-project
+localization platform. It is a service offering users with an easy-to-use
+interface to submit translations to various projects hosted on a number of hosting
+platform types." %}</p>
+
+<p>{% trans "The goal of Transifex is to make it real easy for developers to receive
+translations from contributors, and translators to collaborate together to
+send their contributors to upstream in an easy way." %}</p>
+
+<p>{% trans "And many more to come. :)" %}</p>
+
+{% endblock %}

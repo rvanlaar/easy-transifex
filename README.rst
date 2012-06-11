@@ -18,6 +18,9 @@ It includes gunicorn and uses solr as the haystack backend.
 There is probably some configuration needed for your specific installation
 case. easy-transifex is meant to be configurable in an easy way.
 
+Transifex is included because the tarball on pypi is broken with regards
+to the staticfiles.
+
 Installation
 ============
 
@@ -54,3 +57,4 @@ Static Media
 ============
 
 Make sure to serve the static media via Apache or Nginx.
+An Nginx configuration file is included.

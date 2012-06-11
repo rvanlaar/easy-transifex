@@ -1,0 +1,5708 @@
+# Translation file for Transifex.
+# Copyright (C) 2007-2010 Indifex Ltd.
+# This file is distributed under the same license as the Transifex package.
+#
+# Translators:
+#   <alpapa@yahoo.com>, 2011.
+# Apostolos Bessas <mpessas@gmail.com>, 2011.
+# Diego Búrigo Zacarão <diegobz@indifex.com>, 2011.
+# Dimitris Glezos <glezos@indifex.com>, 2011.
+# Duke_Dux <duke.dux@gmail.com>, 2011.
+# kiolalis <kiolalis@gmail.com>, 2011.
+# Konstantinos Bairaktaris <kbairak@indifex.com>, 2011.
+# Nikos Tsirakis <tsirman@gmail.com>, 2011.
+#   <themhs@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Transifex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-07 16:49+0000\n"
+"PO-Revision-Date: 2011-12-30 23:36+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@indifex.com>\n"
+"Language-Team: Greek (http://www.transifex.net/projects/p/transifex/team/"
+"el/)\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: actionlog/filters.py:12
+msgid "Search for a username or leave it blank"
+msgstr "Αναζητήστε ένα όνομα χρήστη ή αφήστε το κενό"
+
+#: actionlog/models.py:159 actionlog/templates/object_action_list.html:7
+#: addons/copyright/models.py:80 addons/suggestions/models.py:45
+#: addons/suggestions/models.py:111 teams/models.py:125 teams/models.py:161
+#: txpermissions/forms.py:18
+msgid "User"
+msgstr "Χρήστης"
+
+#: actionlog/models.py:168
+msgid "Action type"
+msgstr "Τύπος ενέργειας"
+
+#: actionlog/models.py:169
+msgid "Action time"
+msgstr "Ώρα ενέργειας"
+
+#: actionlog/models.py:177
+msgid "log entry"
+msgstr "καταχώρηση καταγραφής"
+
+#: actionlog/models.py:178
+msgid "log entries"
+msgstr "καταχωρήσεις καταγραφής"
+
+#: actionlog/templates/object_action_list.html:6
+msgid "Date/Time"
+msgstr "Ημερομηνία/Ώρα"
+
+#: actionlog/templates/object_action_list.html:8
+msgid "Action"
+msgstr "Ενέργεια"
+
+#: actionlog/templates/object_action_list.html:14
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: actionlog/templates/object_action_list.html:22
+msgid "No changes."
+msgstr "Χωρίς αλλαγές."
+
+#: addons/autofetch/models.py:18
+msgid "Source file URL"
+msgstr "Η διεύθυνση URL του πηγαίου αρχείου"
+
+#: addons/autofetch/models.py:20
+msgid ""
+"A URL pointing to the source file of this resource to be used for automatic "
+"updates."
+msgstr ""
+"Μια διεύθυνση URL η οποία παραπέμπει στο πηγαίο αρχείο αυτού του πόρου που "
+"θα χρησιμοποιηθεί για αυτόματες ενημερώσεις."
+
+#: addons/autofetch/models.py:22
+msgid "Automatically update source file"
+msgstr "Αυτόματη ενημέρωση πηγαίου αρχείου"
+
+#: addons/autofetch/models.py:23
+msgid ""
+"A boolean field indicating whether the file should be automatically updated "
+"by pulling and merging from the given URL."
+msgstr ""
+"Boolean πεδίο το οποίο δείχνει αν το αρχείο θα πρέπει να ανανεώνεται και να "
+"συγχωνεύεται αυτόματα από το συγκεκριμένο URL"
+
+#: addons/autofetch/models.py:28 addons/copyright/models.py:89
+#: resources/models.py:364 resources/models.py:641 resources/models.py:846
+#: resources/models.py:959 templates/projects/release_language_detail.html:115
+#: templates/projects/release_language_detail.html:250
+#: templates/teams/team_detail.html:149
+msgid "Resource"
+msgstr "Πόρος"
+
+#: addons/autofetch/models.py:30
+msgid "The translation resource."
+msgstr "Ο πόρος μετάφρασης."
+
+#: addons/autofetch/models.py:33
+msgid "url handler"
+msgstr "χειριστής url"
+
+#: addons/autofetch/views.py:25
+msgid "URL not set for this resource."
+msgstr "Δεν έχει οριστεί διεύθυνση URL για αυτόν τον πόρο."
+
+#: addons/autofetch/views.py:30
+msgid "Error updating source file."
+msgstr "Σφάλμα κατά την ενημέρωση του πηγαίου αρχείου."
+
+#: addons/autofetch/views.py:35
+msgid "Source file updated successfully."
+msgstr "Το πηγαίο αρχείο ενημερώθηκε επιτυχώς."
+
+#: addons/charts/templates/charts/widget_snippet.html:63
+msgid "Image Charts"
+msgstr "Εικόνα διαγραμμάτων"
+
+#: addons/charts/templates/charts/widget_snippet.html:69
+#: addons/charts/templates/charts/widget_snippet.html:100
+msgid "Loading..."
+msgstr "Φόρτωση..."
+
+#: addons/charts/templates/charts/widget_snippet.html:72
+msgid ""
+"Display your project's translation statistics on your own website as a "
+"simple image. Perfect for embedding in wiki pages, Trac instances, and email."
+msgstr ""
+"Εμφανίζει τα στατιστικά της μετάφρασης του έργου σας στην ιστοσελίδα σας ως "
+"μία απλή εικόνα. Ιδανική για ενσωμάτωση σε σελίδες wiki, περιπτώσεις Trac, "
+"και email."
+
+#: addons/charts/templates/charts/widget_snippet.html:73
+msgid "The chart will always report live Transifex numbers."
+msgstr ""
+"Το διάγραμμα θα αναφέρει πάντα τους αριθμούς του Transifex σε πραγματικό "
+"χρόνο."
+
+#: addons/charts/templates/charts/widget_snippet.html:74
+#: addons/charts/templates/charts/widget_snippet.html:108
+msgid "Show code snippet for resource:"
+msgstr "Δείτε το απόσπασμα κώδικα για τον πόρο:"
+
+#: addons/charts/templates/charts/widget_snippet.html:76
+#: addons/charts/templates/charts/widget_snippet.html:110
+#: addons/widgets/templates/project_widgets.html:53 projects/models.py:158
+msgid "Hidden"
+msgstr "Απόκρυψη"
+
+#: addons/charts/templates/charts/widget_snippet.html:92
+msgid "Interactive Charts"
+msgstr "Διαδραστικά διαγράμματα"
+
+#: addons/charts/templates/charts/widget_snippet.html:104
+msgid ""
+"Display your project's translation statistics on your own website as an "
+"interactive chart. This requires modifications to your homepage's HTML code."
+msgstr ""
+"Εμφανίζει τα στατιστικά της μετάφρασης του έργου σας στην ιστοσελίδα σας ως "
+"ένα διαδραστικό διάγραμμα. Αυτό απαιτεί τροποποιήσεις στον κώδικα HTML της "
+"ιστοσελίδας σας."
+
+#: addons/charts/templates/charts/widget_snippet.html:106
+msgid ""
+"You can adjust level of detail, dimensions and colors of the chart by "
+"tweaking the code below."
+msgstr ""
+"Μπορείτε να ρυθμίσετε το επίπεδο των λεπτομερειών, τις διαστάσεις και τα "
+"χρώματα του γραφήματος προσαρμόζοντας τον παρακάτω κώδικα."
+
+#: addons/charts/templates/charts/widget_snippet.html:127
+msgid "Interactive and Image Charts"
+msgstr "Εικόνα διαγραμμάτων και Διαδραστικά διαγράμματα"
+
+#: addons/charts/templates/charts/widget_snippet.html:128
+msgid ""
+"Sorry, but your project doesn't have any resources with up-to-date "
+"statistics. You need to have at least one resource with statistics to export "
+"charts from Transifex."
+msgstr ""
+"Λυπούμαστε, αλλά το έργο σας δεν έχει πόρους με ενημερωμένα στατιστικά "
+"στοιχεία. Χρειάζεστε τουλάχιστον έναν πόρο με στατιστικά στοιχεία για την "
+"εξαγωγή διαγραμμάτων από το Transifex."
+
+#: addons/copyright/models.py:73 projects/models.py:176 storage/models.py:44
+msgid "Owner"
+msgstr "Ιδιοκτήτης"
+
+#: addons/copyright/models.py:74
+msgid "The copyright owner in text form."
+msgstr "Ο κάτοχος πνευματικών δικαιωμάτων σε μορφή κειμένου."
+
+#: addons/copyright/models.py:81
+msgid "The Transifex user who owns the copyright, if applicable."
+msgstr ""
+"Ο χρήστης του Transifex που κατέχει τα πνευματικά δικαιώματα, αν μπορεί να "
+"προσδιοριστεί."
+
+#: addons/copyright/models.py:84 resources/forms.py:55 resources/forms.py:65
+#: resources/models.py:849 teams/models.py:38 teams/models.py:121
+#: templates/projects/release_detail.html:176
+#: templates/resources/resource_detail.html:214
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: addons/copyright/models.py:85 addons/watches/models.py:30
+msgid "Language of the translation."
+msgstr "Η γλώσσα της μετάφρασης."
+
+#: addons/copyright/models.py:90
+msgid "The resource this copyright is on."
+msgstr "Ο πόρος που υπάγεται στα πνευματικά δικαιώματα."
+
+#: addons/copyright/models.py:93
+msgid "Copyright years"
+msgstr "Έτη ισχύος των πνευματικών δικαιωμάτων"
+
+#: addons/copyright/models.py:95
+msgid "The years the copyright is active in."
+msgstr "Τα έτη στα οπότα τα πνευματικά δικαιώματα έχουν ισχύ."
+
+#: addons/copyright/models.py:97
+#: addons/lotte/templates/tab_details_snippet.html:79
+msgid "Comment"
+msgstr "Σχόλιο"
+
+#: addons/copyright/models.py:99
+msgid "A comment for this copyright."
+msgstr "Ένα σχόλιο για τα πνευματικά δικαιώματα."
+
+#: addons/copyright/models.py:108
+msgid "Imported by"
+msgstr "Εισήχθηκε από"
+
+#: addons/copyright/models.py:109
+msgid "How this copyright notice was created."
+msgstr "Πώς δημιουργήθηκε το σημείωμα πνευματικών δικαιωμάτων."
+
+#: addons/copyright/models.py:116
+msgid "Copyright Years Text"
+msgstr "Έτη Ισχύος Πνευματικών Δικαιωμάτων Σε Μορφή Κειμένου"
+
+#: addons/copyright/models.py:118
+msgid "Textual representation of the copyright years."
+msgstr ""
+"Αναπαράσταση σε μορφή κειμένου των ετών ισχύος των πνευματικών δικαιωμάτων."
+
+#: addons/gtranslate/handlers.py:40
+msgid "Auto Translate Service"
+msgstr "Υπηρεσία Αυτόματης Μετάφρασηςê"
+
+#: addons/gtranslate/handlers.py:42
+msgid ""
+"Select the type of service you want to use for the auto-transalte service. "
+"Leave it blank, if you do not want to have the feature enabled. You will "
+"have to insert your API key for the service, too."
+msgstr ""
+"Επιλέξτε τον τύπο της υπηρεσίας που θέλετε να χρησιμοποιήσετε για την "
+"υπηρεσία αυτόματης μετάφρασης. Αφήστε αυτό το πεδίο κενό, αν δεν θέλετε να "
+"ενεργοποιήσετε αυτήν την υπηρεσία. Θα πρέπει επίσης να εισάγετε και ένα "
+"κωδικό API για την υπηρεσία."
+
+#: addons/gtranslate/handlers.py:49
+#, fuzzy
+msgid "Auto Translate API Key"
+msgstr "Υπηρεσία Αυτόματης Μετάφρασηςê"
+
+#: addons/gtranslate/handlers.py:51
+msgid ""
+"Enter the API key that Transifex will use for the auto-translate service you "
+"have chosen."
+msgstr ""
+"Εισάγετε το κλειδί API που θα χρησιμοποιήσει το Transifex για την υπηρεσία "
+"αυτόματης μετάφρασης που επιλέξατε."
+
+#: addons/gtranslate/handlers.py:61
+msgid "You have to select an API key, too."
+msgstr ""
+
+#: addons/gtranslate/handlers.py:64
+#, fuzzy
+msgid "You have to select a service for the auto-translate feature, too."
+msgstr "Το κλειδί API για την υπηρεσία αυτόματης μετάφρασης."
+
+#: addons/gtranslate/models.py:30
+msgid "API key"
+msgstr "Κλειδί API"
+
+#: addons/gtranslate/models.py:31
+msgid "The API key for the auto-translate service."
+msgstr "Το κλειδί API για την υπηρεσία αυτόματης μετάφρασης."
+
+#: addons/gtranslate/models.py:35
+msgid "Service"
+msgstr "Υπηρεσία"
+
+#: addons/gtranslate/models.py:37
+msgid "The service you want to use for auto-translation."
+msgstr "Η υπηρεσία που θέλετε να χρησιμοποιήσετε για αυτόματη μετάφραση."
+
+#: addons/gtranslate/models.py:42 addons/webhooks/models.py:20
+#: releases/models.py:66 resources/models.py:163 teams/models.py:35
+#: teams/models.py:118
+msgid "Project"
+msgstr "Έργο"
+
+#: addons/gtranslate/models.py:43
+msgid "The project this setting applies to."
+msgstr "Το έργο στο οποιό εφαρμόζεται αυτή η ρύθμιση."
+
+#: addons/helptext/templates/extended_helptext.html:8
+msgid "...more"
+msgstr "...περισσότερα"
+
+#: addons/jsonmap/models.py:20
+msgid "Slug for the mapping. Usually the same as the old component slug."
+msgstr ""
+
+#: addons/jsonmap/models.py:23
+msgid "Mapping in JSON format."
+msgstr ""
+
+#: addons/jsonmap/models.py:29
+msgid "Project to which the JSON mapping belongs."
+msgstr ""
+
+#: addons/jsonmap/models.py:39
+msgid "JSONMap"
+msgstr ""
+
+#: addons/jsonmap/models.py:40
+msgid "JSONMaps"
+msgstr ""
+
+#: addons/locks/handlers.py:59
+#, fuzzy
+msgid "This translation is locked by someone else."
+msgstr "Ο πόρος μετάφρασης '%s' διαγράφηκε."
+
+#: addons/locks/models.py:67
+#, python-format
+msgid ""
+"User '%(user)s' has no permission to submit translations for '%(resource)s' "
+"to '%(language)s'."
+msgstr ""
+"Ο/Η χρήστης '%(user)s' δεν έχει δικαίωμα να υποβάλλει μεταφράσεις για το "
+"'%(resource)s' στα '%(language)s'."
+
+#: addons/locks/models.py:79
+#, python-format
+msgid "User '%(user)s' already has maximum allowed %(locks)i locks."
+msgstr ""
+"Ο/Η χρήστης '%(user)s' έχει ήδη το μέγιστο αριθμό για τα επιτρεπόμενα "
+"%(locks)i κλειδώματα."
+
+#: addons/locks/models.py:93
+#, python-format
+msgid "This resource language is already locked by '%s'"
+msgstr "Αυτός ο πόρος γλώσσας είναι ήδη κλειδωμένος από τον/ην '%s'"
+
+#: addons/locks/models.py:172
+#, python-format
+msgid "User '%(user)s' is not allowed to remove lock '%(lock)s'"
+msgstr ""
+"Ο/Η χρήστης '%(user)s' δεν επιτρέπεται να αφαιρέσει το κλείδωμα '%(lock)s'"
+
+#: addons/locks/notifications.py:15
+msgid "Lock expiration"
+msgstr "Λήξη κλειδώματος"
+
+#: addons/locks/notifications.py:16
+msgid "when a lock for a translation resource will expire"
+msgstr "όταν ένα κλείδωμα για έναν πόρο μετάφρασης θα λήξει"
+
+#: addons/locks/views.py:45
+msgid "Lock created."
+msgstr "Το κλείδωμα δημιουργήθηκε."
+
+#: addons/locks/views.py:52 addons/locks/views.py:89
+msgid "Sorry, but you need to send a POST request."
+msgstr "   "
+
+#: addons/locks/views.py:80
+msgid "Lock removed."
+msgstr "Το κλείδωμα αφαιρέθηκε."
+
+#: addons/locks/views.py:82
+msgid "You don't have permission to unlock this file."
+msgstr "Δεν έχετε δικαίωμα για να ξεκλειδώσετε αυτό το αρχείο."
+
+#: addons/locks/views.py:86
+msgid "Unlock failed. Lock doesn't exist."
+msgstr "Το ξεκλείδωμα απέτυχε. Το κλείδωμα δεν υπάρχει."
+
+#: addons/locks/templates/lock_resource_action.html:17
+msgid "You locked this translation."
+msgstr "Κλειδώσατε αυτή τη μετάφραση."
+
+#: addons/locks/templates/lock_resource_action.html:19
+#, python-format
+msgid "User '%(owner)s' locked this translation."
+msgstr "Ο/Η χρήστης '%(owner)s' κλείδωσε αυτή τη μετάφραση."
+
+#: addons/locks/templates/lock_resource_action.html:21
+#, python-format
+msgid "(%(lock_expires)s left)"
+msgstr "(%(lock_expires)s απομένουν)"
+
+#: addons/locks/templates/lock_resource_action.html:23
+msgid "unlock"
+msgstr "ξεκλείδωμα"
+
+#: addons/locks/templates/lock_resource_action.html:28
+msgid "Click to renew your lock for a fresh period of time."
+msgstr "Πατήστε για να ανανεώσετε το κλείδωμά σας για μια νέα χρονική περίοδο."
+
+#: addons/locks/templates/lock_resource_action.html:29
+#: addons/locks/templates/pofile_lock.html:31
+#, python-format
+msgid "Extend lock by %(hours)s hour."
+msgid_plural "Extend lock by %(hours)s hours."
+msgstr[0] "Επέκταση κλειδώματος για %(hours)s ώρα."
+msgstr[1] "Επέκταση κλειδώματος για %(hours)s ώρες."
+
+#: addons/locks/templates/lock_resource_action.html:38
+msgid "Lock this translation to notify others you're working with it."
+msgstr ""
+"Κλειδώστε τη μετάφραση για να ειδοποιήσετε τους υπόλοιπους ότι εργάζεστε με "
+"αυτή."
+
+#: addons/locks/templates/lock_resource_action.html:42
+msgid ""
+"This translation isn't locked. Most likely no one is working on it right now."
+msgstr ""
+"Η μετάφραση αυτή δεν είναι κλειδωμένη. Πιθανότατα κανείς δεν εργάζεται σ´ "
+"αυτήν τώρα."
+
+#: addons/locks/templates/lock_resource_action.html:56
+msgid "Creating lock..."
+msgstr "Δημιουργία κλειδώματος..."
+
+#: addons/locks/templates/lock_resource_action.html:78
+msgid "Removing lock..."
+msgstr "Κατάργηση κλειδώματος..."
+
+#: addons/locks/templates/lock_resource_action.html:101
+msgid "Extending lock..."
+msgstr "Επέκταση κλειδώματος..."
+
+#: addons/locks/templates/pofile_lock.html:19
+#, python-format
+msgid "User '%(owner)s' locked this file."
+msgstr "Ο/Η χρήστης '%(owner)s' κλείδωσε αυτό το αρχείο."
+
+#: addons/locks/templates/pofile_lock.html:21
+msgid "Click file to unlock."
+msgstr "Πατήστε στο αρχείο για ξεκλείδωμα."
+
+#: addons/locks/templates/pofile_lock.html:23
+msgid "Time left:"
+msgstr "Χρόνος που απομένει:"
+
+#: addons/locks/templates/pofile_lock.html:41
+msgid ""
+"Lock and download this file to notify others that you're working with it."
+msgstr ""
+"Κλειδώστε και κατεβάστε το αρχείο για να ενημερώσετε τους υπόλοιπους ότι "
+"εργάζεστε με αυτό."
+
+#: addons/locks/templates/pofile_lock.html:46
+msgid "This file isn't locked. Most likely no one is working on it right now."
+msgstr ""
+"Το αρχείο αυτό δεν είναι κλειδωμένο. Πιθανότατα κανείς δεν εργάζεται σε αυτό "
+"τώρα."
+
+#: addons/locks/templates/notification/project_resource_language_lock_expiring/notice.html:3
+#, python-format
+msgid ""
+"\n"
+"A lock for <a href=\"http://%(current_site)s%(resource_url)s\">%(resource)s "
+"in %(language)s</a> is about to expire on %(expires)s\n"
+msgstr ""
+"\n"
+"Ένα κλείδωμα για το <a href=\"http://%(current_site)s%(resource_url)s\">"
+"%(resource)s στα %(language)s</a> πρόκειται να λήξει στις %(expires)s\n"
+
+#: addons/lotte/views.py:83
+msgid ""
+"There are multiple source languages for this project. You will only be able "
+"to translate resources for one source language at a time."
+msgstr ""
+
+#: addons/lotte/views.py:104
+msgid ""
+"Cannot edit the source language because this would result in translation "
+"mismatches! If you want to update the source strings consider using the "
+"transifex command-line client."
+msgstr ""
+
+#: addons/lotte/views.py:394
+msgid "Save the specific change"
+msgstr "Αποθήκευση της συγκεκριμένης αλλαγής"
+
+#: addons/lotte/views.py:395
+msgid "Check spelling"
+msgstr "Ορθογραφικός έλεγχος"
+
+#: addons/lotte/views.py:396
+msgid "Undo to initial text"
+msgstr "Αναίρεση στο αρχικό κείμενο"
+
+#: addons/lotte/views.py:738
+msgid "Source string cannot be identified in the DB"
+msgstr "Η πηγαία συμβολοσειρά δεν μπορεί να προσδιοριστεί στη βάση δεδομένων"
+
+#: addons/lotte/views.py:745
+msgid "The resource of this source string is not accepting translations."
+msgstr "Ο πόρος αυτής της πηγαίας συμβολοσειράς δε δέχεται μεταφράσεις."
+
+#: addons/lotte/views.py:768
+msgid ""
+"Cannot save unless plural translations are either completely specified or "
+"entirely empty!"
+msgstr ""
+"Δεν μπορεί να πραγματοποιηθεί αποθήκευση πληθυντικών μεταφράσεων εκτός και "
+"είναι πλήρως προσδιορισμένες ή εξολοκλήρου κενές!"
+
+#: addons/lotte/views.py:887
+msgid "The translation string is empty"
+msgstr "Η μετάφραση της συμβολοσειράς είναι κενή"
+
+#: addons/lotte/views.py:892
+#, python-format
+msgid "Error occurred while trying to save translation: %s"
+msgstr "Εμφανίστηκε σφάλμα στην απόπειρα αποθήκευσης της μετάφρασης: %s"
+
+#: addons/lotte/views.py:1052
+msgid "Permission error."
+msgstr "Σφάλμα πρόσβασης."
+
+#: addons/lotte/views.py:1054
+msgid "Bad request."
+msgstr "Κακή αίτηση."
+
+#: addons/lotte/views.py:1072
+msgid "No such Source Entity for the given project."
+msgstr "Δεν υπάρχει αυτή η Πηγαία Οντότητα για το δοσμένο έργο."
+
+#: addons/lotte/views.py:1079
+msgid "Ops! Something weird happened. The admins were notified about it."
+msgstr "Ωχ! Κάτι περίεργο συνέβη. Οι διαχειριστές έχουν ενημερωθεί για αυτό."
+
+#: addons/lotte/templates/filters_menu_resources.html:16
+#: addons/lotte/templates/filters_menu_users.html:16
+msgid "No active contributor!"
+msgstr "Χωρίς ενεργό συντελεστή!"
+
+#: addons/lotte/templates/more_languages.html:20
+msgid "No active languages!"
+msgstr "Χωρίς ενεργές γλώσσες!"
+
+#: addons/lotte/templates/tab_details_snippet.html:31
+msgid "Reverted to original comment from file."
+msgstr "Ανακτήστε το πρωτότυπο σχόλιο από το αρχείο."
+
+#: addons/lotte/templates/tab_details_snippet.html:46
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: addons/lotte/templates/tab_details_snippet.html:47
+msgid "OK"
+msgstr "ΟΚ"
+
+#: addons/lotte/templates/tab_details_snippet.html:48
+msgid "Click to edit..."
+msgstr "Κάντε κλικ για να επεξεργαστείτε..."
+
+#: addons/lotte/templates/tab_details_snippet.html:49
+msgid "Click here to add a comment"
+msgstr "Κάντε κλικ εδώ για να προσθέσετε ένα σχόλιο"
+
+#: addons/lotte/templates/tab_details_snippet.html:61
+msgid "Last Translation:"
+msgstr "Τελευταία μετάφραση:"
+
+#: addons/lotte/templates/tab_details_snippet.html:65
+#, python-format
+msgid "by %(user)s"
+msgstr "από τον/ην %(user)s"
+
+#: addons/lotte/templates/tab_details_snippet.html:75
+#: addons/lotte/templates/translate.html:258
+msgid "Key"
+msgstr "Κλειδί"
+
+#: addons/lotte/templates/tab_details_snippet.html:75
+msgid "String ID:"
+msgstr "ID συμβολοσειράς:"
+
+#: addons/lotte/templates/tab_details_snippet.html:76
+#: addons/timeline/templates/timeline/timeline_base.html:38
+#: addons/txapps/models.py:49 languages/models.py:60
+#: languages/migrations/0001_initial.py:14
+#: languages/migrations/0002_added_rules_f.py:82 projects/models.py:140
+#: releases/models.py:36 templates/timeline.html:39
+#: templates/helptext/project_form_helptext.html:26
+#: templates/notification/notices.html:42
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: addons/lotte/templates/tab_details_snippet.html:76
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+#: addons/lotte/templates/tab_details_snippet.html:80
+msgid "Comment: "
+msgstr "Σχόλιο: "
+
+#: addons/lotte/templates/tab_details_snippet.html:85 resources/models.py:337
+msgid "Occurrences"
+msgstr "Εμφανίσεις"
+
+#: addons/lotte/templates/tab_details_snippet.html:85
+msgid "Occurrences:"
+msgstr "Εμφανίσεις:"
+
+#: addons/lotte/templates/translate.html:9
+#: addons/lotte/templates/view_strings.html:8 addons/txapps/models.py:64
+#: templates/base-sample.html:79 templates/projects/base.html:6
+#: templates/projects/project_list.html:14
+#: templates/resources/resource_detail.html:79
+#: templates/resources/resource_form.html:10
+msgid "Projects"
+msgstr "Έργα"
+
+#: addons/lotte/templates/translate.html:12
+#: addons/lotte/templates/view_strings.html:11
+#, python-format
+msgid "Translate to %(lang)s"
+msgstr "Μετάφραση στα %(lang)s"
+
+#: addons/lotte/templates/translate.html:137
+msgid ""
+"There is at least one entry with error that was not saved. Do you want to "
+"continue anyway?"
+msgstr ""
+"Υπάρχει τουλάχιστον μια καταχώρηση με σφάλμα που δεν αποθηκεύτηκε. Θέλετε να "
+"προχωρήσετε παρ' όλα αυτά;"
+
+#: addons/lotte/templates/translate.html:165
+#: addons/lotte/templates/view_strings.html:41
+msgid "Processing..."
+msgstr "Επεξεργασία..."
+
+#: addons/lotte/templates/translate.html:166
+#: addons/lotte/templates/view_strings.html:42
+msgid "Show _MENU_ entries"
+msgstr "Εμφάνιση ανά _MENU_ καταχωρήσεις"
+
+#: addons/lotte/templates/translate.html:167
+#: addons/lotte/templates/view_strings.html:43
+msgid "No matching records found"
+msgstr "Δεν βρέθηκαν αντιστοιχίες"
+
+#: addons/lotte/templates/translate.html:168
+#: addons/lotte/templates/view_strings.html:44
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Εμφάνιση _START_ έως _END_ από τις _TOTAL_ καταχωρήσεις"
+
+#: addons/lotte/templates/translate.html:169
+#: addons/lotte/templates/view_strings.html:45
+msgid "Nothing to show"
+msgstr "Δεν υπάρχει τίποτε για εμφάνιση"
+
+#: addons/lotte/templates/translate.html:171
+#: addons/lotte/templates/view_strings.html:46
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(φιλτράρισμα από _MAX_ συνολικά καταχωρήσεις)"
+
+#: addons/lotte/templates/translate.html:173 txcommon/feeds.py:43
+msgid " "
+msgstr " "
+
+#: addons/lotte/templates/translate.html:176
+#: addons/lotte/templates/view_strings.html:51
+msgid "First"
+msgstr "Πρώτη"
+
+#: addons/lotte/templates/translate.html:177
+#: addons/lotte/templates/view_strings.html:52
+msgid "Previous"
+msgstr "Προηγούμενη"
+
+#: addons/lotte/templates/translate.html:178
+#: addons/lotte/templates/view_strings.html:53
+msgid "Next"
+msgstr "Επόμενη"
+
+#: addons/lotte/templates/translate.html:179
+#: addons/lotte/templates/view_strings.html:54
+msgid "Last"
+msgstr "Τελευταία"
+
+#: addons/lotte/templates/translate.html:213
+#: addons/lotte/templates/translate.html:218
+#: addons/trans_memory/templates/search_translation.html:51
+msgid "Source string"
+msgstr "Πηγαία συμβολοσειρά"
+
+#: addons/lotte/templates/translate.html:263
+msgid "details"
+msgstr "λεπτομέρειες"
+
+#: addons/lotte/templates/translate.html:266 addons/suggestions/models.py:54
+msgid "suggestions"
+msgstr "προτάσεις"
+
+#: addons/lotte/templates/translate.html:290
+#: addons/lotte/templates/translate.html:295
+msgid "Fill in a new translation"
+msgstr "Συμπληρώστε μια νέα μετάφραση"
+
+#: addons/lotte/templates/translate.html:317
+msgid "auto translate"
+msgstr "αυτόματη μετάφραση"
+
+#: addons/lotte/templates/translate.html:319
+msgid "copy source"
+msgstr "αντιγραφή πηγαίας"
+
+#: addons/lotte/templates/translate.html:341
+#: addons/lotte/templates/view_strings.html:123
+msgid "Loading strings..."
+msgstr "Φόρτωση συμβολοσειρών..."
+
+#: addons/lotte/templates/translate.html:573
+msgid "Translation text will be saved automatically."
+msgstr "Το κείμενο της μετάφρασης θα αποθηκευτεί αυτόματα."
+
+#: addons/lotte/templates/translate.html:577
+msgid "Translation text will no longer be saved automatically."
+msgstr "Το κείμενο της μετάφρασης δε θα αποθηκεύεται πλέον αυτόματα."
+
+#: addons/lotte/templates/translate.html:595
+msgid "There are no translations (to delete) on this page!"
+msgstr "Δεν υπάρχουν μεταφράσεις (να διαγράψετε) σε αυτή τη σελίδα!"
+
+#: addons/lotte/templates/translate.html:596
+msgid ""
+"This will delete all translations on this page. Are you sure you want to "
+"proceed?"
+msgstr ""
+"Αυτό θα διαγράψει όλες της μεταφράσεις σε αυτή τη σελίδα. Είστε σίγουρος ότι "
+"θέλετε να συνεχίσετε;"
+
+#: addons/lotte/templates/translate.html:782
+msgid "Lotte keyboard shortcuts"
+msgstr ""
+
+#: addons/lotte/templates/translate.html:808
+msgid "Shortcuts"
+msgstr "Συντομεύσεις"
+
+#: addons/lotte/templates/translate.html:832
+msgid "Show translations in<br /> the selected languages"
+msgstr "Εμφάνιση των μεταφράσεων των<br /> επιλεγμένων γλωσσών"
+
+#: addons/lotte/templates/translate.html:835
+msgid "More languages"
+msgstr "Περισσότερες γλώσσες"
+
+#: addons/lotte/templates/translate.html:840
+msgid "Show only the translations<br /> by the selected users"
+msgstr "Εμφάνιση μόνο των μεταφράσεων<br /> από τους επιλεγμένους χρήστες"
+
+#: addons/lotte/templates/translate.html:843
+msgid "Filter by users"
+msgstr "Φίλτρο κατά χρήστες"
+
+#: addons/lotte/templates/translate.html:849
+msgid "Show only the strings from<br /> the selected resources."
+msgstr "Εμφάνιση μόνο των συμβολοσειρών<br /> από τους επιλεγμένους πόρους."
+
+#: addons/lotte/templates/translate.html:852
+msgid "Filter by resources"
+msgstr "Φίλτρο κατά πόρους"
+
+#: addons/lotte/templates/translate.html:865
+#: addons/lotte/templates/view_strings.html:185
+msgid "Translated"
+msgstr "Μεταφρασμένες"
+
+#: addons/lotte/templates/translate.html:874
+#: addons/lotte/templates/view_strings.html:193
+msgid "Untranslated"
+msgstr "Αμετάφραστες"
+
+#: addons/lotte/templates/translate.html:883
+#: addons/lotte/templates/view_strings.html:201 resources/models.py:624
+msgid "Reviewed"
+msgstr "Έχουν εγκριθεί"
+
+#: addons/lotte/templates/translate.html:892
+#: addons/lotte/templates/view_strings.html:210
+msgid "Total"
+msgstr "Σύνολο:"
+
+#: addons/lotte/templates/translate.html:905
+#: addons/lotte/templates/view_strings.html:223 resources/models.py:636
+msgid "Source String"
+msgstr "Πηγαία συμβολοσειρά"
+
+#: addons/lotte/templates/translate.html:906
+#: addons/lotte/templates/view_strings.html:224
+#: addons/trans_memory/templates/search_translation.html:52
+msgid "Translation"
+msgstr "Μετάφραση"
+
+#: addons/lotte/templates/translate.html:919
+msgid "Save all"
+msgstr "Αποθήκευση όλων"
+
+#: addons/lotte/templates/translate.html:922
+#: templates/resources/resource_actions.html:246
+msgid "Delete translations"
+msgstr "Διαγραφή μεταφράσεων"
+
+#: addons/lotte/templates/translate.html:924
+msgid "Save and Exit"
+msgstr "Αποθήκευση και έξοδος"
+
+#: addons/lotte/templates/translate.html:930
+msgid "General Settings"
+msgstr "Γενικές ρυθμίσεις"
+
+#: addons/lotte/templates/translate.html:935
+msgid "Verbose editing"
+msgstr "Αναλυτική επεξεργασία"
+
+#: addons/lotte/templates/translate.html:939
+msgid "Auto save"
+msgstr "Αυτόματη αποθήκευση"
+
+#: addons/lotte/templates/view_strings.html:48
+msgid "Search:"
+msgstr "Αναζήτηση:"
+
+#: addons/priorities/models.py:8
+msgid "Normal"
+msgstr "Φυσιολογικό"
+
+#: addons/priorities/models.py:9
+msgid "High"
+msgstr "Υψηλό"
+
+#: addons/priorities/models.py:10
+msgid "Urgent"
+msgstr "Επείγον"
+
+#: addons/priorities/models.py:19
+msgid "The resource associated with this priority."
+msgstr "Ο πόρος συσχετίστηκε με αυτή την προτεραιότητα."
+
+#: addons/priorities/models.py:20
+msgid "Priority Levels"
+msgstr "Επίπεδα προτεραιότητας"
+
+#: addons/priorities/models.py:22
+msgid ""
+"The priority levels, indicating the importance of completing translations "
+"for the resource."
+msgstr ""
+"Τα επίπεδα προτεραιότητας, υποδεικνύουν τη σπουδαιότητα της ολοκλήρωσης "
+"μεταφράσεων για τον πόρο."
+
+#: addons/priorities/models.py:36
+msgid "resource priority"
+msgstr "προτεραιότητα πόρου"
+
+#: addons/priorities/models.py:37
+msgid "resource priorities"
+msgstr "προτεραιότητες πόρων"
+
+#: addons/suggestions/models.py:20 resources/models.py:322
+#: resources/models.py:605
+msgid "String"
+msgstr "Συμβολοσειρά"
+
+#: addons/suggestions/models.py:21
+msgid "The actual string content of suggestion."
+msgstr "Το πραγματικό περιεχόμενο της συμβολοσειράς των προτάσεων."
+
+#: addons/suggestions/models.py:22 resources/models.py:324
+#: resources/models.py:607
+msgid "String Hash"
+msgstr "  "
+
+#: addons/suggestions/models.py:24
+msgid "The hash of the suggestion string used for indexing"
+msgstr " "
+
+#: addons/suggestions/models.py:25
+msgid "Score Value"
+msgstr "Τιμή βαθμολογίας"
+
+#: addons/suggestions/models.py:26
+msgid ""
+"A value which indicates the relevance of this suggestion to the translation "
+"of the source string."
+msgstr ""
+"Τιμή η οποία δείχνει τη σχετικότητα αυτής της πρότασης με το πηγαίο "
+"αλφαριθμητικό."
+
+#: addons/suggestions/models.py:35
+msgid "Source Entity"
+msgstr "Πηγαία Οντότητα"
+
+#: addons/suggestions/models.py:37
+msgid "The source entity this suggestion instance translates or affects."
+msgstr ""
+"Η πηγαία οντότητα η οποία μεταφράζεται ή επηρρεάζεται από την τρέχουσα "
+"πρόταση."
+
+#: addons/suggestions/models.py:41 resources/models.py:646
+msgid "Target Language"
+msgstr "Γλώσσα Προορισμού"
+
+#: addons/suggestions/models.py:42 resources/models.py:647
+#: storage/models.py:32
+msgid "The language in which this translation string is written."
+msgstr "Η γλώσσα στην οποία αυτή η μετάφραση συμβολοσειράς είναι γραμμένη."
+
+#: addons/suggestions/models.py:46
+msgid "The user who committed the specific suggestion."
+msgstr "Ο χρήστης που υπέβαλε τη συγκεκριμένη πρόταση."
+
+#: addons/suggestions/models.py:53
+msgid "suggestion"
+msgstr "πρόταση"
+
+#: addons/suggestions/models.py:107
+msgid "Suggestion"
+msgstr "Πρόταση"
+
+#: addons/suggestions/models.py:109
+msgid "The suggestion about which the user is voting."
+msgstr "Η πρόταση για την οποία ο χρήστης ψηφίζει."
+
+#: addons/suggestions/models.py:113
+msgid "The user who voted for the specific suggestion."
+msgstr "Ο χρήστης ο οποίος ψήφισε για τη συγκεκριμένη πρόταση."
+
+#: addons/suggestions/models.py:124
+msgid "vote"
+msgstr "ψήφος"
+
+#: addons/suggestions/models.py:125
+msgid "votes"
+msgstr "ψήφοι"
+
+#: addons/suggestions/views.py:28 addons/suggestions/views.py:54
+msgid "POST method only allowed."
+msgstr ""
+
+#: addons/suggestions/views.py:31
+msgid "POST variable 'suggestion_string' missing."
+msgstr ""
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:186
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:190
+msgid "User Suggestions"
+msgstr "Προτάσεις χρήστη"
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:200
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:204
+msgid "Vote up for this translation suggestion (click again to undo)."
+msgstr ""
+"Υπερψηφίστε αυτή την πρόταση μετάφρασης (πατήστε ξανά για να αναιρέσετε)."
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:202
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:206
+msgid ""
+"The score of the suggestion, indicating its popularity among translators."
+msgstr ""
+"Η βαθμολογία της πρόταση, υποδεικνύει τη δημοτικότητά της μεταξύ των "
+"μεταφραστών."
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:204
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:208
+msgid "Vote down for this translation suggestion (click again to undo)."
+msgstr ""
+"Καταψηφίστε αυτή την πρόταση μετάφρασης (πατήστε ξανά για να αναιρέσετε)."
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:209
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:213
+msgid "This is the currently accepted translation."
+msgstr "Αυτή είναι η τρέχουσα αποδεκτή μετάφραση."
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:211
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:214
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:215
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:218
+msgid "Use this!"
+msgstr "Χρήση αυτού!"
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:222
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:226
+msgid "New Suggestion"
+msgstr "Νεα προταση"
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:226
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:230
+msgid "You!"
+msgstr "Εσύ!"
+
+#: addons/suggestions/templates/lotte_suggestions_snippet.html:232
+#: addons/suggestions/templates/suggestions/suggestions_snippet.html:236
+msgid "Send suggestion!"
+msgstr "Αποστολή πρότασης!"
+
+#: addons/timeline/templates/timeline/project.html:10
+#: addons/timeline/templates/timeline/timeline_project.html:17
+#: addons/timeline/templates/timeline/timeline_project.html:19
+#: addons/timeline/templates/timeline/timeline_project.html:23
+#: addons/timeline/templates/timeline/timeline_user.html:13
+#: templates/projects/project_timeline.html:12
+#: templates/projects/project_timeline.html:14
+#: templates/txcommon/user_timeline.html:12
+msgid "Timeline"
+msgstr "Χρονολόγιο"
+
+#: addons/timeline/templates/timeline/timeline_account_link.html:3
+msgid "My Timeline"
+msgstr "Το χρονολόγιό μου"
+
+#: addons/timeline/templates/timeline/timeline_base.html:17
+#: templates/timeline.html:17 templates/resources/resource_actions.html:112
+msgid "Go"
+msgstr "Εντάξει"
+
+#: addons/timeline/templates/timeline/timeline_base.html:23
+#: templates/timeline.html:24 templates/teams/team_detail.html:325
+msgid "None available"
+msgstr "Κανένα διαθέσιμο"
+
+#: addons/timeline/templates/timeline/timeline_base.html:27
+#: templates/timeline.html:28
+#, python-format
+msgid "The query returned %(counter)s result"
+msgid_plural "The query returned %(counter)s results"
+msgstr[0] "Η αναζήτηση επέστρεψε %(counter)s αποτέλεσμα"
+msgstr[1] "Η αναζήτηση επέστρεψε %(counter)s αποτελέσματα"
+
+#: addons/timeline/templates/timeline/timeline_project.html:30
+msgid "Filter results:"
+msgstr "Φιλτράρετε τα αποτελέσματα:"
+
+#: addons/timeline/templates/timeline/timeline_user.html:16
+#: templates/simpleauth/base_profile.html:4
+#: templates/simpleauth/base_profile.html:7
+#: templates/simpleauth/profile_public.html:5
+#: templates/simpleauth/profile_public.html:6
+#: templates/simpleauth/settings.html:5
+#: templates/txcommon/user_timeline.html:15 templates/userena/public.html:26
+msgid "Profile"
+msgstr "Προφίλ"
+
+#: addons/timeline/templates/timeline/timeline_user.html:23
+#: templates/projects/project_timeline.html:20
+#: templates/txcommon/user_timeline.html:22
+#, python-format
+msgid "%(project_name)s Timeline"
+msgstr "Το χρονολόγιο του %(project_name)s"
+
+#: addons/trans_memory/templates/search_translation.html:13
+#: addons/trans_memory/templates/search_translation.html:19
+msgid "Search Translations"
+msgstr "Αναζήτηση μεταφράσεων"
+
+#: addons/trans_memory/templates/search_translation.html:40
+#, python-format
+msgid "%(source_language)s &rarr; %(translation_language)s"
+msgstr "%(source_language)s &rarr; %(translation_language)s"
+
+#: addons/trans_memory/templates/search_translation.html:60
+msgid "Location:"
+msgstr "Τοποθεσία:"
+
+#: addons/trans_memory/templates/search_translation.html:72
+msgid "Tough luck! No translations obtained."
+msgstr "Ατυχία! Δεν βρέθηκαν μεταφράσεις."
+
+#: addons/trans_memory/templates/search_translation_form.html:7
+msgid "Search for a string:"
+msgstr "Αναζήτηση μιας συμβολοσειράς:"
+
+#: addons/trans_memory/templates/search_translation_form.html:11
+msgid "From:"
+msgstr "Από:"
+
+#: addons/trans_memory/templates/search_translation_form.html:13
+msgid "To:"
+msgstr "Σε:"
+
+#: addons/trans_memory/templates/search_translation_form.html:38
+#: templates/search.html:7 templates/search.html.py:9
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: addons/trans_memory/templates/trans_memory/lotte_header_link.html:4
+msgid ""
+"Search in Transifex memory for existing translations (uses a new tab/window)"
+msgstr ""
+"Αναζήτηση στη μνήμη του Transifex για υπάρχουσες μεταφράσεις "
+"(χρησιμοποιώντας μια νέα καρτέλα/παράθυρο)"
+
+#: addons/trans_memory/templates/trans_memory/lotte_header_link.html:4
+msgid "Search translations"
+msgstr "Αναζήτηση μεταφράσεων"
+
+#: addons/txapps/models.py:40 projects/models.py:134 releases/models.py:31
+#: resources/models.py:124 templates/helptext/project_form_helptext.html:5
+msgid "Slug"
+msgstr "Slug"
+
+#: addons/txapps/models.py:41 projects/models.py:136 releases/models.py:32
+msgid ""
+"A short label to be used in the URL, containing only letters, numbers, "
+"underscores or hyphens."
+msgstr ""
+"Μια σύντομη επιγραφή που θα χρησιμοποιηθεί στην διεύθυνση URL, η οποία να "
+"περιέχει μόνο γράμματα, αριθμούς, κάτω παύλες ή παύλες."
+
+#: addons/txapps/models.py:46 languages/models.py:58
+#: languages/migrations/0001_initial.py:19
+#: languages/migrations/0002_added_rules_f.py:94 projects/models.py:138
+#: releases/models.py:34 resources/models.py:127
+#: templates/helptext/project_form_helptext.html:16
+#: templates/userena/profile_detail.html:13 templates/userena/public.html:53
+msgid "Name"
+msgstr "Όνομα"
+
+#: addons/txapps/models.py:46
+msgid "A short name."
+msgstr "Ένα σύντομο όνομα."
+
+#: addons/txapps/models.py:50
+msgid "A small description for the app."
+msgstr "Μια σύντομη περιγραφή της εφαρμογής"
+
+#: addons/txapps/models.py:53 addons/webhooks/models.py:25
+msgid "URL"
+msgstr "Σύνδεσμος"
+
+#: addons/txapps/models.py:54
+msgid "The URL where the app is hosted."
+msgstr "Ο σύνδεσμος όπου στεγάζεται η εφαρμογή."
+
+#: addons/txapps/models.py:57
+msgid "Allowed URLs"
+msgstr "Επιτρεπτοί σύνδεσμο"
+
+#: addons/txapps/models.py:58
+msgid "URLs allowed to be accessed by team members."
+msgstr "Σύνδεσμοι οι οποίοι επιτρέπεται να προσπελαστούν από μέλητης ομάδας."
+
+#: addons/txapps/models.py:65
+msgid "The projects that have enabled this app."
+msgstr "Τα έργα που έχουν ενεργοποιήσει αυτήν την εφαρμογή"
+
+#: addons/txapps/views.py:165
+#, fuzzy, python-format
+msgid "TxApp responded with an error: %s"
+msgstr "Η απάντηση της εφαρμογής ήταν \"%(error_message)s\""
+
+#: addons/txapps/views.py:168 addons/txapps/templates/txapp_error.html:5
+msgid "Error contacting app."
+msgstr "Σφάλμα κατά την επικοινωνία με την εφαρμογή."
+
+#: addons/txapps/templates/txapp_error.html:7
+#, python-format
+msgid "There was an error, while contacting the app %(app_name)s."
+msgstr "Προέκυψε σφάλμα κατά την επικοινωνία με την εφαρμογή %(app_name)s."
+
+#: addons/txapps/templates/txapp_error.html:11
+#, python-format
+msgid "App responded \"%(error_message)s\""
+msgstr "Η απάντηση της εφαρμογής ήταν \"%(error_message)s\""
+
+#: addons/txapps/templates/txapp_error.html:15
+msgid "Please, <a href=mailto:admin@transifex.net>report</a> this incident."
+msgstr ""
+"Παρακαλούμε να <a href=mailto:admin@transifex.net>αναφέρετε</a> αυτό το "
+"περιστατικό."
+
+#: addons/watches/models.py:28
+msgid "Resource to watch."
+msgstr "Πόρος για παρακολούθηση."
+
+#: addons/watches/models.py:41
+msgid "translation watch"
+msgstr "παρακολούθηση μετάφρασης"
+
+#: addons/watches/models.py:42
+msgid "translation watches"
+msgstr "παρακολουθήσεις μετάφρασης"
+
+#: addons/watches/views.py:28 addons/watches/views.py:94
+msgid "Must use POST to activate"
+msgstr "Πρέπει να γίνει χρήση του POST για ενεργοποίηση"
+
+#: addons/watches/views.py:31 addons/watches/views.py:97
+msgid "Notification is not enabled"
+msgstr "Η ειδοποίηση δεν είναι ενεργή"
+
+#: addons/watches/views.py:55 addons/watches/templates/watch_toggle.html:7
+msgid "Watch it"
+msgstr "Παρακολουθήστε το"
+
+#: addons/watches/views.py:73
+msgid "Stop watching"
+msgstr "Διακοπή παρακολούθησης"
+
+#: addons/watches/views.py:114
+msgid "Watch this project"
+msgstr "Παρακολούθηση αυτού του έργου"
+
+#: addons/watches/views.py:148
+msgid "Stop watching this project"
+msgstr "Διακοπή παρακολούθησης αυτού του έργου"
+
+#: addons/watches/templates/watch_toggle.html:7
+msgid "Stop watching it"
+msgstr "Διακοπή παρακολούθησης"
+
+#: addons/watches/templates/watch_toggle.html:12
+msgid "Stop watching project"
+msgstr "Διακοπή παρακολούθησης έργου"
+
+#: addons/watches/templates/watch_toggle.html:14
+msgid "Watch project"
+msgstr "Παρακολούθηση έργου"
+
+#: addons/webhooks/handlers.py:82
+msgid "Web hook URL"
+msgstr "Σύνδεσμος επανάκλησης"
+
+#: addons/webhooks/handlers.py:83
+msgid ""
+"You can specify a URL which Transifex will visit whenever a translation of a "
+"resource of the project is changed."
+msgstr ""
+"Μπορείτε να προσδιορίσετε έναν σύνδεσμο τον οποίον θα επισκευτεί το "
+"Transifex όταν μεταβληθεί η μετάφραση ενός πόρου το έργου."
+
+#: addons/webhooks/models.py:21
+msgid "The id of the project for the web hook."
+msgstr "Το αναγνωριστικό του έργου του συνδέσμου επανάκλησης."
+
+#: addons/webhooks/models.py:26
+msgid "The URL to send the notification to."
+msgstr "Ο σύνδεσμος στον οποίον θα αποσταλεί η ειδοποίηση."
+
+#: addons/webhooks/models.py:30
+msgid "Kind"
+msgstr "Είδος"
+
+#: addons/webhooks/models.py:32
+msgid "The kind of web hook (apps or project)"
+msgstr "Το είδος του συνδέσμου επανάκλησης (εφαρμογής ή έργου)"
+
+#: addons/widgets/templates/project_widgets.html:12
+#: addons/widgets/templates/project_widgets.html:14
+#: addons/widgets/templates/widgets/project.html:7
+msgid "Widgets"
+msgstr "Γραφικά συστατικά"
+
+#: addons/widgets/templates/project_widgets.html:22
+msgid "Widgets, buttons, etc."
+msgstr "Γραφικά συστατικά, κουμπιά, κλπ."
+
+#: addons/widgets/templates/project_widgets.html:26
+msgid ""
+"Here are some widgets, buttons and other cool stuff you can add to your "
+"homepage!"
+msgstr ""
+"Εδώ βρίσκονται μερικά γραφικά συστατικά, κουμπιά κι άλλα όμορφα πράγματα που "
+"μπορείτε να προσθέσετε στην ιστοσελίδα σας!"
+
+#: addons/widgets/templates/project_widgets.html:39
+msgid "Userbars"
+msgstr "Userbars"
+
+#: addons/widgets/templates/project_widgets.html:50
+msgid "You can insert userbars to forums, e-mail signatures, etc."
+msgstr "Μπορείτε να εισάγετε τα userbars σε forums, σε υπογραφές e-mail, κλπ."
+
+#: addons/widgets/templates/project_widgets.html:51
+msgid "Show code snippet for userbar:"
+msgstr "Δείτε το απόσπασμα κώδικα για το userbar:"
+
+#: languages/feeds.py:14
+#, python-format
+msgid "Languages on %(site_name)s"
+msgstr "Οι γλώσσες στο %(site_name)s"
+
+#: languages/feeds.py:17
+#, python-format
+msgid "The languages spoken on %s."
+msgstr "Οι γλώσσες που μιλιούνται στο %s."
+
+#: languages/models.py:61 languages/migrations/0001_initial.py:13
+#: languages/migrations/0002_added_rules_f.py:79
+msgid "Code"
+msgstr "Κώδικας"
+
+#: languages/models.py:64 languages/migrations/0001_initial.py:12
+#: languages/migrations/0002_added_rules_f.py:76
+msgid "Code aliases"
+msgstr "Ψευδώνυμα του κώδικα"
+
+#: languages/models.py:67 languages/migrations/0001_initial.py:17
+#: languages/migrations/0002_added_rules_f.py:91
+msgid "Special Chars"
+msgstr "Ειδικοί χαρακτήρες"
+
+#: languages/models.py:68
+msgid "Enter any special characters that users might find difficult to type"
+msgstr ""
+"Εισάγετε τους ειδικούς χαρακτήρες όπου οι χρήστες μπορεί να βρουν δυσκολία "
+"κατά την πληκτρολόγηση"
+
+#: languages/models.py:71 languages/migrations/0001_initial.py:16
+#: languages/migrations/0002_added_rules_f.py:88
+msgid "Number of Plurals"
+msgstr "Αριθμός των πληθυντικών"
+
+#: languages/models.py:73 languages/migrations/0001_initial.py:15
+#: languages/migrations/0002_added_rules_f.py:85
+msgid "Plural Equation"
+msgstr "Εξίσωση πληθυντικού"
+
+#: languages/models.py:77
+msgid "Rule zero"
+msgstr "Κανόνας μηδέν"
+
+#: languages/models.py:79
+msgid "Rule one"
+msgstr "Κανόνας ένα"
+
+#: languages/models.py:81
+msgid "Rule two"
+msgstr "Κανόνας δύο"
+
+#: languages/models.py:83
+msgid "Rule few"
+msgstr "Κανόνας λίγων"
+
+#: languages/models.py:85
+msgid "Rule many"
+msgstr "Κανόνας πολλών"
+
+#: languages/models.py:87
+msgid "Rule other"
+msgstr "Κανόνας άλλος"
+
+#: languages/models.py:98
+msgid "language"
+msgstr "γλώσσα"
+
+#: languages/models.py:99 templates/languages/language_list.html:15
+msgid "languages"
+msgstr "γλώσσες"
+
+#: projects/api.py:489 projects/api.py:565 resources/api.py:809
+#, python-format
+msgid "%i strings added"
+msgstr "%i συμβολοσειρές προστέθηκαν"
+
+#: projects/api.py:491 projects/api.py:567 resources/api.py:811
+#, python-format
+msgid "%i strings updated"
+msgstr "%i συμβολοσειρές ενημερώθηκαν"
+
+#: projects/feeds.py:13
+#, python-format
+msgid "Latest projects on %(site_name)s"
+msgstr "Τα πρόσφατα έργα στο %(site_name)s"
+
+#: projects/feeds.py:16
+msgid "Updates on changes and additions to registered projects."
+msgstr "Ενημερώσεις για αλλαγές και προσθήκες στα καταχωρημένα έργα."
+
+#: projects/feeds.py:32
+#, python-format
+msgid "%(site_name)s: Resources in %(project)s"
+msgstr "%(site_name)s: Οι πόροι στο %(project)s"
+
+#: projects/feeds.py:37
+#, python-format
+msgid "Latest resources in project %s."
+msgstr "Οι πιο πρόσφατοι πόρου του έργου %s."
+
+#: projects/forms.py:25 projects/models.py:168
+#: templates/helptext/project_form_helptext.html:93
+msgid "Maintainers"
+msgstr "Συντηρητές"
+
+#: projects/forms.py:26 txpermissions/forms.py:19
+msgid "Search for a username"
+msgstr "Αναζήτηση ονόματος χρήστη"
+
+#: projects/forms.py:28 projects/models.py:165
+#: templates/helptext/project_form_helptext.html:81
+msgid "Tags"
+msgstr "Ετικέτες:"
+
+#: projects/forms.py:77
+msgid "Your password"
+msgstr "Ο κωδικός ειδόδου σας"
+
+#: projects/forms.py:89
+msgid "Invalid password."
+msgstr "Άκυρος κωδικός εισόδου"
+
+#: projects/forms.py:124
+msgid "Free for all"
+msgstr "Ελεύθερο για όλους"
+
+#: projects/forms.py:126
+msgid ""
+"Allow any logged-in user to submit files to my project. <a href=\"http://www."
+"youtube.com/watch?v=-b7qaSxuZUg\" target=\"_blank\">Imagine</a> all the "
+"people, sharing all the world. Recommended for quick translations, and when "
+"a pre-commit review process is in place, e.g. when contributions are "
+"submitted by email or to a separate branch."
+msgstr ""
+"Επιτρέψτε σε κάθε συνδεδεμένο χρήστη να υποβάλει μεταφράσεις για το έργο "
+"μου. <a href=\"http://www.youtube.com/watch?v=-b7qaSxuZUg\" target=\"_blank"
+"\">Φανταστείτε</a> όλους τους ανθρώπους να μοιράζονται όλον τον κόσμο. "
+"Προτείνεται για γρήγορες μεταφράσεις, και όταν εφαρμόζεται διαδικασία "
+"έγκρισης πριν την εφαρμογή των μεταφράσεων, πχ. όταν οι συνεισφορές "
+"υποβάλλονται μέσω ηλεκτρονικού ταχυδρομείου ή σε διαφορετικό κλάδου του "
+"εναποθετηρίου."
+
+#: projects/forms.py:135
+msgid "Limited access"
+msgstr "Περιορισμένη πρόσβαση"
+
+#: projects/forms.py:137
+msgid ""
+"Give access to specific people. Translations teams will have access to their "
+"language's files only, and global writers will have access to all "
+"translation files. Recommended for most projects."
+msgstr ""
+"Δώστε πρόσβαση σε συγκεκριμένους ανθρώπους. Οι ομάδες μεταφράσεων θα έχουν "
+"πρόσβαση στα αρχεία των δικών τους γλωσσών μόνο και οι καθολικοί συγγραφείς "
+"θα έχουν πρόσβαση σε όλα τα αρχεία μεταφράσεων. Προτείνεται για τα "
+"περισσότερα έργα."
+
+#: projects/forms.py:144
+msgid "Outsourced access"
+msgstr "ȴ顰"
+
+#: projects/forms.py:146
+msgid ""
+"Re-use another project's teams and writers by delegating access control to "
+"that project. If a person can contribute to that project, it can contribute "
+"to this one as well. Recommended for non-upstream projects such as "
+"distribution packages and desktop environment modules."
+msgstr ""
+"Επαναχρησιμοποιήστε τις ομάδες ενός άλλου έργου εναποθέτοντας τον έλεγχο "
+"πρόσβασης σε αυτό το έργο. Αν κάποιος μπορεί να συνεισφέρει σε εκείνο το "
+"έργο, τότε θα μπορεί να συνεισφέρει επίσης και στο τρέχον. Προτείνεται για "
+"μη-κεντρικά έργα όπως πακέτα διανομών και μέρη γραφικών περιβάλλοντων."
+
+#: projects/models.py:130
+msgid "Private"
+msgstr "Ιδιωτικό"
+
+#: projects/models.py:131
+msgid ""
+"A private project is visible only by you and your team.Moreover, private "
+"projects are limited according to billingplans for the user account."
+msgstr ""
+"A private project is visible only by you and your team.Moreover, private "
+"projects are limited according to billingplans for the user account."
+
+#: projects/models.py:139
+msgid "A short name or very short description."
+msgstr "Ένα μικρό όνομα ή μία πολύ μικρή περιγραφή."
+
+#: projects/models.py:141 releases/models.py:38
+msgid "A sentence or two describing the object."
+msgstr "Μία πρόταση ή δύο που να περιγράφουν το αντικείμενο"
+
+#: projects/models.py:142 releases/models.py:39
+#: templates/helptext/project_form_helptext.html:37
+msgid "Long description"
+msgstr "Εκτενής Περιγραφή"
+
+#: projects/models.py:144
+msgid "A longer description (optional). Use Markdown syntax."
+msgstr ""
+"Μία εκτενέστερη περιγραφή (προαιρετικά). Χρησιμοποιήστε σύνταξη Markdown."
+
+#: projects/models.py:145 releases/models.py:42
+#: templates/helptext/project_form_helptext.html:50
+msgid "Homepage"
+msgstr "Ιστοσελίδα"
+
+#: projects/models.py:146
+msgid "Feed"
+msgstr "Αρχείο ροής"
+
+#: projects/models.py:147
+msgid "An RSS feed with updates to the project."
+msgstr "Μία ροή RSS με ενημερώσεις για το έργο."
+
+#: projects/models.py:148
+msgid "Bug tracker"
+msgstr "Ιχνηλάτης σφαλμάτων"
+
+#: projects/models.py:149
+msgid "The URL for the bug and tickets tracking system (Bugzilla, Trac, etc.)"
+msgstr ""
+"Η διεύθυνση URL για το σύστημα εντοπισμού σφαλμάτων και εργασιών (Bugzilla, "
+"Trac, κλπ.)"
+
+#: projects/models.py:151
+msgid "Translator Instructions"
+msgstr "Οδηγίες Μετάφρασης"
+
+#: projects/models.py:152
+msgid ""
+"A web page containing documentation or instructions for translators, or "
+"localization tips for your community."
+msgstr ""
+"Ιστοσελίδα η οποία περιέχει οδηγίες για μεταφραστές ή συμβουλές μετάφρασης "
+"για την κοινότητά σας."
+
+#: projects/models.py:154
+msgid "Anyone can submit"
+msgstr "Οποιοσδήποτε μπορεί να υποβάλλει"
+
+#: projects/models.py:156
+msgid "Can anyone submit files to this project?"
+msgstr "Μπορεί κάποιος να υποβάλλει αρχεία σε αυτό το έργο;"
+
+#: projects/models.py:159
+msgid "Hide this object from the list view?"
+msgstr "Απόκρυψη αυτού του αντικειμένου από τη λίστα εμφάνισης;"
+
+#: projects/models.py:160
+msgid "Enabled"
+msgstr "Ενεργοποιημένο"
+
+#: projects/models.py:161
+msgid "Enable this object or disable its use?"
+msgstr "Ενεργοποίηση αυτού του αντικειμένου ή απενεργοποίηση της χρήσης του;"
+
+#: projects/models.py:172
+msgid "Outsource project"
+msgstr "Εξωτερικής ανάθεσης έργου"
+
+#: projects/models.py:173
+msgid "Project that owns the access control of this project."
+msgstr "Έργο το οποίο κατέχει τον έλεγχο πρόσβασης αυτού του έργου."
+
+#: projects/models.py:177
+msgid "The user who owns this project."
+msgstr "Ο/H χρήστης που κατέχει αυτό το έργο."
+
+#: projects/models.py:180 resources/models.py:161
+msgid "Source Language"
+msgstr "Πηγαία Γλώσσα"
+
+#: projects/models.py:182 resources/models.py:162
+msgid "The source language of this Resource."
+msgstr "Η πηγαία γλώσσα αυτού του πόρου."
+
+#: projects/models.py:186 releases/models.py:61
+msgid "HTML Description"
+msgstr "Περιγραφή HTML"
+
+#: projects/models.py:188 releases/models.py:63
+msgid "Description in HTML."
+msgstr "Περιγραφή σε HTML."
+
+#: projects/models.py:206
+msgid "project"
+msgstr "έργο"
+
+#: projects/models.py:207 templates/projects/project_list.html:23
+msgid "projects"
+msgstr "έργα"
+
+#: projects/permissions/project.py:45
+msgid "Is allowed to maintain this project"
+msgstr "Δικαιούται να διαχειρίζεται το έργο"
+
+#: projects/permissions/project.py:58
+msgid "Is allowed to coordinate a team project"
+msgstr "Δικαιούται να διαχειρίζεται το έργο μιας ομάδας"
+
+#: projects/permissions/project.py:73
+msgid "Is allowed to review translations for a team project"
+msgstr "Επιτρέπεται να εγκρίνει μεταφράσεις για ένα έργο της ομάδας"
+
+#: projects/permissions/project.py:123
+msgid "Is allowed to submit translations to this project"
+msgstr "Δικαιούται να υποβάλλει μεταφράσεις στο έργο"
+
+#: projects/permissions/project.py:140
+msgid "Is allowed to browse this private project"
+msgstr "Δικαιούται να πλοηγηθεί σε αυτό το προσωπικό έργο"
+
+#: projects/templates/feeds/release_description.html:4
+#: projects/templates/feeds/release_language_description.html:4
+msgid "Translated:"
+msgstr "Μεταφρασμένα:"
+
+#: projects/templates/feeds/release_description.html:5
+#: projects/templates/feeds/release_language_description.html:5
+msgid "Untranslated:"
+msgstr "Αμετάφραστα:"
+
+#: projects/templates/feeds/release_description.html:6
+#: projects/templates/feeds/release_language_description.html:6
+msgid "Total:"
+msgstr "Σύνολο:"
+
+#: projects/views/project.py:203
+#, fuzzy, python-format
+msgid "The project '%s' was deleted."
+msgstr "Η ομάδα '%s' διαφράφηκε."
+
+#: projects/views/team.py:204
+#, python-format
+msgid "The team '%s' was deleted."
+msgstr "Η ομάδα '%s' διαφράφηκε."
+
+#: projects/views/team.py:249
+#, python-format
+msgid "You are already on the '%s' team."
+msgstr "Είστε ήδη μέλος της ομάδας '%s'."
+
+#: projects/views/team.py:260
+#, python-format
+msgid "You requested to join the '%s' team."
+msgstr "Ζητήσατε να συμμετέχετε στην ομάδα '%s'."
+
+#: projects/views/team.py:281
+#, python-format
+msgid "You already requested to join the '%s' team."
+msgstr "Έχετε ήδη ζητήσει να συμμετέχετε στην ομάδα '%s'."
+
+#: projects/views/team.py:285
+msgid ""
+"You need to sign the Contribution License Agreement for this project before "
+"you join a translation team"
+msgstr ""
+"Χρειάζεται να υπογράψετε την Άδεια Χρήσης Συντελεστή για αυτό το έργο προτού "
+"συμμετάσχετε σε μία ομάδα μετάφρασης."
+
+#: projects/views/team.py:314
+#, python-format
+msgid "User '%(user)s' is already on the '%(team)s' team."
+msgstr "Ο χρήστης '%(user)s' είναι ήδη στην ομάδα '%(team)s'."
+
+#: projects/views/team.py:321
+#, python-format
+msgid "You added '%(user)s' to the '%(team)s' team."
+msgstr "Προσθέσατε τον χρήστη '%(user)s' στην ομάδα '%(team)s'."
+
+#: projects/views/team.py:369
+#, python-format
+msgid ""
+"You rejected the request by user '%(user)s' to join the '%(team)s' team."
+msgstr ""
+"Απορρίψατε την αίτηση του χρήστη '%(user)s' να συμμετέχει στην "
+"ομάδα'%(team)s'."
+
+#: projects/views/team.py:414
+#, python-format
+msgid "You withdrew your request to join the '%s' team."
+msgstr "Αποσύρατε την αίτησή σας να συμμετέχετε στην ομάδα '%s'."
+
+#: projects/views/team.py:457
+#, python-format
+msgid "You left the '%s' team."
+msgstr "Φύγατε από την ομάδα '%s'."
+
+#: projects/views/team.py:478
+#, python-format
+msgid "You are not in the '%s' team."
+msgstr "Δεν είστε μέλος της ομάδας '%s'."
+
+#: projects/views/team.py:501
+msgid "Please select a language before submitting the form."
+msgstr "Παρακαλούμε να επιλέξετε μια γλώσσα πρωτού υποβάλετε τη φόρμα."
+
+#: projects/views/team.py:514
+#, python-format
+msgid "'%s' team already exists."
+msgstr "Η ομάδα '%s' υπάρχει ήδη."
+
+#: projects/views/team.py:520
+#, python-format
+msgid "A request to create the '%s' team already exists."
+msgstr "Υπάρχει ήδη αίτηση για τη δημιουργία της ομάδας '%s'."
+
+#: projects/views/team.py:537
+#, python-format
+msgid "You requested creation of the '%s' team."
+msgstr "Ζητήσατε τη δημιουργία της ομάδα '%s'."
+
+#: projects/views/team.py:560
+msgid ""
+"You need to sign the Contribution License Agreement for this project before "
+"you submit a team creation request."
+msgstr ""
+"Χρειάζεται να υπογράψετε την Άδεια Χρήσης Συνεισφοράς για αυτό το έργο "
+"προτού υποβάλλετε μία αίτηση δημιουργίας ομάδας."
+
+#: projects/views/team.py:589
+#, python-format
+msgid "You approved the '%(team)s' team requested by '%(user)s'."
+msgstr "Δεχτήκατε την ομάδα '%(team)s' που ζητήθηκε από τον χρήστη '%(user)s'."
+
+#: projects/views/team.py:632
+#, python-format
+msgid "You rejected the request by '%(user)s' for a '%(team)s' team."
+msgstr ""
+"Απορρίψατε την ομάδα '%(team)s' που ζητήθηκε από τον χρήστη '%(user)s'."
+
+#: releases/feeds.py:31
+#, python-format
+msgid "%(site_name)s: %(project)s :: %(release)s release"
+msgstr "%(site_name)s: %(project)s :: έκδοση %(release)s"
+
+#: releases/feeds.py:37
+#, python-format
+msgid "Translation statistics for all languages against %s release."
+msgstr "Τα στατιστικά των μεταφράσεων σε όλες τις γλώσσες κατά την έκδοση %s."
+
+#: releases/feeds.py:69
+#, python-format
+msgid "%(site_name)s: %(project)s :: %(release)s release :: %(lang)s"
+msgstr "%(site_name)s: %(project)s :: έκδοση %(release)s :: %(lang)s"
+
+#: releases/feeds.py:76
+#, python-format
+msgid ""
+"Translation statistics for %(lang)s language against %(release)s release."
+msgstr ""
+"Τα στατιστικά των μεταφράσεων για την %(lang)s γλώσσα κατά την έκδοση "
+"%(release)s."
+
+#: releases/forms.py:13
+msgid "Search for a resource"
+msgstr "Αναζήτηση ενός πόρου"
+
+#: releases/forms.py:19
+msgid "Enter a valid date/time in YYYY-MM-DD HH:MM[:ss[.uuuuuu]] format."
+msgstr ""
+"Εισάγετε μια έγκυρη ημερομηνία/ώρα στη μορφή YYYY-MM-DD HH:MM[:ss[.uuuuuu]]."
+
+#: releases/forms.py:44
+msgid "Invalid resource used."
+msgstr "Χρησιμοποιήθηκε άκυρος πόρος."
+
+#: releases/forms.py:48
+#, python-format
+msgid "%s is an unaccessible private resource.Remove it!"
+msgstr "Ο πόρος %s είναι μη προσβάσιμος. Αφαιρέστε τον!"
+
+#: releases/forms.py:57
+msgid "This value is reserved and cannot be used."
+msgstr "Αυτή η τιμή ειναι δεσμευμένη και δεν μπορεί να χρησιμοποιηθεί."
+
+#: releases/forms.py:69
+msgid "Devel freeze date must be after the String freeze date."
+msgstr ""
+"Η ημερομηνία παγώματος Ανάπτυξης πρέπει να είναι μετά από την ημερομηνία "
+"Παγώματος αλφαριθμητικών."
+
+#: releases/forms.py:75
+msgid "Release date must be after the String freeze date."
+msgstr ""
+"Η ημερομηνία Έκδοσης πρέπει να είναι μετά την ημερομηνία Παγώματος "
+"αλφαριθμητικών."
+
+#: releases/forms.py:81
+msgid "Release date must be after the Devel freeze date."
+msgstr ""
+"Η ημερομηνία Έκδοσης πρέπει να είναι μετά την ημερομηνία Παγώματος ανάπτυξης."
+
+#: releases/models.py:35
+msgid "A string like a name or very short description."
+msgstr "Μία συμβολοσειρά όπως ένα όνομα ή μια πολύ σύντομη περιγραφή."
+
+#: releases/models.py:41
+msgid "Use Markdown syntax."
+msgstr "Χρησιμοποιήστε σύνταξη Markdown"
+
+#: releases/models.py:44
+msgid "Release date"
+msgstr "Ημερομηνία έκδοσης"
+
+#: releases/models.py:46
+msgid "When this release will be available."
+msgstr "Όταν αυτή η έκδοση θα είναι διαθέσιμη."
+
+#: releases/models.py:47
+msgid "String freeze date"
+msgstr "Ημερομηνία παγώματος αλφαριθμητικών"
+
+#: releases/models.py:49
+msgid ""
+"When the translatable strings will be frozen (no strings can be added/"
+"modified which affect translations."
+msgstr ""
+"Πότε τα μεταφράσιμα αλφαρηθμιτικά θα παγώσουν (δεν θα μπορούν να προστεθούν/"
+"αλλάξουν αλφαριθμητικά που θα επηρρεάζουν τις μεταφράσεις."
+
+#: releases/models.py:51
+msgid "Devel freeze date"
+msgstr "Ημερομηνία παγώματος ανάπτυξης"
+
+#: releases/models.py:53
+msgid ""
+"The last date packages from this release can be built from the developers. "
+"Translations sent after this date will not be included in the released "
+"version."
+msgstr ""
+"Η τελευταία ημερομηνία που μπορούν να δημιουργηθούν πακέτα λογισμικού από "
+"τους προγραμματιστές. Τυχόν μεταφράσεις που θα σταλούν μετά από αυτήν την "
+"ημερομηνία δεν θα συμπεριληφθούν στην τελική έκδοση."
+
+#: releases/models.py:69
+msgid "Resources"
+msgstr "Πόροι"
+
+#: releases/models.py:76
+#, python-format
+msgid "<Release: %(rel)s (Project %(proj)s)>"
+msgstr "<Έκδοση: %(rel)s (Έργο %(proj)s)>"
+
+#: releases/models.py:87
+msgid "release"
+msgstr "έκδοση"
+
+#: releases/models.py:88 templates/projects/release_list.html:13
+#: templates/projects/release_list.html:20
+#: templates/projects/release_list.html:41
+#: templates/projects/release_list.html:45
+msgid "releases"
+msgstr "εκδόσεις"
+
+#: releases/models.py:115
+msgid "Before String Freeze"
+msgstr "Πριν από το Πάγωμα Αλφαριθμητικών"
+
+#: releases/models.py:117
+msgid "Whether the 'Before String Freeze' notification was sent or not."
+msgstr ""
+"Εαν η προειδοποίηση για είσοδο σε περίοδο Παγώματος Αλφαριθμητικών εστάλη ή "
+"όχι."
+
+#: releases/models.py:120
+msgid "Being in String Freeze"
+msgstr "Περίοδος Παγώματος Αλφαριθμητικών"
+
+#: releases/models.py:122
+msgid "Whether the 'Being in String Freeze' notification was sent or not."
+msgstr ""
+"Εαν η ειδοποίηση για την 'Περίοδο Παγώματος Αλφαριθμητικών' εστάλη ή όχι."
+
+#: releases/models.py:126
+msgid "Before Translation Deadline"
+msgstr "Πριν από τη Διορία Μετάφρασης"
+
+#: releases/models.py:127
+msgid "Whether the 'Before Translation Deadline' notification was sent or not."
+msgstr "Εαν η ειδοποιήση 'Πριν από τη Διορία Μετάφρασης' εστάλη ή όχι."
+
+#: releases/models.py:130
+msgid "Hit Translation Deadline"
+msgstr "Διορία Μετάφρασης"
+
+#: releases/models.py:132
+msgid "Whether the 'Hit Translation Deadline' notification was sent or not."
+msgstr "Εαν η ειδοποίηση 'Διορία Μετάφρασης' εστάλη ή όχι"
+
+#: releases/models.py:137
+msgid "Release"
+msgstr "Έκδοση"
+
+#: releases/models.py:143
+#, python-format
+msgid "<ReleaseNotification: %(rel)s (Project %(proj)s)>"
+msgstr "<ReleaseNotification: %(rel)s (Project %(proj)s)>"
+
+#: releases/models.py:148
+msgid "release notification"
+msgstr "ειδοποίηση έκδοσης"
+
+#: releases/models.py:149
+msgid "release notifications"
+msgstr "ειδοποιήσεις έκδοσης"
+
+#: releases/views.py:152
+#, python-format
+msgid "The release '%s' was deleted."
+msgstr "Η έκδοση '%s' διαγράφηκε."
+
+#: resources/backends.py:74
+msgid "Invalid arguments given."
+msgstr "Δόθηκαν άκυρα ορίσματα."
+
+#: resources/backends.py:80
+#, fuzzy
+msgid "A resource with the same slug exists in this project."
+msgstr "Δεν υπάρχουν πόροι σε αυτό το έργο."
+
+#: resources/backends.py:83
+#, fuzzy, python-format
+msgid "Error creating resource: %s"
+msgstr "Σφάλμα κατά την ενημέρωση του πηγαίου αρχείου."
+
+#: resources/backends.py:92
+msgid "The content type of the request is not valid."
+msgstr ""
+
+#: resources/backends.py:133
+msgid "No language specified, when importing source file."
+msgstr ""
+
+#: resources/backends.py:140 resources/backends.py:157
+#, fuzzy, python-format
+msgid "Invalid i18n method used: %s"
+msgstr "Χρησιμοποιήθηκε άκυρος πόρος."
+
+#: resources/forms.py:17
+#, fuzzy
+msgid "Source File"
+msgstr "Αρχείο Πόρου"
+
+#: resources/forms.py:31
+msgid "Resource File"
+msgstr "Αρχείο Πόρου"
+
+#: resources/forms.py:33
+msgid "I18N Type"
+msgstr "Τύπος i18n"
+
+#: resources/forms.py:35 resources/models.py:133
+#, python-format
+msgid "The type of i18n method used in this resource (%s)"
+msgstr "Ο τύπος της μεθόδου i18n που χρησιμοποιείται σε αυτό τον πόρο (%s)"
+
+#: resources/forms.py:53 resources/forms.py:63
+msgid "Translation File"
+msgstr "Αρχείο Μετάφρασης"
+
+#: resources/forms.py:56 resources/forms.py:67
+msgid "The language of the translation."
+msgstr "Η γλώσσα της μετάφρασης."
+
+#: resources/forms.py:75
+msgid "Pseudo type"
+msgstr "Τύπος ψευδο-αρχείου"
+
+#: resources/forms.py:78
+msgid ""
+"For more info about each pseudo translation type, please refer to the docs."
+msgstr ""
+"Για περισσότερες πληροφορίες για τους τύπους ψευδο-αρχείων μεταφράσεων, "
+"παρακαλούμε στην τεκμηρίωση του Transifex."
+
+#: resources/models.py:125
+msgid ""
+"A short label to be used in the URL, containing only letters, numbers, "
+"underscores and hyphens."
+msgstr ""
+"Μια σύντομη επιγραφή που θα χρησιμοποιηθεί στην διεύθυνση URL, η οποία να "
+"περιέχει μόνο γράμματα, αριθμούς, κάτω παύλες και παύλες."
+
+#: resources/models.py:128
+msgid "A descriptive name unique inside the project."
+msgstr "Ένα περιγραφικό όνομα, μοναδικό μέσα στο έργο."
+
+#: resources/models.py:131
+msgid "I18n type"
+msgstr "Τύπος i18n"
+
+#: resources/models.py:135
+msgid "Accepting translations?"
+msgstr "Δέχεται μεταφράσεις;"
+
+#: resources/models.py:137
+msgid "Is this resource accepting translations?"
+msgstr "Δέχεται αυτός ο πόρος μεταφράσεις;"
+
+#: resources/models.py:138
+msgid "Total source entities"
+msgstr "Συνολικός αριθμός πηγαίων οντοτήτων"
+
+#: resources/models.py:140
+msgid "The number of source strings in this translation resource."
+msgstr "Ο αριθμός των πηγαίων αλφαριθμητικών σε αυτόν τον πόρο μετάφρασης."
+
+#: resources/models.py:142
+msgid "Number of words in source entities."
+msgstr "Αριθμός των λέξεων στις πηγαίες οντότητες."
+
+#: resources/models.py:144
+msgid ""
+"The number of words contained in the source entities in this translation "
+"resource."
+msgstr ""
+"Ο αριθμώς των λέεων που περιέχεται στις πηγαίες οντότητες αυτού του πόρου "
+"μετάφρασης."
+
+#: resources/models.py:149 templates/projects/release_language_detail.html:114
+#: templates/projects/resource_list.html:123
+msgid "Category"
+msgstr "Κατηγορία"
+
+#: resources/models.py:151
+msgid ""
+"A text field used to help organize a release's resources into categories."
+msgstr ""
+"Ένα πεδίο κειμένου που βοηθάει στην οργάνωση των πόρων μιας έκδοσης σε "
+"κατηγορίες."
+
+#: resources/models.py:165
+msgid "The project containing the translation resource."
+msgstr "Το έργο που περιέχει τον πόρο μετάφρασης."
+
+#: resources/models.py:178
+msgid "resource"
+msgstr "πόρος"
+
+#: resources/models.py:179
+msgid "resources"
+msgstr "πόροι"
+
+#: resources/models.py:323
+msgid "The actual string content of source string."
+msgstr "Το περιεχόμενο αλφαριθμητικό της πηγαίας οντότητας"
+
+#: resources/models.py:326 resources/models.py:609
+msgid "The hash of the translation string used for indexing"
+msgstr ""
+"Το hash του μεταφρασμένου αλφαριθμητικού το οποίο χρησιμοποιείται για "
+"δεικτοδότηση"
+
+#: resources/models.py:327
+msgid "Context"
+msgstr "Συμφραζόμενα"
+
+#: resources/models.py:329
+msgid ""
+"A list of description of the source string. This field specifies the context "
+"of the source string inside the resource."
+msgstr ""
+"Μια λίστα της περιγραφής του πηγαίου αλφαριθμητικού. Αυτό το πεδίο "
+"προσδιορίζει το πλαίσιο του πηγαίου αλφαριθμητικού στον πόρο."
+
+#: resources/models.py:332
+msgid "Position"
+msgstr "Ακριβής θέση"
+
+#: resources/models.py:333
+msgid ""
+"The position of the source string in the Resource.For example, the specific "
+"position of a msgid field in a po template (.pot) file in gettext."
+msgstr ""
+"Η θέση του πηγαίου αλφαριθμητικού στον πόρο. Για παράδειγμα, η συγκεκριμένη "
+"θέση του πεδίου msgid σε ένα πρότυπο po (.pot) αρχείο του gettext."
+
+#: resources/models.py:339
+msgid "The occurrences of the source string in the project code."
+msgstr "Ο αριθμός εμφανίσεων του πηγαίου αλφαριθμητικού στον κώδικα του έργου."
+
+#: resources/models.py:340
+msgid "Flags"
+msgstr "Σημαίες"
+
+#: resources/models.py:342
+msgid ""
+"The flags which mark the source string. For example, ifthere is a python "
+"formatted string this is marked as \"#, python-format\" in gettext."
+msgstr ""
+"Οι σημαίες που μαρκάρουν το πηγαίο αλφαριθμητικό. Για παράδειγμα, αν "
+"πρόκειται για μορφοποιημένο αλφαριθμητικό python αυτό μαρκάρεται ως \"#, "
+"python-forma\" στο gettext."
+
+#: resources/models.py:345
+msgid "Comments"
+msgstr "Σχόλια"
+
+#: resources/models.py:347
+msgid "The comment of the developer."
+msgstr "Το σχόλιο του προγραμματιστή."
+
+#: resources/models.py:350
+msgid "Extra comments"
+msgstr "Επιπλέον σχόλια"
+
+#: resources/models.py:352
+msgid "Another comment of the developer"
+msgstr "Ακόμα ένα σχόλιου του προγραμματιστή"
+
+#: resources/models.py:354
+msgid "Pluralized"
+msgstr "Με πληθυντικό αριθμό"
+
+#: resources/models.py:356
+msgid "Whether the entity is pluralized."
+msgstr "Εαν η οντότητα είναι πληθυντικής μορφής."
+
+#: resources/models.py:366
+msgid "The translation resource which owns the source string."
+msgstr "Ο πόρος μετάφρασης στον οποίον ανήκει το πηγαίο αλφαριθμητικό."
+
+#: resources/models.py:375
+msgid "source string"
+msgstr "πηγαία συμβολοσειρά"
+
+#: resources/models.py:376
+msgid "source strings"
+msgstr "πηγαίες συμβολοσειρές"
+
+#: resources/models.py:606
+msgid "The actual string content for translation."
+msgstr "Το ακριβές αλφαριθμητικό περιεχόμενο της μετάφρασης."
+
+#: resources/models.py:610
+msgid "Plural rule"
+msgstr "Κανόνας πληθυντικού"
+
+#: resources/models.py:612
+msgid ""
+"Number related to the plural rule of the translation. It's 0=zero, 1=one, "
+"2=two, 3=few, 4=many and 5=other. For translations that have no plural "
+"forms, the rule must be 5 (other)."
+msgstr ""
+"Αριθμός που σχετίζεται με τον κανόνα πληθυντηκών της μετάφρασης. Είναι "
+"0=μηδέν, 1=ένα, 2=δύο, 3=λίγα, 4=πολλά, 5=άλλο. Για μεταφράσεις που δεν "
+"είναι πληθυντικές, ο κανόνας πρέπει να είναι 5 (άλλο)."
+
+#: resources/models.py:616
+msgid "Wordcount for this string."
+msgstr "Αριθμός λέξεων του αλφαριθμητικού."
+
+#: resources/models.py:620
+msgid "Origin"
+msgstr "Προέλευση"
+
+#: resources/models.py:622
+msgid "The origin of the translation."
+msgstr "Η προέλευση της μετάφρασης"
+
+#: resources/models.py:625
+msgid "Marks if the translation has been reviewed or not."
+msgstr "Προσδιορίζει εαν η μετάφραση έχει εγκριθεί ή όχι."
+
+#: resources/models.py:639
+msgid "The source string this translation string translates."
+msgstr "Το πηγαίο αλφαριθμητικό που μεταφράζεται από αυτήν την μετάφραση."
+
+#: resources/models.py:643
+msgid "The translation resource which owns the translation."
+msgstr "Ο πόρος μετάφρασης στον οποίον ανήκει η μετάφραση."
+
+#: resources/models.py:650
+msgid "Committer"
+msgstr "Χρήστης ενέργειας"
+
+#: resources/models.py:651
+msgid "The user who committed the specific translation."
+msgstr "Ο χρήστης που τροποποίησε τελευταίος τη μετάφραση."
+
+#: resources/models.py:661
+msgid "translation string"
+msgstr "μετάφραση συμβολοσειράς"
+
+#: resources/models.py:662
+msgid "translation strings"
+msgstr "μετάφραση συμβολοσειρών"
+
+#: resources/models.py:825
+msgid "Translated Entities"
+msgstr "Μεταφρασμένες οντότητες"
+
+#: resources/models.py:826
+#, fuzzy
+msgid ""
+"The number of translated entities in a language for a specific resource."
+msgstr ""
+"Ο αριθμώς των λέεων που περιέχεται στις πηγαίες οντότητες αυτού του πόρου "
+"μετάφρασης."
+
+#: resources/models.py:828
+msgid "Wordcount for Translated Entities"
+msgstr "Αριθμός Λέξεων για Μεταφρασμένες Οντότητες"
+
+#: resources/models.py:829
+#, fuzzy
+msgid ""
+"The number of words containing translated entities in a language for a "
+"specific resource."
+msgstr ""
+"Ο αριθμώς των λέεων που περιέχεται στις πηγαίες οντότητες αυτού του πόρου "
+"μετάφρασης."
+
+#: resources/models.py:831
+msgid "Untranslated Entities"
+msgstr "Μη-μεταφρασμένες Οντότητες"
+
+#: resources/models.py:832
+#, fuzzy
+msgid ""
+"The number of untranslated entities in a language for a specific resource."
+msgstr ""
+"Ο αριθμώς των λέεων που περιέχεται στις πηγαίες οντότητες αυτού του πόρου "
+"μετάφρασης."
+
+#: resources/models.py:834
+msgid "Reviewed Entities"
+msgstr "Οντότητες που έχουν Εγκριθεί"
+
+#: resources/models.py:835
+#, fuzzy
+msgid "The number of reviewed entities in a language for a specific resource."
+msgstr ""
+"Ο αριθμώς των λέεων που περιέχεται στις πηγαίες οντότητες αυτού του πόρου "
+"μετάφρασης."
+
+#: resources/models.py:837
+msgid "Last Update"
+msgstr "Τελευταία Ανανέωση"
+
+#: resources/models.py:838
+msgid "The datetime that this language was last updated."
+msgstr ""
+
+#: resources/models.py:841
+msgid "Last Committer"
+msgstr "Τελευταίος που συνεισέφερε"
+
+#: resources/models.py:841
+#, fuzzy
+msgid "The user associated with the last change for this language."
+msgstr "Ο πόρος συσχετίστηκε με αυτή την προτεραιότητα."
+
+#: resources/models.py:846
+#, fuzzy
+msgid "The resource to which the statistics are associated."
+msgstr "Ο πόρος συσχετίστηκε με αυτή την προτεραιότητα."
+
+#: resources/models.py:849
+#, fuzzy
+msgid "The language to which these statistics refer."
+msgstr "Η γλώσσα στην οποία αυτή η μετάφραση συμβολοσειράς είναι γραμμένη."
+
+#: resources/models.py:957
+msgid "This is the actual content of the template"
+msgstr "Αυτό είναι το πραγματικό περιεχόμενο του προτύπου"
+
+#: resources/models.py:961
+msgid ""
+"This is the template of the imported source file which is used to export "
+"translation files from the db to the user."
+msgstr ""
+"Αυτό είναι το πρότυπο του εισαγόμενου πηγαίου αρχείου που χρησιμοποιείται "
+"για την εξαγωγή αρχείων μετάφρασης από τη ΒΔ στο χρήστη."
+
+#: resources/models.py:965
+msgid "Template"
+msgstr "Πρότυπο"
+
+#: resources/models.py:966
+msgid "Templates"
+msgstr "Πρότυπα"
+
+#: resources/views.py:109
+#, python-format
+msgid "The translation resource '%s' was deleted."
+msgstr "Ο πόρος μετάφρασης '%s' διαγράφηκε."
+
+#: resources/views.py:166
+msgid "The URL you provided doesn't link to a valid file."
+msgstr "Ο σύδεσμος που παρείχατε δεν οδηγεί σε έγκυρο αρχείο."
+
+#: resources/views.py:177
+msgid ""
+"You have checked the auto update checkbox but you haven't provided a valid "
+"url."
+msgstr ""
+"Έχετε επιλέξει το checkbox αυτόματης ενημέρωσης αλλά δεν έχετε δώσει ένα "
+"έγκυρο url."
+
+#: resources/views.py:449
+#, python-format
+msgid "Deleted %(lang)s translation for resource %(resource)s."
+msgstr "Η μετάφραση %(lang)s για τον πόρο %(resource)s διεγράφη."
+
+#: resources/views.py:486
+msgid "Error compiling translation file."
+msgstr "Σφάλμα κατά την συναρμολόγηση του αρχείου μετάφρασης."
+
+#: resources/views.py:521
+msgid "Error compiling the pot file."
+msgstr "Παρουσιάστηκε σφάλμα κατά τη σύνταξη του αρχείου pot."
+
+#: resources/views.py:573
+msgid "Sorry, you cannot lock this file!"
+msgstr "Συγγνώμη, δεν μπορείτε να κλειδώσετε αυτό το αρχείο!"
+
+#: resources/views.py:585
+msgid "Failed to lock the resource!"
+msgstr "Αποτυχία κατά το κλείδωμα του πόρου!"
+
+#: resources/views.py:596
+msgid "Failed to extend lock period on the resource!"
+msgstr "Αποτυχία κατά την επέκταση της περιόδου κλειδώματος του πόρου!"
+
+#: resources/views.py:601
+#, python-format
+msgid "You cannot lock it right now! (Locked by %s )"
+msgstr "Δεν μπορείτε να το κλειδώσετε τώρα! (Είναι κλειδωμένο από τον %s )"
+
+#: resources/views.py:635
+msgid "You are not allowed to upload a translation."
+msgstr "Δεν έχετε το δικαίωμα να ανεβάσετε μια μετάφραση."
+
+#: resources/formats/core.py:225
+#, fuzzy, python-format
+msgid "Specified file %s does not exist."
+msgstr "Το ξεκλείδωμα απέτυχε. Το κλείδωμα δεν υπάρχει."
+
+#: resources/formats/core.py:240
+#, python-format
+msgid "The specified object %s is not of type Resource"
+msgstr ""
+
+#: resources/formats/core.py:249
+#, python-format
+msgid "pseudo_type needs to be based on type %s"
+msgstr ""
+
+#: resources/formats/desktop.py:149
+#, python-format
+msgid "Unknown language specified: %s"
+msgstr ""
+
+#: resources/formats/pofile.py:64
+#, fuzzy, python-format
+msgid ""
+"Your file failed a correctness check (msgfmt -c). It returned the following "
+"error:\n"
+"\n"
+"%s\n"
+"\n"
+"Please run this command on your system to see the errors for yourself."
+msgstr ""
+"Το αρχείο σας εμφάνισε αποτυχία κατά έναν έλεγχο ορθότητας (msgfmt -c). "
+"Παρακαλούμε να εκτελέσετε αυτήν την εντολή"
+
+#: resources/formats/pofile.py:107
+#, python-format
+msgid "Uploaded file header doesn't have '%s' metadata!"
+msgstr ""
+
+#: resources/formats/pofile.py:296
+msgid ""
+"Your source file is not a POT file and the translation file you're using has "
+"more than two plurals which is not supported."
+msgstr ""
+
+#: resources/formats/qt.py:42 resources/formats/xliff.py:165
+#, python-format
+msgid "Element '%s' not found!"
+msgstr ""
+
+#: resources/formats/qt.py:44 resources/formats/xliff.py:167
+#, python-format
+msgid "Multiple '%s' elements found!"
+msgstr ""
+
+#: resources/formats/qt.py:183
+#, python-format
+msgid "Your file doesn't seem to contain valid xml: %s!"
+msgstr ""
+
+#: resources/formats/qt.py:187
+msgid "Incorrect doctype!"
+msgstr ""
+
+#: resources/formats/qt.py:189
+msgid "Uploaded file has no Doctype!"
+msgstr ""
+
+#: resources/formats/qt.py:192
+msgid "Root element is not 'TS'"
+msgstr ""
+
+#: resources/formats/qt.py:227
+msgid "Malformed 'location' element"
+msgstr ""
+
+#: resources/formats/qt.py:279
+msgid "Qt Linguist variants are not yet supported."
+msgstr ""
+
+#: resources/formats/qt.py:307
+msgid ""
+"Source file could not be imported: Qt Linguist variants are not supported."
+msgstr ""
+
+#: resources/formats/validators.py:79
+msgid "Translation string only contains whitespaces."
+msgstr "Η μετάφραση της συμβολοσειράς περιέχει μόνο κενά."
+
+#: resources/formats/validators.py:95
+#, python-format
+msgid ""
+"Translation string doesn't contain the same number of '%s' as the source "
+"string."
+msgstr ""
+"Η μετάφραση της συμβολοσειράς δεν περιέχει τον ίδιο αριθμό '%s', όπως η "
+"πηγαία συμβολοσειρά."
+
+#: resources/formats/validators.py:115
+#, python-format
+msgid ""
+"The following url is either missing from the translation or has been "
+"translated: '%s'."
+msgstr ""
+"Ο επόμενος σύνδεσμος είτε λείπει από τη μετάφραση ή έχει μεταφραστεί: '%s'."
+
+#: resources/formats/validators.py:133
+#, python-format
+msgid ""
+"The following email is either missing from the translation or has been "
+"translated: '%s'."
+msgstr ""
+"Η επόμενη διεύθυνση ηλεκτρονικού ταχυδρομείου είτε λείπει από τη μετάφραση ή "
+"έχει μεταφραστεί: '%s'."
+
+#: resources/formats/validators.py:149
+msgid "Translation must start with a newline (\\n)"
+msgstr "Η μετάφραση πρέπει να αρχίζει σε μία νέα γραμμή (\\n)"
+
+#: resources/formats/validators.py:151
+msgid "Translation should not start with a newline (\\n)"
+msgstr "Η μετάφραση δε θα πρέπει να αρχίζει σε μία νέα γραμμή (\\n)"
+
+#: resources/formats/validators.py:166
+msgid "Translation must end with a newline (\\n)"
+msgstr "Η μετάφραση πρέπει να τελειώνει με μία νέα γραμμή (\\n)"
+
+#: resources/formats/validators.py:168
+msgid "Translation should not end with a newline (\\n)"
+msgstr "Η μετάφραση δε θα πρέπει να τελειώνει με μία νέα γραμμή (\\n)"
+
+#: resources/formats/validators.py:187
+#, python-format
+msgid "Number %s is in the source string but not in the translation."
+msgstr "Ο αριθμός %s είναι στην πηγαία συμβολοσειρά αλλά όχι στη μετάφραση."
+
+#: resources/formats/validators.py:216
+msgid ""
+"The number of arguments seems to differ between the source string and the "
+"translation."
+msgstr ""
+"Ο αριθμός των ορισμάτων φαίνεται να διαφέρει μεταξύ της πηγαίας "
+"συμβολοσειράς και της μετάφρασης."
+
+#: resources/formats/xliff.py:183
+msgid "Root element is not 'xliff'"
+msgstr ""
+
+#: resources/formats/xliff.py:227
+msgid "Your source file has more than two plurals which is not supported."
+msgstr ""
+
+#: resources/formats/xliff.py:236
+msgid "Your translation file does not have the supported number of plurals."
+msgstr ""
+
+#: simpleauth/forms.py:7
+msgid "Remember me"
+msgstr "Να με θυμάσαι"
+
+#: storage/api.py:129 storage/api.py:138
+msgid ""
+"The encoding of the uploaded file is not UTF-8. Currently, transifex "
+"supports only UTF-8encoded files. Please, visithttp://help.transifex.net/"
+"user-guide/formats.html#encodingfor further information."
+msgstr ""
+"Η κωδικοποίηση του ανεβασμένου αρχείου δεν είναι UTF-8. Αυτή τη στιγμή, το "
+"Transifex υποστηρίζει μόνο αρχεία κωδικοποιημένα με κωδικοποίηση UTF-8. "
+"Παρακαλούμε να επισκεφτείτε τη σελίδα http://help.transifex.net/user-guide/"
+"formats.html#encoding για περισσότερες πληροφορίες."
+
+#: storage/api.py:149
+msgid "A strange error happened."
+msgstr "Υπήρξε κάποιο πρόβλημα με την ενέργεια αυτή."
+
+#: storage/api.py:166
+msgid "File uploaded successfully."
+msgstr "Η αποστολή του αρχείου ήταν επιτυχής."
+
+#: storage/models.py:23
+msgid "File size in bytes"
+msgstr "Το μέγεθος του αρχείου σε bytes"
+
+#: storage/models.py:31
+msgid "Source language"
+msgstr "Πηγαία γλώσσα"
+
+#: storage/models.py:40
+msgid "Bound to any object"
+msgstr "Προσκολλημένο σε οποιοδήποτε αντικείμενο"
+
+#: storage/models.py:41
+msgid ""
+"Whether this file is bound to a project/translation resource, otherwise show "
+"in the upload box"
+msgstr ""
+"Εάν αυτό το αρχείο είναι προσκολλημένο σε έναν πόρο του έργου / μετάφρασης, "
+"αλλιώς δείχνουν στο πλαίσιο ανεβάσματος"
+
+#: storage/models.py:45
+msgid "The user who uploaded the specific file."
+msgstr "Ο/Η χρήστης που ανέβασε το συγκεκριμένο αρχείο."
+
+#: storage/models.py:48
+msgid "Total number of strings"
+msgstr "Συνολικός αριθμός συμβολοσειρών"
+
+#: teams/forms.py:15 teams/models.py:42
+msgid "Coordinators"
+msgstr "Συντονιστές"
+
+#: teams/forms.py:16
+msgid ""
+"Coordinators are people that can manage the members of the team, for "
+"example. Search for usernames."
+msgstr ""
+"Οι συντονιστές, για παράδειγμα είναι άτομα που μπορούν να διαχειριστούν τα "
+"μέλη της ομάδας. Αναζητήστε ονόματα χρηστών."
+
+#: teams/forms.py:21 teams/models.py:44
+msgid "Members"
+msgstr "Μέλη"
+
+#: teams/forms.py:22
+msgid ""
+"Members are actually people that can submit translations. Search for "
+"usernames."
+msgstr ""
+"Τα μέλη είναι στην ουσία άτομα τα οποία μπορούν να υποβάλλουν μεταφράσεις."
+"Αναζητήστε ονόματα χρηστών."
+
+#: teams/forms.py:27 teams/models.py:46
+msgid "Reviewers"
+msgstr "Χρήστες με δικαίωμα έγκρισης μεταφράσεων"
+
+#: teams/forms.py:28
+msgid ""
+"Reviewers are team members that can proofread translations and mark them as "
+"reviewed. Search for usernames."
+msgstr ""
+"Μέλη της ομάδας που έχουν δικαίωμα να εγκρίνουν μεταφράσεις. Αναζητήστε για "
+"ονόματα χρήστη."
+
+#: teams/forms.py:84 teams/forms.py:141
+msgid "Enter a valid value."
+msgstr "Εισάγετε μία έγκυρη τιμή."
+
+#: teams/forms.py:97
+#, python-format
+msgid ""
+"User(s) %s cannot be in both Coordinators and Members lists. Please make "
+"sure that the lists are unique."
+msgstr ""
+"Ο χρήστης %s δεν μπορεί να είναι ταυτόχρονα στις λίστες Συντονιστών και "
+"Μελών. Παρακαλούμε να εξασφαλίσετε ότι οι λίστες είναι μοναδικές."
+
+#: teams/forms.py:105
+#, python-format
+msgid ""
+"User(s) %s cannot be in both Coordinators and Reviewers lists. Please make "
+"sure that the lists are unique."
+msgstr ""
+"Οι χρήστες %s δεν μπορούν να είναι ταυτόχρονα στις λίστες των συντονιστών "
+"και αυτών που εγκρίνουν μεταφράσεις. Παρακαλούμε να εξασφαλίσετε ότι οι "
+"λίστες είναι μοναδικές."
+
+#: teams/models.py:37 teams/models.py:120
+msgid "The project this team works on."
+msgstr "Το έργο στο οποίο αυτή η ομάδα εργάζεται."
+
+#: teams/models.py:40 teams/models.py:123
+msgid ""
+"People in this team will only be able to submit translations files related "
+"to the specific language."
+msgstr ""
+"Οι άνθρωποι σ´ αυτή την ομάδα θα μπορούν μόνο να υποβάλλουν αρχεία για "
+"μετάφραση που σχετίζονται με τη συγκεκριμένη γλώσσα."
+
+#: teams/models.py:49
+msgid "Mainlist"
+msgstr "Κύρια λίστα"
+
+#: teams/models.py:50
+msgid "The main mailing list of the team."
+msgstr "Η κύρια λίστα αλληλογραφίας της ομάδας."
+
+#: teams/models.py:52
+msgid "creator"
+msgstr "δημιουργός"
+
+#: teams/models.py:72
+msgid "team"
+msgstr "ομάδα"
+
+#: teams/models.py:73
+msgid "teams"
+msgstr "ομάδες"
+
+#: teams/models.py:140
+msgid "team creation request"
+msgstr "αίτηση δημιουργίας ομάδας"
+
+#: teams/models.py:141
+msgid "team creation requests"
+msgstr "αιτήσεις δημιουργίας ομάδας"
+
+#: teams/models.py:159
+msgid "Team"
+msgstr "Ομάδα"
+
+#: teams/models.py:176
+msgid "team access request"
+msgstr "αίτηση πρόσβασης ομάδας"
+
+#: teams/models.py:177
+msgid "team access requests"
+msgstr "αιτήσεις πρόσβασης ομάδας"
+
+#: templates/403.html:4 templates/403.html.py:7
+msgid "Forbidden access"
+msgstr "Απαγορεύεται η πρόσβαση"
+
+#: templates/403.html:12
+msgid ""
+"Looks like you do not have the necessary permissions for the required action."
+msgstr ""
+"Φαίνεται να μην έχετε τα απαραίτητα δικαιώματα για τις απαιτούμενες "
+"ενέργειες."
+
+#: templates/403.html:15 templates/404.html:16
+#, python-format
+msgid ""
+"Here's a link to the <a href=\"%(home)s\">homepage</a>. You know, just in "
+"case."
+msgstr ""
+"Εδώ είναι ένας σύνδεσμος για την <a href=\"%(home)s\">ιστοσελίδα</a>. "
+"Ξέρετε, για κάθε περίπτωση."
+
+#: templates/404.html:4 templates/404.html.py:7
+msgid "Page not found"
+msgstr "Η σελίδα δε βρέθηκε"
+
+#: templates/404.html:13
+msgid ""
+"Looks like you followed a bad link. If you think it's our fault, please <a "
+"href='http://transifex.org/newticket'>let us know</a>."
+msgstr ""
+"Φαίνεται να ακολουθήσατε ένα λάθος σύνδεσμο. Αν νομίζετε ότι είναι δικό μας "
+"λάθος, παρακαλώ <a href='http://transifex.org/newticket'> ενημερώστε μας</a>."
+
+#: templates/500.html:6 templates/500.html.py:21
+msgid "Page unavailable"
+msgstr "Η σελίδα δεν είναι διαθέσιμη"
+
+#: templates/500.html:22
+msgid "We're sorry, but the requested page is currently unavailable."
+msgstr ""
+"Λυπούμαστε, αλλά η σελίδα που ζητήσατε δεν είναι διαθέσιμη αυτή τη στιγμή."
+
+#: templates/500.html:23
+msgid ""
+"We're messing around with things internally, and the server had a bit of a "
+"hiccup."
+msgstr ""
+"Πειράζουμε πράγματα στο εσωτερικό του server, και αντιμετώπισε κάποια "
+"μικροπροβληματάκια."
+
+#: templates/500.html:24
+msgid "Please try again later."
+msgstr "Παρακαλούμε δοκιμάστε ξανά αργότερα."
+
+#: templates/about.html:9 templates/index.html:10
+msgid "Welcome to Transifex"
+msgstr "Καλώς ήλθατε στο Transifex"
+
+#: templates/about.html:15
+#, fuzzy
+msgid "About Transifex"
+msgstr "Transifex"
+
+#: templates/about.html:26
+msgid "And many more to come. :)"
+msgstr ""
+
+#: templates/base-sample.html:9 templates/admin/base_site.html:5
+#: templates/flatpages/default.html:5
+msgid "Transifex"
+msgstr "Transifex"
+
+#: templates/base-sample.html:69 txcommon/templates/common_homelink.html:2
+msgid "Go to the start page"
+msgstr "Μετάβαση στην αρχική σελίδα"
+
+#: templates/base-sample.html:70
+msgid "Go to start page"
+msgstr "Μετάβαση στην αρχική σελίδα"
+
+#: templates/base-sample.html:75 templates/projects/project_list.html:50
+msgid "My projects"
+msgstr "Τα έργα μου"
+
+#: templates/base-sample.html:77 templates/projects/project_myprojects.html:30
+msgid "The projects being served"
+msgstr "Τα έργα που εξυπηρετούνται"
+
+#: templates/base-sample.html:80
+msgid "The languages our service serves"
+msgstr "Οι γλώσσες που εξυπηρετεί η υπηρεσία μας"
+
+#: templates/base-sample.html:80 templates/languages/base.html:5
+#: templates/languages/language_list.html:7
+#: templates/languages/language_list.html:13 templates/userena/public.html:60
+#: txcommon/models.py:33
+msgid "Languages"
+msgstr "Γλώσσες"
+
+#: templates/base-sample.html:87
+#, python-format
+msgid ""
+"Welcome <a title=\"Profile settings\" href=\"%(user_profile)s\">"
+"%(user_username)s</a>!"
+msgstr ""
+"Καλώς ήρθατε <a title=\"Ρυθμίσεις προφίλ\" href=\"%(user_profile)s\">"
+"%(user_username)s</a>!"
+
+#: templates/base-sample.html:93
+msgid "Sign out from the website"
+msgstr "Αποσυνδεθείτε από την ιστοσελίδα"
+
+#: templates/base-sample.html:93
+msgid "Sign out"
+msgstr "Αποσύνδεση"
+
+#: templates/base-sample.html:100 templates/simpleauth/login_box.html:10
+#: templates/simpleauth/login_box.html:20 templates/simpleauth/logout.html:4
+#: templates/simpleauth/logout.html.py:5 templates/simpleauth/logout.html:6
+#: templates/simpleauth/signin.html:4 templates/simpleauth/signin.html.py:5
+#: templates/simpleauth/signin.html:6 templates/userena/signin_form.html:22
+#: templates/userena/signin_form.html:48
+msgid "Sign in"
+msgstr "Είσοδος"
+
+#: templates/base-sample.html:103 templates/userena/signup_form.html:5
+#: templates/userena/signup_form.html:48
+msgid "Register"
+msgstr "Εγγραφή"
+
+#: templates/base-sample.html:172
+msgid "Learn more about Transifex"
+msgstr "Μάθετε περισσότερα σχετικά με το Transifex"
+
+#: templates/base-sample.html:172
+msgid "About"
+msgstr "Περί"
+
+#: templates/base-sample.html:174
+msgid "Drops us a line"
+msgstr "Επικοινωνήστε μαζί μας"
+
+#: templates/base-sample.html:174
+msgid "Feedback"
+msgstr "Ανάδραση"
+
+#: templates/base-sample.html:178
+msgid ""
+"Powered by <a href=\"http://transifex.org/\" title=\"Transifex community"
+"\">Transifex</a>, the Open Translation Platform"
+msgstr ""
+"Powered by <a href=\"http://transifex.org/\" title=\"Transifex community"
+"\">Transifex</a>, η Ανοιχτή Πλατφόρμα Μετάφρασης"
+
+#: templates/index.html:23
+msgid ""
+"Transifex is a service aimed at helping translators keep track of their "
+"favorite translation projects."
+msgstr ""
+"Το Transifex είναι μια υπηρεσία που στοχεύει να βοηθήσει τους μεταφραστές να "
+"έχουν έλεγχο των αγαπημένων τους έργων μετάφρασης"
+
+#: templates/index.html:30
+#, python-format
+msgid ""
+"You could also browse through <a href=\"%(project_list)s\">all projects</a>."
+msgstr ""
+"Θα μπορούσατε επίσης να περιηγηθείτε σε <a href=\"%(project_list)s\">όλα τα "
+"έργα</a>."
+
+#: templates/search.html:9
+msgid "Results"
+msgstr "Αποτελέσματα"
+
+#: templates/search.html:15
+msgid "Search projects"
+msgstr "Αναζήτηση έργων"
+
+#: templates/search.html:15
+msgid "Search results"
+msgstr "Αποτελέσματα αναζήτησης"
+
+#: templates/search.html:27
+msgid "Did you mean:"
+msgstr "Μήπως εννοούσατε:"
+
+#: templates/search.html:32
+#, python-format
+msgid "Search Results (%(result_count)s)"
+msgstr "Αποτελέσματα αναζήτησης (%(result_count)s)"
+
+#: templates/search.html:55
+#, python-format
+msgid ""
+"No projects were found for \"%(q)s\". You may want to change your query a "
+"bit."
+msgstr ""
+"Κανένα έργο δεν βρέθηκε για \"%(q)s\". Μπορεί να θέλετε να αλλάξετε λίγο την "
+"αναζήτησή σας."
+
+#: templates/search.html:67
+#, python-format
+msgid ""
+"Couldn't find your project? Why don't you go ahead and <a href="
+"\"%(project_create_url)s\">add it</a>?"
+msgstr ""
+"Δεν ήταν δυνατή η εύρεση του έργου σας; Γιατί δεν ξεκινάτε και να <a href="
+"\"%(project_create_url)s\">το προσθέσετε</a>;"
+
+#: templates/search_form.html:4
+msgid "Find projects by name, description, etc."
+msgstr "Βρείτε έργα με βάση το όνομα, την περιγραφή, κλπ."
+
+#: templates/search_form.html:6 templates/search_form_plain.html:5
+msgid "Search Projects"
+msgstr "Αναζήτηση έργων"
+
+#: templates/timeline.html:11
+msgid "Filter results"
+msgstr "Φιλτράρισμα αποτελεσμάτων"
+
+#: templates/admin/base_site.html:10
+msgid "Transifex administration"
+msgstr "Η διαχείρηση του Transifex"
+
+#: templates/contact_form/contact_form.html:5
+#: templates/contact_form/contact_form.html:6
+msgid "Contact us"
+msgstr "Επικοινωνήστε μαζί μας"
+
+#: templates/contact_form/contact_form.html:7
+msgid "Let us know what you think!"
+msgstr "Ενημερώστε μας για το τι πιστεύετε!"
+
+#: templates/contact_form/contact_form.html:10
+msgid ""
+"We'd like to make this web service as useful as possible for our users. If "
+"you have any feedback to provide, please do so!"
+msgstr ""
+"Θα θέλαμε να κάνουν αυτήν την διαδικτυακή υπηρεσία όσο το δυνατόν πιο "
+"εύχρηστη για τους χρήστες μας. Αν έχετε να δώσετε τυχόν σχόλια/παρατηρήσεις, "
+"παρακαλούμε κάντε το!"
+
+#: templates/contact_form/contact_form.html:22
+msgid "Send feedback"
+msgstr "Αποστολή σχόλιου"
+
+#: templates/contact_form/contact_form_sent.html:4
+msgid "Thanks for the feedback!"
+msgstr "Ευχαριστούμε για τα σχόλια!"
+
+#: templates/contact_form/contact_form_sent.html:7
+msgid "Thanks!"
+msgstr "Ευχαριστούμε!"
+
+#: templates/contact_form/contact_form_sent.html:11
+msgid "Thank you for your feedback."
+msgstr "Ευχαριστούμε για τα σχόλιά σας."
+
+#: templates/helptext/project_form_helptext.html:7
+msgid ""
+"\n"
+"The slug is a short word, summarizing and uniquely defining a project.\n"
+"Slug should be self-explainable, but it is most important to be unique.\n"
+"Its main purpose is to be part of a reference URL for the specific object.\n"
+msgstr ""
+"\n"
+"Το slug είναι μια μικρή λέξη η οποία ορίζει το έργο με περιληπτικό και "
+"μοναδικό τρόπο. Ο κύριος της σκοπός είναι να αποτελεί τμήμα ενός URL για το "
+"συγκεκριμένο αντικείμενο.\n"
+
+#: templates/helptext/project_form_helptext.html:18
+msgid ""
+"\n"
+"The name is a short name for the project. This is the \"codename\" of the\n"
+"project. E.g. this would be \"Transifex\" for transifex project.\n"
+msgstr ""
+"\n"
+"Ένα σύντομο όνομα για το έργο. Αυτή είναι η \"κωδική ονομασία\" του έργου. "
+"Για παράδειγμα, στην περίπτωση του έργου transifex θα χρησιμοποιούσαμε το "
+"\"Transifex\".\n"
+
+#: templates/helptext/project_form_helptext.html:28
+msgid ""
+"\n"
+"The description must be one or two sentences length. This is a short\n"
+"summary about the project. It is a required field for the project form.\n"
+"E.g. Transifex description : \"An open translation platform.\"\n"
+msgstr ""
+"\n"
+"Η περιγραφή πρέπει να έχει μήκος μιας ή δύο προτάσεων. Αυτή είναι μια "
+"σύντομη\n"
+"περίληψη του έργου. Είναι απαιτούμενο πεδίο της φόρμας έργου.\n"
+"Πχ. η περιγραφή του Transfiex: \"Μια ανοιχτή πλατφόρμα μεταφράσεων.\"\n"
+
+#: templates/helptext/project_form_helptext.html:39
+msgid ""
+"\n"
+"The long description field should contain an extensive description of\n"
+"the project. E.g. Transifex long description : \"Transifex is web system\n"
+" for managing translations from various distributed repositories.\"\n"
+"Caution! <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown </a>\n"
+"syntax should be used.\n"
+msgstr ""
+"\n"
+"Το πεδίο εκτενούς περιγραφής θα πρέπει να περιέχει μια λεπτομερή περιγαφή "
+"του\n"
+"έργου. Πχ. Η εκτενής περιγραφή του Transifex: \"Το Transifex είναι ένα "
+"σύστημα παγκόσμιου ιστού\n"
+"για τη διαχείριση μεταφράσεων από διάφορες κατανεμημένες πηγές.\"\n"
+"Προσοχή! Θα πρέπει να χρησιμοποιηθεί σύνταξη\n"
+"<a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown </a>.\n"
+
+#: templates/helptext/project_form_helptext.html:52
+msgid ""
+"\n"
+"Type in the url of the project's home page.\n"
+msgstr ""
+"\n"
+"Πληκτρολογήστε τη διεύθυνση url της ιστοσελίδας του έργου.\n"
+
+#: templates/helptext/project_form_helptext.html:59
+msgid "RSS Feed"
+msgstr "Ροή RSS"
+
+#: templates/helptext/project_form_helptext.html:61
+msgid ""
+"\n"
+"This is the projects feed name. By following feed url, other users,\n"
+"which are interested in translation news, can be synchronized with updates\n"
+"on the project.\n"
+msgstr ""
+"\n"
+"Αυτό είναι το όνομα της ροής ειδήσεων του έργου. Ακολουθώντας τη διεύθυνση "
+"της ροής ειδήσεων, άλλοι χρήστες,\n"
+"που ενδιαφέρονται για τα νέα των μεταφράσεων, μπορούν να ενημερωθούν\n"
+"για το έργο.\n"
+
+#: templates/helptext/project_form_helptext.html:70
+msgid "Bug Tracker"
+msgstr "Ιχνηλάτης σφαλμάτων"
+
+#: templates/helptext/project_form_helptext.html:72
+msgid ""
+"\n"
+"This field should contain the url for the maintenance, tracking system of\n"
+"the project. For example, the bug tracker url of transifex is:\n"
+"http://www.transifex.org/\n"
+msgstr ""
+"\n"
+"Το πεδίο αυτό πρέπει να περιέχει τη διεύθυνση url για τη συντήρηση, το "
+"σύστημα καταγραφής\n"
+"του έργου. Για παράδειγμα, η διεύθυνση url του ιχνηλάτη σφαλμάτων του "
+"Transifex είναι:\n"
+"http://www.transifex.org/\n"
+
+#: templates/helptext/project_form_helptext.html:83
+msgid ""
+"\n"
+"Tags are keywords that annotate an object. Tags separated by whitespaces\n"
+"should be used to help searching for the specific project. They are also\n"
+"a compact description of a project. For example, Transifex has the "
+"following\n"
+"tags: i18n l10n translations.\n"
+msgstr ""
+"\n"
+"Οι ετικέτες είναι λέξεις-κλειδιά που περιγράφουν ένα αντικείμενο. Οι "
+"ετικέτες χωρίζονται από κενά\n"
+"και χρησιμοποιούνται για να βοηθούν κατά την αναζήτηση ενός συγκεκριμένου "
+"έργου. Λειτουργούν επίσης\n"
+"σαν περίληψη για την περιγραφή ενός έργου. Για παράδειγμα, το Transifex έχει "
+"τις εξής ετικέτες: i18n l10n translations.\n"
+
+#: templates/helptext/project_form_helptext.html:95
+msgid ""
+"\n"
+"Maintainers are the people responsible for the administration of the "
+"project.\n"
+"They have permissions to edit the project and to add translators. They can\n"
+"also add, edit remove resources of a project.\n"
+msgstr ""
+"\n"
+"Οι διαχειριστές είναι οι άνθρωποι που είναι υπεύθυνοι για τη διαχείριση ενός "
+"έργου.\n"
+"Έχουν πρόσβαση για να επεξεργάζονται το έργο και να προσθέτουν μεταφραστές. "
+"Μπορούν επίσης\n"
+"να προσθέτουν να επεξεργάζονται και να αφαιρούν πόρους από ένα έργο.\n"
+
+#: templates/helptext/project_form_helptext.html:102
+msgid ""
+"\n"
+"This field is ajax powered so it is possible to type only a few characters\n"
+"and be redirected to the wishing username. Type the preferred username and\n"
+"will be appeared above to be added. If you want to remove a maintainer "
+"remove\n"
+"him from the list under the text box.\n"
+msgstr ""
+"\n"
+"Αυτό το πεδίο παράγεται με ajax και έτσι είναι δυνατό να πληκτρολογήσετε "
+"μόνο μερικούς χαρακτήρες\n"
+"και να βρείτε το επιθυμητό όνομα χρήστη. Πληκτρολογήστε το επιθυμητό όνομα "
+"χρήστη και\n"
+"αυτό θα εμφανιστεί για να το προσθέσετε. Αν θέλετε να αφαιρέσετε έναν "
+"διαχειριστή αφαιρέστε\n"
+"τον από τη λίστα κάτω από το πεδίο κειμένου.\n"
+
+#: templates/languages/language_list.html:15
+msgid "Languages on Transifex"
+msgstr "Οι γλώσσες στο Transifex"
+
+#: templates/languages/language_list.html:18
+msgid "Languages feed"
+msgstr "Ροή γλωσσών"
+
+#: templates/languages/language_list.html:28
+msgid "No languages registered yet. :-("
+msgstr "Δεν έχουν καταχωρηθεί γλώσσες ακόμη. :-("
+
+#: templates/languages/language_list.html:35
+msgid ""
+"Couldn't find your language? Please use the feedback form and <a href="
+"\"http://help.transifex.net/user-guide/faq.html#where-does-the-language-list-"
+"come-from-how-can-i-add-my-own\">let us know</a>!"
+msgstr ""
+"Δεν βρήκατε τη γλώσσα που θέλατε; Παρακαλούμε να χρησιμοποιήσετε τη φόρμα "
+"ανατροφοδότησης και <a href=\"http://help.transifex.net/user-guide/faq."
+"html#where-does-the-language-list-come-from-how-can-i-add-my-own"
+"\">ενημερώστε μας</a>!"
+
+#: templates/notification/notices.html:6 templates/notification/notices.html:7
+#: templates/notification/notices.html:8
+msgid "Notifications"
+msgstr "Ειδοποιήσεις"
+
+#: templates/notification/notices.html:32
+msgid "Received Notifications"
+msgstr "Ληφθέντες ειδοποιήσεις"
+
+#: templates/notification/notices.html:43
+msgid "Time"
+msgstr "Ώρα"
+
+#: templates/notification/notices.html:71
+msgid "Mark all unseen notices seen"
+msgstr "Σημείωη όλων των αδιάβαστων ειδοποιήσεων ως διαβασμένες"
+
+#: templates/notification/notices.html:77
+msgid "No notices."
+msgstr "Δεν υπάρχουν ειδοποιήσεις."
+
+#: templates/notification/notices.html:81
+#: templates/notification/notices.html:83
+msgid "Change your notification settings"
+msgstr "Αλλάξτε τις ρυθμίσεις των ειδοποιήσεών σας."
+
+#: templates/notification/notices.html:81
+#: templates/userena/base_userena.html:33
+msgid "Notification settings"
+msgstr "Ρυθμίσεις ειδοποιήσεων"
+
+#: templates/notification/notices.html:86
+msgid ""
+"You can receive notifications whenever an event occurs in Transifex. Check "
+"the notifications available for you in the list below and choose which "
+"events you would like to be notified by email."
+msgstr ""
+"Μπορείτε να λαμβάνετε ειδοποιήσεις κάθε φορά που ένα γεγονός συμβαίνει στο "
+"Transifex. Κοιτάξτε ποιες ειδοποιήσεις είναι διαθέσιμες για εσάς και "
+"επιλέξτε για ποια γεγονότα θα θέλατε να ειδοποιήστε μέσω ηλεκτρονικού "
+"ταχυδρομείου."
+
+#: templates/notification/notices.html:87
+msgid "Primary email"
+msgstr "Κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
+#: templates/notification/notices.html:90
+msgid "change under"
+msgstr "αλλαγή για"
+
+#: templates/notification/notices.html:90
+#: templates/notification/notices.html:94
+msgid "Account"
+msgstr "Λογαριασμός"
+
+#: templates/notification/notices.html:93
+msgid "Note"
+msgstr "Σημείωση"
+
+#: templates/notification/notices.html:94
+msgid ""
+"You do not have a verified email address to which notices can be sent. You "
+"can add one by going to"
+msgstr ""
+"Δεν έχει εξακριβωθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου στην οποία "
+"μπορούν να σταλούν ειδοποιήσεις. Μπορείτε να προσθέσετε μια πηγαίνοντας στο"
+
+#: templates/notification/notices.html:102
+msgid "Notification Type"
+msgstr "Τύπος ειδοποίησης"
+
+#: templates/notification/notices.html:121
+msgid "Change"
+msgstr "Αλλαγή"
+
+#: templates/notification/single.html:5 templates/notification/single.html:8
+msgid "Notice"
+msgstr "Ειδοποίηση"
+
+#: templates/notification/project_added/notice.html:2
+#, python-format
+msgid ""
+"A new <span class=\"notice_subject\">project</span> <a href=\"%(project_url)s"
+"\">%(project)s</a> was <span class=\"notice_action\">added</span>."
+msgstr ""
+"Ένα νέο <span class=\"notice_subject\">έργο</span> <a href=\"%(project_url)s"
+"\">%(project)s</a> <span class=\"notice_action\">προστέθηκε</span>."
+
+#: templates/notification/project_changed/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">project</span> <a href=\"%(project_url)s"
+"\">%(project)s</a> was <span class=\"notice_action\">changed</span>."
+msgstr ""
+"Το <span class=\"notice_subject\">έργο</span> <a href=\"%(project_url)s\">"
+"%(project)s</a> <span class=\"notice_action\">άλλαξε</span>."
+
+#: templates/notification/project_deleted/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">project</span> <a href=\"%(project_url)s"
+"\">%(project)s</a> was <span class=\"notice_action\">deleted</span>."
+msgstr ""
+"Το <span class=\"notice_subject\">έργο</span> <a href=\"%(project_url)s\">"
+"%(project)s</a> <span class=\"notice_action\">διαγράφηκε</span>."
+
+#: templates/notification/project_release_added/notice.html:2
+#: templates/notification/project_release_changed/notice.html:2
+#, python-format
+msgid ""
+"A new release <a href=\"%(release_url)s\">%(release_name)s</a> has been "
+"added to the <a href=\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"Μια νέα έκδοση <a href=\"%(release_url)s\">%(release_name)s</a> προστέθηκε "
+"στο έργο <a href=\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/notification/project_release_before_stringfreeze/notice.html:2
+#, python-format
+msgid ""
+"Notification about the approaching of the <a href=\"%(release_url)s\">"
+"%(release_name)s</a> string freeze of the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project has been sent"
+msgstr ""
+"Η ειδοποίηση ότι πλησιάζει το πάγωμα αλφαριθμητικών της έκδοσης <a href="
+"\"%(release_url)s\">%(release_name)s</a> του έργου <a href=\"%(project_url)s"
+"\">%(project_name)s</a> έχει σταλεί"
+
+#: templates/notification/project_release_before_trans_deadline/notice.html:2
+#, python-format
+msgid ""
+"Notification about the approaching of the <a href=\"%(release_url)s\">"
+"%(release_name)s</a> translation deadline of the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project has been sent"
+msgstr ""
+"Η ειδοποίηση ότι πλησιάζει η διορία μεταφράσεων της έκδοσης <a href="
+"\"%(release_url)s\">%(release_name)s</a> του έργου <a href=\"%(project_url)s"
+"\">%(project_name)s</a> έχει σταλεί"
+
+#: templates/notification/project_release_deleted/notice.html:2
+#, python-format
+msgid ""
+"The resource '%(release_name)s' has been deleted from the <a href="
+"\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"Ο πόρος '%(release_name)s' έχει διαγραφεί από το έργο <a href="
+"\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/notification/project_release_hit_trans_deadline/notice.html:2
+#, python-format
+msgid ""
+"Notification about translation period of the  <a href=\"%(release_url)s\">"
+"%(release_name)s</a> release of the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project being over has been sent"
+msgstr ""
+"Η ειδοποίηση για την πάροδο της περιόδου μεταφράσεων της έκδοσης  <a href="
+"\"%(release_url)s\">%(release_name)s</a> του έργου <a href=\"%(project_url)s"
+"\">%(project_name)s</a> έχει σταλεί"
+
+#: templates/notification/project_release_in_stringfreeze/notice.html:2
+#, python-format
+msgid ""
+"Notification about <a href=\"%(release_url)s\">%(release_name)s</a> release "
+"of the <a href=\"%(project_url)s\">%(project_name)s</a> project being in "
+"string freeze has been sent"
+msgstr ""
+"Η ειδοποίηση για την είσοδο στην περίοδο παγώματως αλφαριθμητικών της "
+"έκδοσης  <a href=\"%(release_url)s\">%(release_name)s</a> του έργου <a href="
+"\"%(project_url)s\">%(project_name)s</a> έχει σταλεί"
+
+#: templates/notification/project_release_stringfreeze_breakage/notice.html:2
+#, python-format
+msgid ""
+"Notification about <a href=\"%(resource_url)s\">%(resource_name)s</a> "
+"resource string freeze breakage for the <a href=\"%(release_url)s\">"
+"%(release_name)s</a> release of the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project has been sent"
+msgstr ""
+"Η ειδοποίηση για σπάσιμο παγώματος αλφαριθμητικών στον πόρο <a href="
+"\"%(resource_url)s\">%(resource_name)s</a> για την έκδοση <a href="
+"\"%(release_url)s\">%(release_name)s</a> του έργου <a href=\"%(project_url)s"
+"\">%(project_name)s</a> έχει σταλεί"
+
+#: templates/notification/project_report_weekly_maintainers/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">weekly report</span> of the <a href="
+"\"%(project_url)s\">%(project_name)s</a> project was <span class="
+"\"notice_subject\">generated</span>"
+msgstr ""
+"Η <span class=\"notice_subject\">εβδομαδιαία αναφορά</span> του έργου <a "
+"href=\"%(project_url)s\">%(project_name)s</a> <span class=\"notice_subject"
+"\">δημιουργήθηκε</span>."
+
+#: templates/notification/project_resource_added/notice.html:2
+#, python-format
+msgid ""
+"A new resource <a href=\"%(resource_url)s\">%(resource_name)s</a> has been "
+"added to the <a href=\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"Ένας νέος πόρος <a href=\"%(resource_url)s\">%(resource_name)s</a> "
+"προστέθηκε στο έργο <a href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_resource_changed/notice.html:2
+#, python-format
+msgid ""
+"The resource <a href=\"%(resource_url)s\">%(resource_name)s</a> of the <a "
+"href=\"%(project_url)s\">%(project_name)s</a> project has been changed"
+msgstr ""
+"Ο πόρος <a href=\"%(resource_url)s\">%(resource_name)s</a> του έργου <a href="
+"\"%(project_url)s\">%(project_name)s</a> άλλαξε."
+
+#: templates/notification/project_resource_deleted/notice.html:2
+#, python-format
+msgid ""
+"The resource '%(resource_name)s' has been deleted from the <a href="
+"\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"Ο πόρος '%(resource_name)s' διαγράφηκε απο το έργο <a href=\"%(project_url)s"
+"\">%(project_name)s</a>."
+
+#: templates/notification/project_resource_translated/notice.html:2
+#, python-format
+msgid ""
+"A translation for %(language_name)s was sent to <a href=\"%(resource_url)s\">"
+"%(resource_name)s</a> of the <a href=\"%(project_url)s\">%(project_name)s</"
+"a> project"
+msgstr ""
+"Μια μετάφραση για τη γλώσσα %(language_name)s εστάλη στον πόρο <a href="
+"\"%(resource_url)s\">%(resource_name)s</a> του έργου <a href="
+"\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/notification/project_resource_translation_changed/notice.html:2
+#, python-format
+msgid ""
+"The %(language_name)s translation of the project <a href=\"%(project_url)s\">"
+"%(project_name)s</a>, resource <a href=\"%(resource_url)s\">"
+"%(resource_name)s</a> has been modified."
+msgstr ""
+"Η μετάφραση %(language_name)s του έργου <a href=\"%(project_url)s\">"
+"%(project_name)s</a>, πόρου <a href=\"%(resource_url)s\">%(resource_name)s</"
+"a> μεταβλήθηκε."
+
+#: templates/notification/project_submit_access_granted/notice.html:2
+#, python-format
+msgid ""
+"The user <a href=\"%(user_url)s\">%(user_request)s</a> had <span class="
+"\"notice_subject\">access to submit translations</span> to the project <a "
+"href=\"%(project_url)s\">%(project)s</a> <span class=\"notice_action"
+"\">granted</span>"
+msgstr ""
+"Η <span class=\"notice_subject\">πρόσβαση για υποβολή μεταφράσεων</span> του "
+"χρήστη <a href=\"%(user_url)s\">%(user_request)s</a> για το έργο <a href="
+"\"%(project_url)s\">%(project)s</a> <span class=\"notice_action"
+"\">χορηγήθηκε</span>."
+
+#: templates/notification/project_submit_access_request_denied/notice.html:2
+#, python-format
+msgid ""
+"The user <a href=\"%(user_url)s\">%(user_request)s</a> had its <span class="
+"\"notice_subject\">request</span> of access to submit translations to the "
+"project <a href=\"%(project_url)s\">%(project)s</a> <span class="
+"\"notice_action\">denied</span>"
+msgstr ""
+"Η <span class=\"notice_subject\">αίτηση</span> πρόσβασης για υποβολή "
+"μεταφράσεων του χρήστη <a href=\"%(user_url)s\">%(user_request)s</a> για το "
+"έργο <a href=\"%(project_url)s\">%(project)s</a> <span class=\"notice_action"
+"\">απορρίφθηκε</span>."
+
+#: templates/notification/project_submit_access_request_withdrawn/notice.html:2
+#, python-format
+msgid ""
+"<span class=\"notice_action\">Withdrew</span> own <span class="
+"\"notice_subject\">request</span> of access to submit translations to the "
+"<span class=\"notice_action\">project</span> <a href=\"%(project_url)s\">"
+"%(project)s</a>"
+msgstr ""
+"<span class=\"notice_action\">Αποσύρατε</span> την <span class="
+"\"notice_subject\">αίτηση</span> πρόσβασής σας για υποβολή μεταφράσεων στο "
+"<span class=\"notice_action\">έργο</span> <a href=\"%(project_url)s\">"
+"%(project)s</a>."
+
+#: templates/notification/project_submit_access_requested/notice.html:2
+#, python-format
+msgid ""
+"<span class=\"notice_action\">Requested</span> <span class=\"notice_subject"
+"\">access to submit translations</span> to the <span class=\"notice_action"
+"\">project</span> <a href=\"%(project_url)s\">%(project)s</a>"
+msgstr ""
+"<span class=\"notice_action\">Αίτηση</span> <span class=\"notice_subject"
+"\">πρόσβασης για υποβολή μεταφράσεων</span> στο <span class=\"notice_action"
+"\">έργο</span> <a href=\"%(project_url)s\">%(project)s</a>."
+
+#: templates/notification/project_submit_access_revoked/notice.html:2
+#, python-format
+msgid ""
+"The user <a href=\"%(user_url)s\">%(user_request)s</a> had its <span class="
+"\"notice_subject\">access to submit translations</span> to the project <a "
+"href=\"%(project_url)s\">%(project)s</a> <span class=\"notice_action"
+"\">revoked</span>."
+msgstr ""
+"Η <span class=\"notice_subject\">πρόσβαση για υποβολή μεταφράσεων</span> του "
+"χρήστη <a href=\"%(user_url)s\">%(user_request)s</a> στο έργο <a href="
+"\"%(project_url)s\">%(project)s</a> <span class=\"notice_action\">ακυρώθηκε</"
+"span>."
+
+#: templates/notification/project_team_added/notice.html:2
+#, python-format
+msgid ""
+"A new <a href=\"%(team_url)s\">%(team_name)s translation team</a> was <span "
+"class=\"notice_action\">added</span> to the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project."
+msgstr ""
+"Μία νέα <a href=\"%(team_url)s\">%(team_name)s ομάδα μετάφρασης</a> <span "
+"class=\"notice_action\">προστέθηκε</span> στο <a έργο href=\"%(project_url)s"
+"\">%(project_name)s</a>."
+
+#: templates/notification/project_team_changed/notice.html:2
+#, python-format
+msgid ""
+"The <a href=\"%(team_url)s\">%(team_name)s</a> translation <span class="
+"\"notice_subject\">team</span> of the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project was <span class=\"notice_action\">changed</"
+"span>."
+msgstr ""
+"Η <a href=\"%(team_url)s\">%(team_name)s</a> <span class=\"notice_subject"
+"\">ομάδα</span> μετάφρασης του <a έργου href=\"%(project_url)s\">"
+"%(project_name)s</a> <span class=\"notice_action\">άλλαξε</span>."
+
+#: templates/notification/project_team_deleted/notice.html:2
+#, python-format
+msgid ""
+"The <a href=\"%(team_url)s\">%(team_name)s</a> translation <span class="
+"\"notice_subject\">team</span> was <span class=\"notice_action\">deleted</"
+"span> from the <a href=\"%(project_url)s\">%(project_name)s</a> project."
+msgstr ""
+"Η <a href=\"%(team_url)s\">%(team_name)s</a> <span class=\"notice_subject"
+"\">ομάδα</span> μετάφρασης <span class=\"notice_action\">διαγράφηκε</span> "
+"από το <a έργο href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_team_join_approved/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">user</span> <a href=\"%(user_url)s\">"
+"%(user_name)s</a> was <span class=\"notice_action\">added</span> as member "
+"to the <a href=\"%(team_url)s\">%(team_name)s translation team</a> of the <a "
+"href=\"%(project_url)s\">%(project_name)s</a> project."
+msgstr ""
+"Ο/Η <span class=\"notice_subject\">χρήστης</span> <a href=\"%(user_url)s\">"
+"%(user_name)s</a> <span class=\"notice_action\">προστέθηκε</span> ως μέλος "
+"της <a href=\"%(team_url)s\">%(team_name)s ομάδας μετάφρασης</a> του <a "
+"έργου href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_team_join_denied/notice.html:2
+#, python-format
+msgid ""
+"%(performer)s <span class=\"notice_action\">denied</span> user <a href="
+"\"%(user_url)s\">%(user_name)s</a>'s <span class=\"notice_subject\">request</"
+"span> to join the <a href=\"%(team_url)s\">%(team_name)s translation team</"
+"a> of the <a href=\"%(project_url)s\">%(project_name)s</a> project."
+msgstr ""
+"Ο/Η %(performer)s <span class=\"notice_action\">απέρριψε</span> του <a "
+"χρήστη href=\"%(user_url)s\">%(user_name)s</a> την <span class="
+"\"notice_subject\">αίτηση</span> για συμμετοχή στην <a href=\"%(team_url)s\">"
+"%(team_name)s ομάδα μετάφρασης</a> του <a έργου href=\"%(project_url)s\">"
+"%(project_name)s</a>."
+
+#: templates/notification/project_team_join_requested/notice.html:2
+#, python-format
+msgid ""
+"<span class=\"notice_action\">Requested</span> to join the <a href="
+"\"%(team_url)s\">%(team_name)s translation team</a> of the <a href="
+"\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"<span class=\"notice_action\">Αίτηση</span> για συμμετοχή στην <a href="
+"\"%(team_url)s\">%(team_name)s ομάδα μετάφρασης</a> του <a έργου href="
+"\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_team_join_withdrawn/notice.html:2
+#, python-format
+msgid ""
+"<span class=\"notice_action\">Withdrawn</span> its own request for joining "
+"the <a href=\"%(team_url)s\">%(team_name)s translation team</a> of the <a "
+"href=\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"<span class=\"notice_action\">Απόσυρση</span> της αίτησης σας για συμμετοχή "
+"στην <a href=\"%(team_url)s\">%(team_name)s ομάδα μετάφρασης</a> του <a "
+"έργου href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_team_left/notice.html:2
+#, python-format
+msgid ""
+"<span class=\"notice_subject\">User</span> has <span class=\"notice_action"
+"\">left</span> the <a href=\"%(team_url)s\">%(team_name)s translation team</"
+"a> of the <a href=\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"Ο/Η <span class=\"notice_subject\">χρήστης</span> <span class=\"notice_action"
+"\">αποχώρησε</span> από την <a href=\"%(team_url)s\">%(team_name)s ομάδα "
+"μετάφρασης</a> του έργου <a href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/project_team_request_denied/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">request</span> to create a "
+"%(language_name)s translation team for the <a href=\"%(project_url)s\">"
+"%(project_name)s</a> project was <span class=\"notice_action\">denied</span>."
+msgstr ""
+"Η <span class=\"notice_subject\">αίτηση</span> για τη δημιουργία ομάδας "
+"μεταφράσεων %(language_name)s για το έργο <a href=\"%(project_url)s\">"
+"%(project_name)s</a> <span class=\"notice_action\">δεν έγινε αποδεκτή</span>."
+
+#: templates/notification/project_team_requested/notice.html:2
+#, python-format
+msgid ""
+"The creation of a translation <span class=\"notice_subject\">team</span> for "
+"%(language_name)s was <span class=\"notice_action\">requested</span> for the "
+"project <a href=\"%(project_url)s\">%(project_name)s</a>."
+msgstr ""
+"<span class=\"notice_action\">Αιτήθηκε</span> δημιουργία <span class="
+"\"notice_subject\">ομάδας</span> μεταφράσεων για τη γλώσσα %(language_name)s "
+"για το έργο <a href=\"%(project_url)s\">%(project_name)s</a>."
+
+#: templates/notification/user_nudge/notice.html:2
+#, python-format
+msgid ""
+"The <span class=\"notice_subject\">user</span> <a href=\"%(performer_url)s\">"
+"%(performer)s</a> has <span class=\"notice_subject\">nudged</span> you"
+msgstr ""
+"Ο/Η <span class=\"notice_subject\">χρήστης</span> <a href=\"%(performer_url)s"
+"\">%(performer)s</a> σας έστειλε μία <span class=\"notice_subject"
+"\">ειδοποίηση</span>."
+
+#: templates/projects/project_confirm_delete.html:4
+#, python-format
+msgid "Delete %(project_name)s"
+msgstr "Διαγραφή του %(project_name)s"
+
+#: templates/projects/project_confirm_delete.html:6
+#, python-format
+msgid "Delete <em>%(project_name)s</em>"
+msgstr "Διαγραφή του <em>%(project_name)s</em>"
+
+#: templates/projects/project_confirm_delete.html:8
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: templates/projects/project_confirm_delete.html:11
+#, python-format
+msgid "Say goodbye to <em>%(project_name)s</em>?"
+msgstr "Θα πείτε αντίο στο <em>%(project_name)s</em>;"
+
+#: templates/projects/project_confirm_delete.html:17
+#, python-format
+msgid ""
+"Are you sure you want to permanently delete the registered project "
+"'%(project_name)s'?"
+msgstr ""
+"Είστε σίγουρος ότι θέλετε να διαγράψετε οριστικά το καταχωριμένο έργο "
+"'%(project_name)s';"
+
+#: templates/projects/project_confirm_delete.html:21
+#: templates/projects/release_confirm_delete.html:22
+#: templates/resources/resource_confirm_delete.html:19
+#: templates/resources/resource_translations_confirm_delete.html:30
+#: templates/teams/team_confirm_delete.html:17
+msgid "Yes, I'm sure!"
+msgstr "Ναι, είμαι σίγουρος!"
+
+#: templates/projects/project_delete.html:11
+msgid "Delete Project"
+msgstr "Διαγραφή Έργου"
+
+#: templates/projects/project_delete.html:14
+#: templates/projects/project_settings.html:45
+msgid "Delete project"
+msgstr "Διαγραφή έργου"
+
+#: templates/projects/project_detail.html:28
+#: templates/projects/project_form_base.html:89
+#: templates/projects/project_myprojects_snippet.html:63
+#: templates/projects/release_detail.html:87
+#: templates/resources/resource_detail.html:110
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: templates/projects/project_detail.html:41
+#: templates/projects/release_detail.html:99
+msgid "Homepage:"
+msgstr "Ιστοσελίδα:"
+
+#: templates/projects/project_detail.html:42
+#, python-format
+msgid "Homepage for %(project_name)s"
+msgstr "Η ιστοσελίδα για το %(project_name)s"
+
+#: templates/projects/project_detail.html:46
+msgid "Bug tracker:"
+msgstr "Ιχνηλάτης σφαλμάτων:"
+
+#: templates/projects/project_detail.html:47
+#, python-format
+msgid "Bug tracker for %(project_name)s"
+msgstr "Ο ιχνηλάτης σφαλμάτων για το %(project_name)s"
+
+#: templates/projects/project_detail.html:50
+#: templates/projects/project_list.html:75
+msgid "Tags:"
+msgstr "Ετικέτες:"
+
+#: templates/projects/project_detail.html:58
+msgid "Documentation:"
+msgstr "Τεκμηρίωση:"
+
+#: templates/projects/project_detail.html:59
+msgid "Documentation of the translation procedure of this project"
+msgstr "Τεκμηρίωση της διαδικασίας μετάφρασης αυτού του έργου"
+
+#: templates/projects/project_detail.html:59
+msgid "Translation help pages"
+msgstr "Βοηθητικές σελίδες μετάφρασης"
+
+#: templates/projects/project_detail.html:67
+msgid "Maintainer:"
+msgid_plural "Maintainers:"
+msgstr[0] "Συντηρητής:"
+msgstr[1] "Συντηρητές:"
+
+#: templates/projects/project_detail.html:110
+#: templates/resources/resource_detail.html:347
+#: templates/teams/team_detail.html:321
+msgid "History"
+msgstr "Ιστορικό"
+
+#: templates/projects/project_detail.html:116
+msgid "No history recorded yet."
+msgstr "Δεν υπάρχει καταγεγραμμένο ιστορικό ακόμα."
+
+#: templates/projects/project_form.html:11
+#: templates/projects/project_form.html:19
+#: templates/projects/project_form_base.html:8
+#: templates/projects/project_form_base.html:13
+#: templates/projects/project_form_base.html:73
+msgid "Add a project"
+msgstr "Προσθήκη ενός έργου"
+
+#: templates/projects/project_form.html:22
+#: templates/projects/project_form.html:47
+#: templates/projects/project_form_base.html:9
+#: templates/projects/project_settings.html:11
+#, python-format
+msgid "Edit %(project_name)s"
+msgstr "Επεξεργασία του %(project_name)s"
+
+#: templates/projects/project_form.html:45
+#: templates/projects/project_myprojects.html:26
+#: templates/projects/project_settings.html:9
+msgid "New project"
+msgstr "Νέο έργο"
+
+#: templates/projects/project_form.html:53
+#: templates/projects/project_settings.html:17
+msgid "Create a new project on Transifex"
+msgstr "Δημιουργία καινούριου έργου στο Transifex"
+
+#: templates/projects/project_form.html:55
+#: templates/projects/project_settings.html:19
+msgid "Edit your Project"
+msgstr "επεξεργασία του έργου σας"
+
+#: templates/projects/project_form.html:68
+msgid "Add the details of your project"
+msgstr "Προσθήκη λεπτομερειών στο έργο σας"
+
+#: templates/projects/project_form.html:70
+msgid "Edit the details of your project"
+msgstr "Επεξεργασία των λεπτομερειών του έργου σας"
+
+#: templates/projects/project_form.html:93
+msgid "View advanced fields"
+msgstr "Προβολή πεδίων για προχωρημένους"
+
+#: templates/projects/project_form.html:107
+msgid "Save project"
+msgstr "Αποθήκευση έργου"
+
+#: templates/projects/project_form_access_control.html:8
+#: templates/projects/project_form_access_control.html:10
+#: templates/projects/project_form_access_control.html:16
+#: templates/projects/project_form_base.html:90
+#: templates/projects/project_form_permissions.html:8
+#: templates/projects/project_form_permissions.html:15
+#: templates/projects/project_settings.html:49
+msgid "Access Control"
+msgstr "Έλεγχος πρόσβασης"
+
+#: templates/projects/project_form_access_control.html:19
+msgid "Manage how people can have submission access to your project"
+msgstr ""
+"Διαχειριστείτε το πώς οι άνθρωποι θα έχουν πρόσβαση υποβολής στο έργο σας"
+
+#: templates/projects/project_form_access_control.html:63
+msgid "Go to the project writers page."
+msgstr "Μετάβαση στη σελίδα του δημιουργού του έργου."
+
+#: templates/projects/project_form_access_control.html:67
+msgid "Save Access Control Settings"
+msgstr "Αποθήκευση ρυθμίσεων του ελέγχου πρόσβασης"
+
+#: templates/projects/project_form_base.html:14
+#, python-format
+msgid "Edit <em>%(project_name)s</em>"
+msgstr "Επεξεργασία του <em>%(project_name)s</em>"
+
+#: templates/projects/project_form_base.html:29
+msgid "Access control will be enabled once the project is created"
+msgstr "Ο έλεγχος πρόσβασης θα ενεργοποιηθεί μόλις το έργο δημιουργηθεί"
+
+#: templates/projects/project_form_base.html:76
+#, python-format
+msgid "Editing <a href=\"%(project_url)s\">%(project_name)s</a>"
+msgstr "Επεξεργασία <a href=\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/projects/project_form_permissions.html:26
+msgid ""
+"Give write access to a translator to send translations to your project "
+"independent of a translation team."
+msgstr ""
+"Δώστε πρόσβαση εγγραφής σε έναν μεταφραστή για να στέλνει μεταφράσεις στο "
+"έργο σας ανεξάρτητα από μία ομάδα μετάφρασης"
+
+#: templates/projects/project_form_permissions.html:39
+msgid "Pending requests:"
+msgstr "Αιτήσεις σε εκκρεμότητα:"
+
+#: templates/projects/project_form_permissions.html:59
+#: templates/txpermissions/base_permission_form.html:18
+msgid "Users with access to submit files:"
+msgstr "Χρήστες με πρόσβαση για υποβολή αρχείων:"
+
+#: templates/projects/project_latests.html:6
+msgid "Latest Projects"
+msgstr "Πρόσφατα έργα"
+
+#: templates/projects/project_list.html:8
+msgid "Project list"
+msgstr "Λίστα έργων"
+
+#: templates/projects/project_list.html:21
+msgid "Projects on Transifex"
+msgstr "Τα έργα στο Transifex"
+
+#: templates/projects/project_list.html:33
+msgid "Projects feed"
+msgstr "Αρχείο ροής έργων"
+
+#: templates/projects/project_list.html:34 templates/userena/public.html:15
+msgid "Subscribe to this feed"
+msgstr "Εγγραφή σε αυτό το αρχείο ροής"
+
+#: templates/projects/project_list.html:46
+msgid "Add New Project"
+msgstr "Προσθήκη νέου έργου"
+
+#: templates/projects/project_list.html:46
+msgid "Create new project"
+msgstr "Δημιουργία νέου έργου"
+
+#: templates/projects/project_list.html:66
+#: templates/projects/release_detail.html:120
+msgid "Resources:"
+msgstr "Πόροι:"
+
+#: templates/projects/project_list.html:68
+#, python-format
+msgid "Go to resource \"%(resource)s\""
+msgstr "Πηγαίντε στον πόρο %(resource)s"
+
+#: templates/projects/project_list.html:71
+msgid "No resources in this project."
+msgstr "Δεν υπάρχουν πόροι σε αυτό το έργο."
+
+#: templates/projects/project_list.html:83
+msgid "Bummer. No projects could be found."
+msgstr "Ατυχία. Κανένα έργο δεν μπόρεσε να βρεθεί."
+
+#: templates/projects/project_list.html:86
+#, python-format
+msgid "Why don't you <a href=\"%(project_create)s\">add one</a>?"
+msgstr "Γιατί δεν <a href=\"%(project_create)s\">προσθέτετε ένα</a>;"
+
+#: templates/projects/project_list.html:96
+#: templates/projects/project_myprojects.html:42
+#, python-format
+msgid ""
+"Couldn't find your project? Go ahead and <a href=\"%(project_create)s\">add "
+"it</a>!"
+msgstr ""
+"Δεν ήταν δυνατή η εύρεση του έργου σας; Ξεκινήστε και <a href="
+"\"%(project_create)s\">προσθέστε το</a>!"
+
+#: templates/projects/project_menu.html:69
+msgid "Private Project"
+msgstr "Ιδιωτικό έργο"
+
+#: templates/projects/project_menu.html:80
+msgid "Project Overview"
+msgstr "Επισκόπηση έργου"
+
+#: templates/projects/project_menu.html:86 templates/teams/team_detail.html:44
+#: templates/teams/team_list.html:20
+msgid "Teams"
+msgstr "Ομάδες"
+
+#: templates/projects/project_menu.html:95
+msgid "Project Settings"
+msgstr "Ρυθμίσεις Έργου"
+
+#: templates/projects/project_myprojects.html:7
+#: templates/projects/project_myprojects.html:9
+msgid "My Projects"
+msgstr "Τα Έργα Μου"
+
+#: templates/projects/project_myprojects.html:13
+msgid "My Projects on Transifex"
+msgstr "Τα Έργα μου στο Transifex"
+
+#: templates/projects/project_myprojects.html:30
+msgid "All projects"
+msgstr "Όλα τα έργα"
+
+#: templates/projects/project_myprojects_snippet.html:14
+msgid "YOUR PROJECTS"
+msgstr "ΤΑ ΕΡΓΑ ΣΑΣ"
+
+#: templates/projects/project_myprojects_snippet.html:17
+#, python-format
+msgid "Maintaining %(num_of_projects)s project"
+msgid_plural "Maintaining %(num_of_projects)s projects"
+msgstr[0] "Διαχειρίζεται %(num_of_projects)s έργο"
+msgstr[1] "Διαχειρίζεται %(num_of_projects)s έργα"
+
+#: templates/projects/project_myprojects_snippet.html:28
+msgid "This is a \\"
+msgstr "Αυτό είναι ένα \\"
+
+#: templates/projects/project_myprojects_snippet.html:36
+#: templates/projects/project_myprojects_snippet.html:167
+msgid "Edit"
+msgstr "Τροποποίηση"
+
+#: templates/projects/project_myprojects_snippet.html:46
+msgid "Maintaining no projects yet"
+msgstr "Δεν διαχειρίζεστε κανένα έργο ακόμα"
+
+#: templates/projects/project_myprojects_snippet.html:53
+#, python-format
+msgid "Actively translating <cite>%(num_of_locks)s</cite> resource"
+msgid_plural "Actively translating <cite>%(num_of_locks)s</cite> resources"
+msgstr[0] "Αυτή τη στιγμή μεταφράζετε <cite>%(num_of_locks)s</cite> πόρο"
+msgstr[1] "Αυτή τη στιγμή μεταφράζετε <cite>%(num_of_locks)s</cite> πόρους"
+
+#: templates/projects/project_myprojects_snippet.html:100
+#: templates/projects/release_language_detail.html:204
+#: templates/projects/release_language_detail.html:338
+#: templates/resources/resource_detail.html:30
+#: templates/resources/resource_detail.html:293
+msgid "Please select a target language first."
+msgstr "Παρακαλούμε επιλέξτε πρώτα μία γλώσσα προορισμού."
+
+#: templates/projects/project_myprojects_snippet.html:110
+#: templates/projects/release_language_detail.html:214
+#: templates/projects/release_language_detail.html:348
+#: templates/resources/resource_detail.html:303
+#: templates/teams/team_detail.html:250
+msgid "Trying to lock resource..."
+msgstr "Προσπάθεια κλειδώματος πόρου..."
+
+#: templates/projects/project_myprojects_snippet.html:133
+#: templates/projects/release_language_detail.html:237
+#: templates/projects/release_language_detail.html:371
+#: templates/teams/team_detail.html:273
+msgid "Translation Details"
+msgstr "Λεπτομέρειες μετάφρασης"
+
+#: templates/projects/project_myprojects_snippet.html:143
+msgid "Currently not translating something"
+msgstr "Δεν μεταφράζετε κάτι αυτή τη στιγμή"
+
+#: templates/projects/project_myprojects_snippet.html:151
+msgid "YOUR TRANSLATION TEAMS"
+msgstr "ΟΙ ΟΜΑΔΕΣ ΜΕΤΑΦΡΑΣΕΩΝ ΣΑΣ"
+
+#: templates/projects/project_myprojects_snippet.html:156
+#, python-format
+msgid "Coordinating %(num_of_teams)s team"
+msgid_plural "Coordinating %(num_of_teams)s teams"
+msgstr[0] "Συντονίζετε %(num_of_teams)s ομάδα"
+msgstr[1] "Συντονίζετε %(num_of_teams)s ομάδες"
+
+#: templates/projects/project_myprojects_snippet.html:174
+msgid "Coordinating no teams "
+msgstr "Δεν συντονίζετε ομάδες "
+
+#: templates/projects/project_myprojects_snippet.html:180
+#, python-format
+msgid "Member of %(num_of_teams)s team"
+msgid_plural "Member of %(num_of_teams)s teams"
+msgstr[0] "Μέλος %(num_of_teams)s ομάδας"
+msgstr[1] "Μέλος %(num_of_teams)s ομάδων"
+
+#: templates/projects/project_myprojects_snippet.html:188
+#: templates/teams/team_detail.html:308
+msgid "Leave"
+msgstr "Αποχώρηση"
+
+#: templates/projects/project_myprojects_snippet.html:194
+msgid "Not participating in any team so far"
+msgstr "Δεν συμμετέχετε σε καμιά ομάδα μέχρι στιγμής"
+
+#: templates/projects/project_myprojects_snippet.html:200
+msgid "YOUR WATCHES"
+msgstr "ΟΙ ΠΑΡΑΚΟΛΟΥΘΗΣΕΙΣ ΣΑΣ"
+
+#: templates/projects/project_myprojects_snippet.html:204
+#, python-format
+msgid "Watching %(num_of_projects)s project"
+msgid_plural "Watching %(num_of_projects)s projects"
+msgstr[0] "Παρακολουθείτε %(num_of_projects)s έργο"
+msgstr[1] "Παρακολουθείτε %(num_of_projects)s έργα"
+
+#: templates/projects/project_myprojects_snippet.html:215
+msgid "Not watching any project"
+msgstr "Δεν παρακολουθείτε κανένα έργο"
+
+#: templates/projects/project_myprojects_snippet.html:221
+#, python-format
+msgid "Watching %(num_of_resources)s resource translation"
+msgid_plural "Watching %(num_of_resources)s resource translations"
+msgstr[0] "Παρακολουθείτε %(num_of_resources)s πόρο μετάφρασης"
+msgstr[1] "Παρακολουθείτε %(num_of_resources)s πόρους μεταφράσεων"
+
+#: templates/projects/project_myprojects_snippet.html:235
+msgid "Not watching any resource translation"
+msgstr "Δεν αρακολουθείτε καμία μετάφραση πόρων"
+
+#: templates/projects/project_settings.html:43
+msgid "Edit Project"
+msgstr "Επεξεργασία έργου"
+
+#: templates/projects/release_confirm_delete.html:6
+#: templates/projects/release_confirm_delete.html:10
+#, python-format
+msgid "Delete %(release_name)s"
+msgstr "Διαγραφή %(release_name)s"
+
+#: templates/projects/release_confirm_delete.html:14
+#, python-format
+msgid "Say goodbye to <em>%(release_name)s</em>?"
+msgstr "Θα πείτε αντίο στη <em>%(release_name)s</em>;"
+
+#: templates/projects/release_confirm_delete.html:19
+#, python-format
+msgid ""
+"Are you sure you want to permanently delete the release '%(release_name)s' "
+"which works on %(project_name)s?"
+msgstr ""
+"Είστε σίγουρος ότι θέλετε να διαγράψετε οριστικά την έκδοση "
+"'%(release_name)s' που είναι στο %(project_name)s;"
+
+#: templates/projects/release_detail.html:60
+msgid "Statistics feed for this release"
+msgstr "Ροή στατιστικών για αυτήν την έκδοση"
+
+#: templates/projects/release_detail.html:91
+msgid "Edit release detaila"
+msgstr "Επεξεργασία λεπτομερειών έκδοσης"
+
+#: templates/projects/release_detail.html:91
+msgid "Edit release"
+msgstr "Επεξεργασία έκδοσης"
+
+#: templates/projects/release_detail.html:104
+msgid "Release date:"
+msgstr "Ημερομηνία έκδοσης:"
+
+#: templates/projects/release_detail.html:109
+msgid "String freeze:"
+msgstr "\"Πάγωμα\" περιεχομένου"
+
+#: templates/projects/release_detail.html:114
+msgid "Devel freeze:"
+msgstr "\"Πάγωμα\" ανάπτυξης:"
+
+#: templates/projects/release_detail.html:122
+#: templates/projects/release_detail.html:138
+msgid "Click here to show or hide the resource list"
+msgstr "Πατήστε εδώ για να προβάλλετε ή να αποκρύψετε τη λίστα των πόρων"
+
+#: templates/projects/release_detail.html:123
+#, python-format
+msgid "This release has %(resources_number)s resources."
+msgstr "Αυτή η έκδοση έχει %(resources_number)s πόρους."
+
+#: templates/projects/release_detail.html:136
+msgid "Private Resources:"
+msgstr "Ιδιωτικοί πόροι:"
+
+#: templates/projects/release_detail.html:139
+#, python-format
+msgid ""
+"This release has %(resources_number)s private resources you have access to."
+msgstr ""
+"Αυτή η έκδοση έχει %(resources_number)s ιδιωτικούς πόρους στους οποίους "
+"έχετε πρόσβαση."
+
+#: templates/projects/release_detail.html:164
+msgid "Translation Statistics"
+msgstr "Στατιστικές μεταφράσεων"
+
+#: templates/projects/release_detail.html:177
+#: templates/projects/release_language_detail.html:116
+#: templates/projects/release_language_detail.html:251
+#: templates/resources/resource_detail.html:215
+#: templates/teams/team_detail.html:150
+msgid "Completion"
+msgstr "Ολοκλήρωση"
+
+#: templates/projects/release_detail.html:178
+msgid "Last Translation"
+msgstr "Τελευταία μετάφραση"
+
+#: templates/projects/release_detail.html:191
+msgid "source language"
+msgstr "πηγαία γλώσσα"
+
+#: templates/projects/release_detail.html:211
+#: templates/projects/resource_list.html:146
+#: templates/resources/resource_detail.html:251
+#: templates/resources/resource_list_more.html:25
+msgid "no translations yet"
+msgstr "Δεν υπάρχουν μεταφράσεις ακόμη"
+
+#: templates/projects/release_form.html:14
+#: templates/projects/release_form.html:19
+#: templates/projects/release_form.html:25
+msgid "Add a release"
+msgstr "Προσθήκη μιας έκδοσης"
+
+#: templates/projects/release_form.html:15
+#, python-format
+msgid "Edit %(release_name)s"
+msgstr "Επεξεργασία %(release_name)s"
+
+#: templates/projects/release_form.html:20
+#, python-format
+msgid "Edit <em>%(release_name)s</em> release"
+msgstr "Επεξεργασία της έκδοσης <em>%(release_name)s</em>"
+
+#: templates/projects/release_form.html:28
+#, python-format
+msgid "Editing Release '<a href=\"%(release_url)s\">%(release_name)s</a>'"
+msgstr "Επεξεργασία έκδοσης '<a href=\"%(release_url)s\">%(release_name)s</a>'"
+
+#: templates/projects/release_form.html:44
+msgid "Save release"
+msgstr "Αποθήκευση έκδοσης"
+
+#: templates/projects/release_form.html:51
+msgid "Delete release from Transifex"
+msgstr "Διαγραφή έκδοσης από το Transifex"
+
+#: templates/projects/release_form.html:53
+msgid "Delete release..."
+msgstr "Διαγραφή έκδοσης..."
+
+#: templates/projects/release_language_detail.html:94
+#, python-format
+msgid "Release '%(release_name)s"
+msgstr "Έκδοση '%(release_name)s"
+
+#: templates/projects/release_language_detail.html:97
+msgid "Statistics feed for this language and release"
+msgstr "Ροή στατιστικών για αυτήν την γλώσσα και έκδοση"
+
+#: templates/projects/release_language_detail.html:108
+msgid "Resource under this Release"
+msgid_plural "Resources under this Release"
+msgstr[0] "Πόρος υπό αυτή την έκδοση"
+msgstr[1] "Πόροι υπό αυτή την έκδοση"
+
+#: templates/projects/release_language_detail.html:117
+#: templates/projects/release_language_detail.html:252
+#: templates/projects/resource_list.html:124
+#: templates/resources/resource_detail.html:216
+#: templates/teams/team_detail.html:151
+msgid "Last Updated"
+msgstr "Τελευταία ενημέρωση"
+
+#: templates/projects/release_language_detail.html:118
+#: templates/projects/release_language_detail.html:253
+#: templates/projects/resource_list.html:125
+#: templates/teams/team_detail.html:152
+msgid "Importance"
+msgstr "Σπουδαιότητα"
+
+#: templates/projects/release_language_detail.html:123
+#: templates/projects/release_language_detail.html:258
+#: templates/resources/resource_detail.html:223
+#: templates/teams/team_detail.html:158
+msgid "click for translation"
+msgstr "πατήστε για μετάφραση"
+
+#: templates/projects/release_language_detail.html:128
+#: templates/projects/release_language_detail.html:262
+#: templates/resources/resource_detail.html:232
+#: templates/teams/team_detail.html:163
+msgid "Locked"
+msgstr "Κλειδωμένο"
+
+#: templates/projects/release_language_detail.html:131
+#: templates/projects/release_language_detail.html:265
+#: templates/teams/team_detail.html:166
+msgid "Accepting translations"
+msgstr "Δέχεται μεταφράσεις"
+
+#: templates/projects/release_language_detail.html:133
+#: templates/projects/release_language_detail.html:267
+#: templates/teams/team_detail.html:168
+msgid "Not accepting translations at the moment"
+msgstr "Δεν δέχεται μεταφράσεις αυτή τη στιγμή"
+
+#: templates/projects/release_language_detail.html:152
+#: templates/projects/release_language_detail.html:286
+#: templates/teams/team_detail.html:188
+msgid "no activity yet"
+msgstr "χωρίς δραστηριότητα ακόμη"
+
+#: templates/projects/release_language_detail.html:246
+msgid "Private Resource that you have access to under this Release"
+msgid_plural "Private resources that you have access to under this Release"
+msgstr[0] "Ιδιωτικός πόρος στον οποίο έχετε πρόσβαση υπό αυτή την έκδοση"
+msgstr[1] "Ιδιωτικοί πόροι στους οποίους έχετε πρόσβαση υπό αυτή την έκδοση"
+
+#: templates/projects/release_language_detail.html:387
+#: templates/projects/release_language_detail.html:395
+msgid "click for resource details"
+msgstr "Κάντε κλικ για τις λεπτομέρειες της έκδοσης"
+
+#: templates/projects/release_list.html:13
+#: templates/projects/release_list.html:41
+msgid "Project Releases"
+msgstr "Εκδόσεις έργου"
+
+#: templates/projects/release_list.html:15
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: templates/projects/release_list.html:15
+msgid "Add new release "
+msgstr "Προσθήκη νέας έκδοσης "
+
+#: templates/projects/release_list.html:49
+#, python-format
+msgid ""
+"No releases are registered for this project yet. Why don't you <a href="
+"\"%(release_create)s\">add one</a>?"
+msgstr ""
+"Καμία έκδοση δεν έχει καταχωρηθεί γι’ αυτό το έργο ακόμα. Γιατί δεν <a href="
+"\"%(release_create)s\">προσθέτετε μία</a>;"
+
+#: templates/projects/resource_list.html:11
+msgid "Project Resources"
+msgstr "Πόροι έργου"
+
+#: templates/projects/resource_list.html:13
+msgid "Add new resource"
+msgstr "Προσθήκη νέου πόρου"
+
+#: templates/projects/resource_list.html:13
+msgid "Add New Resource"
+msgstr "Προσθήκη Νέου Πόρου"
+
+#: templates/projects/resource_list.html:122
+#, fuzzy
+msgid "Resource name"
+msgstr "Όνομα Πόρου"
+
+#: templates/projects/resource_list.html:125
+msgid "Click the flags to modify the importance of a resource."
+msgstr "Πατήστε στις σημαίες για να τροποποιήσετε τη σπουδαιότητα ενός πόρου."
+
+#: templates/projects/resource_list.html:134
+#, python-format
+msgid "%(strings)s strings, %(words)s words"
+msgstr "%(strings)s αλφαριθμητικά, %(words)s λέξεις"
+
+#: templates/projects/resource_list.html:139
+#, python-format
+msgid "Committed by %(last_committer)s"
+msgstr "Τελευταία τροποποίηση από %(last_committer)s"
+
+#: templates/projects/resource_list.html:139
+msgid "No committers yet"
+msgstr "Χωρίς committer"
+
+#: templates/projects/resource_list.html:173
+#: templates/teams/team_detail.html:280
+msgid "No resources are registered for this project yet."
+msgstr "Δεν έχουν καταχωρηθεί πόροι για το έργο αυτό ακόμη."
+
+#: templates/resources/resource_actions.html:20
+#, python-format
+msgid " Total:&nbsp;%(total_entities)s strings, %(wordcount)s words"
+msgstr " Σύνολο:&nbsp;%(total_entities)s συμβολοσειρές, %(wordcount)s λέξεις"
+
+#: templates/resources/resource_actions.html:21
+#, python-format
+msgid " Translated:&nbsp;%(trans_count)s strings, %(trans_wordcount)s words "
+msgstr ""
+" Μεταφρασμένα:&nbsp;%(trans_count)s αλφαριθμητικά, %(trans_wordcount)s "
+"λέξεις "
+
+#: templates/resources/resource_actions.html:38
+msgid ""
+"<span title=\"You cannot translate the source language strings.\">This is "
+"the Source Language</span>"
+msgstr ""
+"<span title=\"δεν μπορείτε να μεταφράσετε τα πηγαία αλφαριθμητικά.\">Αυτή "
+"είναι η πηγαία γλώσσα</span>"
+
+#: templates/resources/resource_actions.html:45
+#, python-format
+msgid ""
+"Warning: This resource is currently locked by '%(lock_owner)s'. He might be "
+"working on it right now."
+msgstr ""
+"Προσοχή: Αυτός ο πόρος αυτή τη στιγμή είναι κλειδωμένος από τον "
+"'%(lock_owner)s'. Μάλλον δουλεύει σε αυτόν αυτή τη στιγμή."
+
+#: templates/resources/resource_actions.html:45
+#: templates/resources/resource_actions.html:47
+#: templates/resources/resource_actions.html:51
+#: templates/resources/resource_actions.html:56
+#: templates/resources/resource_actions.html:59
+msgid "Translate now"
+msgstr "Μεταφράστε τώρα"
+
+#: templates/resources/resource_actions.html:56
+msgid "This resource is currently not accepting translations"
+msgstr "Ο πόρος αυτός προς το παρόν δεν δέχεται μεταφράσεις"
+
+#: templates/resources/resource_actions.html:59
+#, python-format
+msgid ""
+"To translate you need to be logged in and a member of the %(lang_name)s team"
+msgstr ""
+"Για να μεταφράσετε θα πρέπει να είστε συνδεδεμένος και μέλος της "
+"%(lang_name)s ομάδας"
+
+#: templates/resources/resource_actions.html:68
+#: templates/resources/stats_bar_simple.html:4
+msgid "Translated: "
+msgstr "Μεταφρασμένα:"
+
+#: templates/resources/resource_actions.html:68
+#: templates/resources/stats_bar_simple.html:4
+msgid "Untranslated: "
+msgstr "Αμετάφραστα:"
+
+#: templates/resources/resource_actions.html:76
+#, python-format
+msgid " %(trans_count)s remaining strings (%(trans_wordcount)s words) "
+msgstr " Απομένουν %(trans_count)s αλφαριθμητικά (%(trans_wordcount)s λέξεις) "
+
+#: templates/resources/resource_actions.html:86
+msgid "View strings online"
+msgstr "Προβολή συμβολοσειρών διαδικτυακά"
+
+#: templates/resources/resource_actions.html:90
+msgid "Visit language team"
+msgstr "Μετάβαση στην ομάδα γλώσσας"
+
+#: templates/resources/resource_actions.html:96
+#: templates/resources/resource_actions.html:116
+#: templates/resources/resource_actions.html:123
+msgid "Clone to new language"
+msgstr "Δημιουργία κλώνου σε νέα γλώσσα"
+
+#: templates/resources/resource_actions.html:98
+#: templates/resources/resource_actions.html:118
+#: templates/resources/resource_actions.html:125
+msgid ""
+"Copy all the translations from this language to a new (chosen) language in "
+"the specific resource. This will copy the pluralized translations too, if "
+"and only if the two languages have exactly the same plural rules."
+msgstr ""
+"Αντιγράψτε όλες τις μεταφράσεις από αυτή τη γλώσσα σε μία νέα (επιλεγμένη) "
+"γλώσσα στο συγκεκριμένο πόρο. Θα αντιγραφούν επίσης και οι μεταφράσεις "
+"πληθυντικού, αν και μόνο αν οι δύο γλώσσες έχουν τους ίδιους ακριβώς κανόνες "
+"πληθυντικού."
+
+#: templates/resources/resource_actions.html:133
+#: templates/resources/resource_actions.html:135
+msgid "Download for viewing"
+msgstr "Λήψη για προβολή"
+
+#: templates/resources/resource_actions.html:135
+msgid "You must login to be able to download the translations."
+msgstr ""
+"Θα πρέπει να συνδεθείτε για να μπορέσετε να κατεβάσετε τις μεταφράσεις."
+
+#: templates/resources/resource_actions.html:144
+#: templates/resources/resource_actions.html:148
+msgid "Download original pot file"
+msgstr "Μεταμόρφωση του πρωτότυπου αρχείου pot"
+
+#: templates/resources/resource_actions.html:147
+msgid "You must login to be able to download the pot file."
+msgstr "Πρέπει να συνδεθείτε για να μπορείτε να κατεβάσετε το αρχείο pot."
+
+#: templates/resources/resource_actions.html:157
+msgid "Get pseudo translations"
+msgstr "Λάβετε ψευδο-αρχεία μετάφρασης"
+
+#: templates/resources/resource_actions.html:182
+msgid "Download Pseudo Translation File"
+msgstr "Μεταμόρφωση Ψευδο-αρχείου Μετάφρασης"
+
+#: templates/resources/resource_actions.html:192
+msgid "Resource cannot be locked"
+msgstr "Ο πόρος δεν μπορεί να κλειδωθεί"
+
+#: templates/resources/resource_actions.html:192
+#: templates/resources/resource_actions.html:196
+msgid "Download for translation"
+msgstr "Λήψη για μετάφραση"
+
+#: templates/resources/resource_actions.html:196
+msgid "You must login to use this action"
+msgstr "Θα πρέπει να συνδεθείτε για να χρησιμοποιήσετε αυτή την επιλογή"
+
+#: templates/resources/resource_actions.html:199
+msgid ""
+"Lock the file under your ownership and download it locally to edit it, in "
+"one action."
+msgstr ""
+"Κλειδώστε το αρχείο υπό την ιδιοκτησία σας και κατεβάστε το τοπικά για να το "
+"επεξεργαστείτε, σε μία επιλογή."
+
+#: templates/resources/resource_actions.html:216
+msgid "This resource currently is not accepting translations."
+msgstr "Ο πόρος αυτός προς το παρόν δεν δέχεται μεταφράσεις."
+
+#: templates/resources/resource_actions.html:227
+msgid "Translation last updated "
+msgstr "Τελευταία ενημέρωση μετάφρασης "
+
+#: templates/resources/resource_actions.html:229
+msgid "by"
+msgstr "από τον/ην"
+
+#: templates/resources/resource_actions.html:235
+msgid "No translation yet"
+msgstr "Χωρίς μετάφραση ακόμη"
+
+#: templates/resources/resource_confirm_delete.html:4
+#, python-format
+msgid "Delete %(resource_name)s"
+msgstr "Διαγραφή του %(resource_name)s"
+
+#: templates/resources/resource_confirm_delete.html:6
+#, python-format
+msgid "Delete <em>%(resource_name)s</em>"
+msgstr "Διαγραφή του <em>%(resource_name)s</em>"
+
+#: templates/resources/resource_confirm_delete.html:9
+#, python-format
+msgid "Say goodbye to <em>%(resource_name)s</em>?"
+msgstr "Θα πείτε αντίο στο <em>%(resource_name)s</em>;"
+
+#: templates/resources/resource_confirm_delete.html:14
+#, python-format
+msgid ""
+"\n"
+"  Are you sure you want to permanently delete the translation resource "
+"'%(resource_name)s'?\n"
+msgstr ""
+"\n"
+"  Είστε σίγουρος ότι θέλετε να διαγράψετε οριστικά τον πόρο μετάφρασης "
+"'%(resource_name)s';\n"
+
+#: templates/resources/resource_detail.html:112
+msgid "Edit resource"
+msgstr "Επεξεργασία πόρου"
+
+#: templates/resources/resource_detail.html:122
+msgid "Total Strings"
+msgstr "Συνολικός αριθμός αλφαριθμητικών"
+
+#: templates/resources/resource_detail.html:125
+msgid "words"
+msgstr "λέξεις"
+
+#: templates/resources/resource_detail.html:128
+msgid "Accepting "
+msgstr "Δέχεται "
+
+#: templates/resources/resource_detail.html:140
+msgid "Priority Level"
+msgstr "Επίπεδο προτεραιότητας"
+
+#: templates/resources/resource_detail.html:156
+msgid "Release:"
+msgid_plural "Releases:"
+msgstr[0] "Έκδοση:"
+msgstr[1] "Εκδόσεις:"
+
+#: templates/resources/resource_detail.html:173
+#, python-format
+msgid "Available languages (%(num_of_langs)s)"
+msgstr "Διαθέσιμες γλώσσες (%(num_of_langs)s)"
+
+#: templates/resources/resource_detail.html:175
+msgid ""
+"If you cannot see your language, click the button below to translate( You "
+"must belong to a language team of this project, to be able to translate! )"
+msgstr ""
+"Αν δεν μπορείτε να δείτε τη γλώσσα σας, πατήστε στο παρακάτω κουμπί για να "
+"μεταφράσετε (Πρέπει να είστε μέλος μιας ομάδας μεταφράσεων αυτού του έργο, "
+"για να μπορείτε να μεταφράσετε!)"
+
+#: templates/resources/resource_detail.html:175
+msgid "Add new translation"
+msgstr "Προσθήκη νέας μετάφρασης"
+
+#: templates/resources/resource_detail.html:229
+msgid "(source language)"
+msgstr "(πηγαία γλώσσα)"
+
+#: templates/resources/resource_detail.html:353
+msgid "No actions recorded yet :)"
+msgstr "Καμία ενέργεια δεν έχει καταγραφεί ακόμη :)"
+
+#: templates/resources/resource_form.html:22
+#, python-format
+msgid "Edit %(resource_name)s"
+msgstr "Επεξεργασία %(resource_name)s"
+
+#: templates/resources/resource_form.html:31
+msgid "Edit the details of the translation resource"
+msgstr "Επεξεργασία των λεπτομερειών του πόρου μετάφρασης"
+
+#: templates/resources/resource_form.html:44
+msgid ""
+"\n"
+"\t<div class=\"message\">\n"
+"\t\t<p>To enable automatic \"fetching\" of your source language strings by\n"
+"\t\tTransifex, enter a URL to your source file (e.g. POT file). Refer to\n"
+"\t\t<a href=\"http://help.transifex.net/user-guide/projects.html#projects-"
+"and-resources\">the documentation</a>\n"
+"\t\tfor more information.</p>\n"
+"\n"
+"\t\t<p><b>Warning</b>: Transifex will overwrite the existing source strings\n"
+"\t\tand translations with the ones found in the linked file. This may lead\n"
+"\t\tto <b>loss of translations</b>, so make sure the URL links to the\n"
+"\t\tcorrect file before submitting the form.\n"
+"\t\t</p>\n"
+"\t\t</blink>\n"
+"\t</div>\n"
+"\t"
+msgstr ""
+"\n"
+"    <div class=\"message\">\n"
+"        <span class=\"whitespace other\" title=\"Tab\">»</span><p>Για να "
+"ενεργοποιήσετε το αυτόματο \"τράβηγμα\" των πηγαίων αλφαρηθμιτικών σας από\n"
+"        το Transifex, εισάγετε τη διεύθυνση του πηγαίου αρχείου (πχ. POT "
+"αρχείου). Απευθυνθείτε\n"
+"        <a href=\"http://help.transifex.net/user-guide/projects."
+"html#projects-and-resources\">στην τεκμηρίωση</a> του Transfiex\n"
+"        για περισσότερες πληροφορίες.</p>\n"
+"\n"
+"        <p><b>Προειδοποίηση</b>: Το Transifex θα γράφει πάνω στα υπάρχοντα "
+"πηγαία αλφαριθμητικά\n"
+"        και μεταφράσεις με αυτά που θα βρει στο συνδεδεμένο αρχείο. Αυτό "
+"μπορεί να οδηγήσει\n"
+"        and translations with the ones found in the linked file. This may "
+"lead\n"
+"        σε <b>απώλεια πληροφορίας</b>, οπότε σιγουρευτείτε ότι ο σύνδεσμος "
+"οδηγεί στο\n"
+"        σωστό αρχείο πριν υποβάλλετε τη φόρμα.\n"
+"        </p>\n"
+"        </blink>\n"
+"    </div>\n"
+"    "
+
+#: templates/resources/resource_form.html:60
+msgid "Save translation resource"
+msgstr "Αποθήκευση πόρου μετάφρασης"
+
+#: templates/resources/resource_form.html:68
+msgid "Delete resource from Transifex"
+msgstr "Διαγραφή πόρου από το Transifex"
+
+#: templates/resources/resource_form.html:72
+msgid "Delete resource"
+msgstr "Διαγραφή πόρου"
+
+#: templates/resources/resource_list_more.html:14
+msgid "edit"
+msgstr "επεξεργασία"
+
+#: templates/resources/resource_list_more.html:15
+msgid "del"
+msgstr "διαγραφή"
+
+#: templates/resources/resource_pseudo_translation_actions.html:10
+msgid "Please, select a pseudo type!"
+msgstr "Παρακαλούμε να διαλέξετε έναν τύπο ψευδο-αρχείου!"
+
+#: templates/resources/resource_pseudo_translation_actions.html:38
+msgid "Download"
+msgstr "Μεταμόρφωση"
+
+#: templates/resources/resource_translations_confirm_delete.html:6
+#, python-format
+msgid ""
+"\n"
+"  Delete translations for %(language_name)s of %(resource_name)s resource.\n"
+msgstr ""
+"\n"
+"  Διαγραφή μετάφρασης για τα %(language_name)s του πόρου %(resource_name)s.\n"
+
+#: templates/resources/resource_translations_confirm_delete.html:14
+#, python-format
+msgid ""
+"\n"
+"Delete <em>%(language_name)s</em>\n"
+msgstr ""
+"\n"
+"Διαγραφή <em>%(language_name)s</em>\n"
+
+#: templates/resources/resource_translations_confirm_delete.html:20
+#, python-format
+msgid "Say goodbye to all translations for <em>%(language_name)s</em>?"
+msgstr ""
+"Θέλετε να αποχαιρετίσετε όλες τις μεταφράσεις για τη γλώσσα <em>"
+"%(language_name)s</em>?"
+
+#: templates/resources/resource_translations_confirm_delete.html:25
+#, python-format
+msgid ""
+"\n"
+"  Are you sure you want to permanently delete the translations for "
+"'%(language_name)s' of '%(resource_name)s'?\n"
+msgstr ""
+"\n"
+"  Είστε σίγουρος ότι θέλετε να διαγράψετε οριστικά τις μεταφράσεις για τα "
+"'%(language_name)s' του '%(resource_name)s';\n"
+
+#: templates/resources/upload_create_resource_form.html:22
+#, fuzzy
+msgid "Uploading Resource"
+msgstr "Πόρος μετάφρασης της ομάδας"
+
+#: templates/resources/upload_create_resource_form.html:46
+#, fuzzy
+msgid ""
+"\n"
+"\t\t\t\tCreate a resource by selecting a source language and uploading a "
+"source translation file from your workstation, such as an English POT file.\n"
+"\t\t\t\tTransifex will analyze the file, extract the strings from inside it, "
+"and create your resource based on these.\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"  Δημιουργήστε έναν πόρο επιλέγοντας μια πηγαία γλώσσα και ανεβάζοντας ένα "
+"πηγαίο αρχείο μετάφρασης, όπως ένα Αγγλικό αρχείο POT.\n"
+"  Το Transifex θα αναλύσει το αρχείο, θα εξάγει τα αλφαριθμητικά και θα "
+"δημιουργήσει τον πόρο σας βασιζόμενο σε αυτά.\n"
+"  "
+
+#: templates/resources/upload_create_resource_form.html:51
+msgid ""
+"For extensive information on the supported file formats, visit the "
+"corresponding <a href=\"http://help.transifex.net/features/formats.html#user-"
+"formats\">Transifex Help page</a>."
+msgstr ""
+
+#: templates/resources/upload_create_resource_form.html:89
+msgid "Create Resource"
+msgstr "Δημιουργία πόρου"
+
+#: templates/resources/upload_resource_translation_button.html:16
+#: templates/resources/upload_resource_translation_button.html:33
+#: templates/storage/storagefilewidget.html:16
+msgid "Upload file"
+msgstr "Αποστολή αρχείου"
+
+#: templates/resources/upload_resource_translation_button.html:18
+msgid "&nbsp;or&nbsp;"
+msgstr "&nbsp;ή&nbsp;"
+
+#: templates/resources/upload_resource_translation_button.html:20
+msgid "Translate Online"
+msgstr "Απευθείας μετάφραση"
+
+#: templates/simpleauth/base_profile.html:10
+msgid "Profile settings"
+msgstr "Ρυθμίσεις προφίλ"
+
+#: templates/simpleauth/login_box.html:11
+msgid ""
+"Sign in to add or modify projects, work on translations, and other stuff."
+msgstr ""
+"Συνδεθείτε για να προσθέσετε ή να τροποποιήσετε έργα, να δουλέψετε πάνω σε "
+"μεταφράσεις, και άλλα πολλά."
+
+#: templates/simpleauth/logout.html:9
+msgid "<p>You have been logged out."
+msgstr "<p>Έχετε αποσυνδεθεί."
+
+#: templates/simpleauth/profile_public.html:9 templates/userena/public.html:29
+#, python-format
+msgid "Public profile of %(user)s"
+msgstr "Το δημόσιο προφίλ του/ης %(user)s"
+
+#: templates/simpleauth/profile_public.html:15 txcommon/admin.py:20
+#: txcommon/admin.py:27
+msgid "Username"
+msgstr "Όνομα χρήστη:"
+
+#: templates/simpleauth/settings.html:4
+msgid "Your Profile"
+msgstr "Το προφίλ σας"
+
+#: templates/simpleauth/settings.html:9
+#, python-format
+msgid "Your profile, %(user)s"
+msgstr "Το προφίλ σας, %(user)s"
+
+#: templates/simpleauth/settings.html:15
+msgid ""
+"Any settings associated with your account are presented and may be modified "
+"here."
+msgstr ""
+"Εδώ μπορείτε να δείτε και να αλλάξετε τις ρυθμίσεις που είναι σχετικές με το "
+"λογαριασμό σας."
+
+#: templates/simpleauth/settings.html:23
+msgid "Change notifications"
+msgstr "Αλλαγή ειδοποιήσεων"
+
+#: templates/simpleauth/settings.html:24
+msgid "Change notifications associated to your account"
+msgstr "Αλλαγή ειδοποιήσεων που είναι σχετικές με το λογαριασμό σας"
+
+#: templates/simpleauth/signin.html:10
+msgid "<p>Please sign in with your email or screen name.<br />"
+msgstr "<p>Παρακαλώ συνδεθείτε με το email σας ή το ψευδώνυμό σας.<br />"
+
+#: templates/teams/team_confirm_delete.html:9
+#, python-format
+msgid "Say goodbye to <em>%(lang_name)s</em> team?"
+msgstr "Θα πείτε αντίο στην <em>%(lang_name)s</em> ομάδα;"
+
+#: templates/teams/team_confirm_delete.html:14
+#, python-format
+msgid ""
+"Are you sure you want to permanently delete the '%(lang_name)s' team which "
+"works on %(project_name)s?"
+msgstr ""
+"Είστε σίγουρος ότι θέλετε να διαγράψετε οριστικά την '%(lang_name)s' ομάδα η "
+"οποία εργάζεται στο %(project_name)s;"
+
+#: templates/teams/team_detail.html:51
+#, python-format
+msgid ""
+"Translation Teams - %(language_name)s <sup class=\"entry_metalink\">"
+"%(language_code)s</sup>"
+msgstr ""
+"Ομάδες Μετάφρασης - %(language_name)s <sup class=\"entry_metalink\">"
+"%(language_code)s</sup>"
+
+#: templates/teams/team_detail.html:62
+msgid "Edit team"
+msgstr "Επεξεργασία ομάδας"
+
+#: templates/teams/team_detail.html:69
+msgid "Mainlist:"
+msgstr "Κύρια λίστα:"
+
+#: templates/teams/team_detail.html:75 templates/teams/team_list.html:37
+msgid "Coordinator:"
+msgid_plural "Coordinators:"
+msgstr[0] "Συντονιστής:"
+msgstr[1] "Συντονιστές:"
+
+#: templates/teams/team_detail.html:91
+msgid "Become a translator:"
+msgstr "Γίνετε μεταφραστής:"
+
+#: templates/teams/team_detail.html:94
+msgid "Join this Team"
+msgstr "Συμμετοχή σ´ αυτή την ομάδα"
+
+#: templates/teams/team_detail.html:106
+msgid "People waiting for team membership approving:"
+msgstr "Άτομα που περιμένουν έγκριση για ένταξη στην ομάδα:"
+
+#: templates/teams/team_detail.html:118 templates/teams/team_list.html:75
+msgid "Approve"
+msgstr "Αποδοχή"
+
+#: templates/teams/team_detail.html:122 templates/teams/team_list.html:72
+msgid "Deny"
+msgstr "Απόρριψη"
+
+#: templates/teams/team_detail.html:128
+msgid "Withdraw"
+msgstr "Απόσυρση"
+
+#: templates/teams/team_detail.html:141
+#, fuzzy
+msgid "Team Translating Resource"
+msgid_plural "Team Translating Resources"
+msgstr[0] "Πόρος μετάφρασης της ομάδας"
+msgstr[1] "Πόροι μετάφρασης της ομάδας:"
+
+#: templates/teams/team_detail.html:293
+#, fuzzy
+msgid "Team Members"
+msgstr "Μέλη της ομάδας:"
+
+#: templates/teams/team_form.html:10
+msgid "Add Team"
+msgstr "Προσθήκη ομάδας"
+
+#: templates/teams/team_form.html:19
+#, python-format
+msgid "%(project_name)s Translation Teams"
+msgstr "Ομάδες Μετάφρασης του %(project_name)s"
+
+#: templates/teams/team_form.html:27
+msgid "Translation team details"
+msgstr "Λεπτομέρειες ομάδας μετάφρασης"
+
+#: templates/teams/team_form.html:29
+msgid ""
+"Please note that notification will not be sent when coordinators or members "
+"are added or removed on this page."
+msgstr ""
+"Παρακαλούμε σημειώστε ότι δεν θα αποσταλεί ειδοποίηση όταν συντονιστές ή "
+"μέλη προστίθενται ή αφαιρούνται σ´ αυτή τη σελίδα."
+
+#: templates/teams/team_form.html:40
+msgid "Save team"
+msgstr "Αποθήκευση ομάδας"
+
+#: templates/teams/team_form.html:51
+msgid "Delete team from Transifex"
+msgstr "Διαγραφή ομάδας από το Transifex"
+
+#: templates/teams/team_form.html:53
+msgid "Delete team..."
+msgstr "Διαγραφή ομάδας..."
+
+#: templates/teams/team_list.html:18
+msgid "Translation Teams"
+msgstr "Ομάδες Μετάφρασης"
+
+#: templates/teams/team_list.html:32
+msgid "Available teams:"
+msgstr "Διαθέσιμες ομάδες:"
+
+#: templates/teams/team_list.html:50
+msgid "No translation team has been created yet. Why don't you start one?"
+msgstr ""
+"Καμία ομάδα μετάφρασης δεν έχει δημιουργηθεί ακόμα. Γιατί δεν ξεκινάτε μία;"
+
+#: templates/teams/team_list.html:55
+msgid "Create a new team"
+msgstr "Δημιουργία νέας ομάδας"
+
+#: templates/teams/team_list.html:63
+msgid "Requests for new teams:"
+msgstr "Αιτήσεις για νέες ομάδες:"
+
+#: templates/teams/team_list.html:89
+msgid "Request a new translation team for this project"
+msgstr "Αίτηση νέας ομάδας μετάφρασης για αυτό το έργο"
+
+#: templates/teams/team_list.html:89
+msgid "Request a new team"
+msgstr "Αίτηση νέας ομάδας"
+
+#: templates/teams/team_list.html:99
+msgid "Request team"
+msgstr "Αίτηση ομάδας"
+
+#: templates/teams/team_off.html:12
+msgid "This project is not using Translation Teams"
+msgstr "Το έργο αυτό δε χρησιμοποιεί ομάδες μετάφρασης"
+
+#: templates/teams/team_off.html:17
+#, python-format
+msgid ""
+"This project does not maintain its own teams, but has chosen to re-use the "
+"teams of project '<a href=%(outsource_url)s>%(outsource_project)s</a>'. In "
+"order to send translations here you'll need to join a team of "
+"'%(outsource_project)s'."
+msgstr ""
+"Το έργο αυτό δεν διατηρεί δικές τους ομάδες, αλλά έχει επιλεχθεί η "
+"επαναχρησιμοποίηση των ομάδων του έργου '<a href=%(outsource_url)s>"
+"%(outsource_project)s</a>'. Για να στείλετε μεταφράσεις εδώ θα πρέπει να "
+"ενταχθείτε σε μία ομάδα από το '%(outsource_project)s'."
+
+#: templates/teams/team_off.html:19
+msgid ""
+"This project allows translation submission from <em>anyone</em>, and thus no "
+"translation teams exist."
+msgstr ""
+"Το έργο αυτό επιτρέπει την υποβολή μετάφρασης από <em>οποιονδήποτε</em>, και "
+"συνεπώς δεν υπάρχουν ομάδες μετάφρασης."
+
+#: templates/txpermissions/base_permission_form.html:8
+msgid "Give access to a translator to send translations to your project"
+msgstr "Δώστε πρόσβαση σ´ έναν μεταφραστή να στέλνει μεταφράσεις στο έργο σας"
+
+#: templates/txpermissions/permission_delete_form.html:5
+msgid "Revoke permission"
+msgstr "Ανάκληση δικαιώματος"
+
+#: templates/txpermissions/permission_form.html:13
+msgid "Grant permission"
+msgstr "Χορήγηση δικαιώματος"
+
+#: templates/txpermissions/permission_form.html:15
+msgid "Request permission"
+msgstr "Αίτηση δικαιώματος"
+
+#: templates/txpermissions/permission_request_approve_form.html:5
+msgid "Approve request"
+msgstr "Έγκριση αίτησης"
+
+#: templates/txpermissions/permission_request_delete_form.html:6
+msgid "Withdraw request"
+msgstr "Απόσυρση αίτησης"
+
+#: templates/txpermissions/permission_request_delete_form.html:8
+msgid "Deny request"
+msgstr "Απόρριψη αίτησης"
+
+#: templates/userena/activate_fail.html:4
+msgid "Account activation failed."
+msgstr "Αποτυχία ενεργοποίησης λογαριασμού."
+
+#: templates/userena/activate_fail.html:5
+msgid "Your account could not be activated.."
+msgstr "Ο λογαριασμός σας δεν μπόρεσε να ενεργοποιηθεί.."
+
+#: templates/userena/activate_fail.html:8
+msgid ""
+"Your account could not be activated. This could be because your activation "
+"link has aged."
+msgstr ""
+"Ο λογαριασμός σας δεν μπόρεσε να ενεργοποιηθεί. Αυτό μπορεί να συνέβει διότι "
+"ο σύνδεσμος ενεργοποίησής σας έχει λήξει."
+
+#: templates/userena/activate_fail.html:9
+msgid ""
+"Please try signing up again or contact us if you think something went wrong."
+msgstr ""
+"Παρακαλούμε προσπαθήστε να συνδεθείτε ξανά ή επικοινωνήστε μαζί μας αν "
+"πιστεύετε ότι κάποιο λάθος έχει συμβεί."
+
+#: templates/userena/base_userena.html:30
+msgid "Edit profile"
+msgstr "Επεξεργασία προφίλ"
+
+#: templates/userena/base_userena.html:31 templates/userena/email_form.html:14
+#: templates/userena/userena_menu.html:16
+msgid "Change email"
+msgstr "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+
+#: templates/userena/base_userena.html:32
+#: templates/userena/password_form.html:4
+#: templates/userena/password_form.html:15
+#: templates/userena/userena_menu.html:15
+msgid "Change password"
+msgstr "Αλλαγή κωδικού"
+
+#: templates/userena/base_userena.html:35
+msgid "Social login"
+msgstr "Σύνδεση κοινωνικής δικτύωσης"
+
+#: templates/userena/disabled.html:4
+msgid "Disabled account"
+msgstr "Απενεργοποιημένος λογαριασμός"
+
+#: templates/userena/disabled.html:5
+msgid "Your account has been disabled"
+msgstr "Ο λογαριασμός σας έχει απενεργοποιηθεί"
+
+#: templates/userena/disabled.html:7
+msgid "It seems your account has been disabled."
+msgstr "Απ' ό,τι φαίνεται ο λογαριασμός σας έχει απενεργοποιηθεί."
+
+#: templates/userena/disabled.html:8
+msgid ""
+"It is likely that you have created an account but haven't activated it yet. "
+"Please check your e-mail inbox."
+msgstr ""
+"Είναι πιθανό ότι έχετε δημιουργήσει ένα λογαριασμό αλλά δεν τον έχετε "
+"ενεργοποιήσει ακόμα. Παρακαλούμε να ελέγξετε τα εισερχόμενα μηνύματα "
+"ηλεκτρονικού ταχυδρομείου σας."
+
+#: templates/userena/disabled.html:9
+msgid ""
+"If you feel that injustice has been done to you, feel free to contact the "
+"administrators to find out why."
+msgstr ""
+"Εαν πιστεύετε ότι έχετε αδικηθεί, παρακαλούμε να επικοινωνήσετε με τους "
+"διαχειριστές για να εξακριβώσετε την αιτία."
+
+#: templates/userena/email_change_complete.html:4
+msgid "Email verification"
+msgstr "Πιστοποίησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+
+#: templates/userena/email_change_complete.html:5
+msgid "Confirm your new email"
+msgstr "Επιβεβαιώστε τη νέα σας διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
+#: templates/userena/email_change_complete.html:8
+#, python-format
+msgid "You have received an email at %(email)s."
+msgstr ""
+"Έχετε δεχτεί ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη διεύθυνση %(email)s."
+
+#: templates/userena/email_change_complete.html:9
+#, python-format
+msgid ""
+"To associate this email address with your account (%(username)s) click on "
+"the link provided in this email."
+msgstr ""
+"Για να συσχετίσετε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείο με το "
+"λογαριασμό σας (%(username)s), πατήστε στον σύνδεσμο που παρέχεται στο "
+"τρέχον μήνυμα."
+
+#: templates/userena/email_confirm_complete.html:4
+msgid "Email changed!"
+msgstr "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου!"
+
+#: templates/userena/email_confirm_complete.html:6
+msgid "New email"
+msgstr "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
+
+#: templates/userena/email_confirm_complete.html:8
+msgid ""
+"Your new email address is saved. You can continue using userena with this "
+"email."
+msgstr ""
+"Η νέα διεύθυνση ηλεκτρονικού ταχηδρομείου σας αποθηκεύτηκε. Μπορείτε να "
+"συνεχίσετε να χρησιμοποιείτε το σύστημα με αυτήν τη διεύθυνση."
+
+#: templates/userena/email_confirm_fail.html:4
+msgid "Email verification failed."
+msgstr "Αποτυχία επιβεβαίωσης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+
+#: templates/userena/email_confirm_fail.html:5
+msgid "Your email could not be verified.."
+msgstr ""
+"Δεν μπορέσαμε να επιβεβαιώσουμε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας.."
+
+#: templates/userena/email_confirm_fail.html:8
+msgid "Your email could not be verified..."
+msgstr ""
+"Δεν μπορέσαμε να επιβεβαιώσουμε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας..."
+
+#: templates/userena/email_confirm_fail.html:9
+msgid "You could try changing it again in your account settings."
+msgstr ""
+"Θα μπρορούσατε να δοκιμάσετε να την αλλάξετε ξανά στις ρυθμίσεις του "
+"λογαριασμού σας."
+
+#: templates/userena/email_form.html:5
+msgid "Change your email address"
+msgstr "Αλλαγή της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας"
+
+#: templates/userena/password_complete.html:4
+msgid "Password changed"
+msgstr "Αλλαγή κωδικού εισόδου"
+
+#: templates/userena/password_complete.html:5
+msgid "Your password has been changed"
+msgstr "ο κωδικός εισόδου σας άλλαξε"
+
+#: templates/userena/password_complete.html:8
+msgid "From now on you can use your new password to signin"
+msgstr ""
+"Από εδώ και στο εξής θα μπορείτε να χρησιμοποιήσετε το νέο σας κωδικό για να "
+"συνδεθείτε"
+
+#: templates/userena/password_form.html:6
+msgid "Change your password"
+msgstr "Αλλαγή του κωδικού εισόδου σας"
+
+#: templates/userena/password_reset_complete.html:4
+msgid "Password reset"
+msgstr "Επαναφορά κωδικού πρόσβασης"
+
+#: templates/userena/password_reset_complete.html:5
+msgid "Your password has been reset"
+msgstr "Ο κωδικός εισόδου σας επανήλθε"
+
+#: templates/userena/password_reset_complete.html:7
+msgid "You can now "
+msgstr "Μπορείτε τώρα "
+
+#: templates/userena/password_reset_complete.html:7
+msgid "signin"
+msgstr "να συνδεθείτε"
+
+#: templates/userena/password_reset_complete.html:7
+msgid "with your new password."
+msgstr "με τον καινούριο σας κωδικό εισόδου."
+
+#: templates/userena/password_reset_confirm_form.html:4
+#: templates/userena/password_reset_confirm_form.html:13
+#: templates/userena/password_reset_form.html:4
+msgid "Reset password"
+msgstr "Επαναφορά κωδικού εισόδου"
+
+#: templates/userena/password_reset_confirm_form.html:9
+#: templates/userena/password_reset_form.html:16
+msgid "Reset Password"
+msgstr "Επαναφορά Κωδικού Εισόδου"
+
+#: templates/userena/password_reset_done.html:4
+#: templates/userena/password_reset_done.html:5
+msgid "Reset password email is send"
+msgstr "Μήνυμα ηλεκτρονικού ταχυδρομείου για επαναφορά κωδικού εισόδου εστάλη"
+
+#: templates/userena/password_reset_done.html:8
+msgid ""
+"An e-mail has been send to you which explains how to reset your password."
+msgstr ""
+"Ένα μήνυμα ηλεκτρονικού ταχυδρομείου σας εστάλη το οποίο εξηγεί πώς να "
+"επαναφέρετε τον κωδικό εισόδου σας."
+
+#: templates/userena/password_reset_form.html:20
+msgid "Send password"
+msgstr "Αποστολή κωδικού εισόδου"
+
+#: templates/userena/profile_detail.html:11
+msgid "Your mugshot"
+msgstr "Η εικόνα προφίλ σας"
+
+#: templates/userena/profile_detail.html:16
+msgid "Email"
+msgstr "Διεύθυνση ηλεκτρνοικού ταχυδρομείου"
+
+#: templates/userena/profile_detail.html:19
+msgid "Age"
+msgstr "Ηλικία"
+
+#: templates/userena/profile_detail.html:22
+msgid "Website"
+msgstr "Ιστοσελίδα"
+
+#: templates/userena/profile_detail.html:25 templates/userena/public.html:89
+#: txcommon/models.py:50
+msgid "Location"
+msgstr "Τοποθεσία"
+
+#: templates/userena/profile_detail.html:28
+msgid "About me"
+msgstr "Πληροφορίες για μένα"
+
+#: templates/userena/profile_form.html:6
+msgid "Account setup"
+msgstr "Ρύθμιση λογαριασμού"
+
+#: templates/userena/profile_form.html:22
+msgid "Edit Profile"
+msgstr "Επεξεργασία προφίλ"
+
+#: templates/userena/profile_form.html:38
+msgid "Save changes"
+msgstr "Αποθήκευση αλλαγών"
+
+#: templates/userena/profile_list.html:4
+msgid "Profiles"
+msgstr "Προφίλ"
+
+#: templates/userena/profile_list.html:21
+msgid "previous"
+msgstr "προηγούμενο"
+
+#: templates/userena/profile_list.html:25
+#, python-format
+msgid ""
+"\n"
+"      Page %(page)s of %(num_pages)s\n"
+"      "
+msgstr ""
+"\n"
+"      Σελίδα %(page)s από %(num_pages)s\n"
+"      "
+
+#: templates/userena/profile_list.html:31
+msgid "next"
+msgstr "επόμενο"
+
+#: templates/userena/profile_social_settings.html:4
+#: templates/userena/profile_social_settings.html:6
+msgid "Social login settings"
+msgstr "Ρυθμίσεις σύνδεσης κοινωνικής δικτύωσης"
+
+#: templates/userena/profile_social_settings.html:27
+msgid ""
+"Link your Transifex account to any of the providers below and log in without "
+"a username or password."
+msgstr ""
+"Συνδέστε το λογαριασμό σας στο Transifex με οποιονδήποτε από τους παρακάτω "
+"παρόχους και θα μπορείτε να συνδεθείτε χωρίς όνομα χρήστη ή κωδικό."
+
+#: templates/userena/profile_social_settings.html:39
+#: templates/userena/profile_social_settings.html:48
+msgid "Associated"
+msgstr "Έχει συσχετισθεί"
+
+#: templates/userena/profile_social_settings.html:61
+#: templates/userena/profile_social_settings.html:69
+msgid "Associate"
+msgstr "Συσχετισθείτε"
+
+#: templates/userena/public.html:14
+msgid "User feed"
+msgstr "Ροή συμβάντων χρήστη"
+
+#: templates/userena/public.html:43
+#, python-format
+msgid "Nudge %(user)s "
+msgstr "Ειδοποιήστε τον/ην %(user)s "
+
+#: templates/userena/public.html:71
+msgid "Blog/Site"
+msgstr "Ιστολόγιο/Ιστοσελίδα"
+
+#: templates/userena/public.html:77 txcommon/models.py:39
+#: txcommon/migrations/0002_release_06_07.py:23
+#: txcommon/migrations/0004_new_userena_profile.py:84
+msgid "Twitter"
+msgstr "Twitter"
+
+#: templates/userena/public.html:83 txcommon/models.py:38
+#: txcommon/migrations/0002_release_06_07.py:30
+#: txcommon/migrations/0004_new_userena_profile.py:90
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: templates/userena/public.html:102 templates/userena/public.html.py:121
+#, fuzzy
+msgid "Maintainer of the following project"
+msgid_plural "Member of the following projects"
+msgstr[0] "Διαχειριστής του εξής έργου:"
+msgstr[1] "Διαχειριστής των εξής έργων:"
+
+#: templates/userena/public.html:108 templates/userena/public.html.py:127
+#, python-format
+msgid "<a class=\"name\" href=\"%(project_url)s\">%(project_name)s</a>"
+msgstr "<a class=\"name\" href=\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/userena/public.html:141
+#, fuzzy
+msgid "Coordinator of the following team"
+msgid_plural "Coordinator of the following teams"
+msgstr[0] "Συντονιστής στην ακόλουθη ομάδα:"
+msgstr[1] "Συντονιστής στις ακόλουθες ομάδες:"
+
+#: templates/userena/public.html:148 templates/userena/public.html.py:169
+#, python-format
+msgid ""
+"<a class=\"name\" href=\"%(team_url)s\">%(team_name)s</a> team of the <a "
+"class=\"name\" href=\"%(project_url)s\">%(project_name)s</a> project"
+msgstr ""
+"<a class=\"name\" href=\"%(team_url)s\">%(team_name)s</a> ομάδα του έργου <a "
+"class=\"name\" href=\"%(project_url)s\">%(project_name)s</a>"
+
+#: templates/userena/public.html:162
+#, fuzzy
+msgid "Member of the following team"
+msgid_plural "Member of the following teams"
+msgstr[0] "Μέλος στην ακόλουθη ομάδα:"
+msgstr[1] "Μέλη στις ακόλουθες ομάδες:"
+
+#: templates/userena/signin_form.html:14
+msgid "Forgot your password?"
+msgstr "Ξεχάσατε τον κωδικό σας?"
+
+#: templates/userena/signin_form.html:56
+msgid "You can also login using:"
+msgstr "Μπορείτε επίσης να συνδεθείτε χρησιμοποιώντας:"
+
+#: templates/userena/signin_form.html:60
+msgid "Login using Twitter"
+msgstr "Συνδεθείτε χρησιμοποιώντας το Twitter"
+
+#: templates/userena/signin_form.html:61
+msgid "Login using Google"
+msgstr "Συνδεθείτε χρησιμοποιώντας το Google"
+
+#: templates/userena/signin_form.html:62
+msgid "Login using Facebook"
+msgstr "Συνδεθείτε χρησιμοποιώντας το Facebook"
+
+#: templates/userena/signin_form.html:65
+msgid "Not yet a member?"
+msgstr "Δεν είστε ακόμη μέλος?"
+
+#: templates/userena/signin_form.html:65
+msgid "Register now!"
+msgstr "Εγγραφείτε τώρα!"
+
+#: templates/userena/signout.html:4
+msgid "Signed out"
+msgstr "Η αποσύνδεση πραγματοποιήθηκε"
+
+#: templates/userena/signout.html:5
+msgid "You have been signed out"
+msgstr "Έχετε αποσυνδεθεί"
+
+#: templates/userena/signout.html:8
+msgid "You have been signed out. Till we meet again."
+msgstr "Έχετε αποσυνδεθεί. Εις το επανειδείν."
+
+#: templates/userena/signup_complete.html:4
+msgid "Signup almost done!"
+msgstr "Η εγραφή έχει σχεδόν ολοκληρωθεί!"
+
+#: templates/userena/signup_complete.html:6
+msgid "Signup"
+msgstr "Εγγραφή"
+
+#: templates/userena/signup_complete.html:9
+msgid "Thank you for signing up with us!"
+msgstr "Ευχαριστούμε που εγγραφήκατε σε μας!"
+
+#: templates/userena/signup_complete.html:12
+msgid ""
+"You have been send an e-mail with an activation link to the supplied email."
+msgstr ""
+"Σας έχει σταλεί ένα μήνυμα ηλεκτρονικού ταχυδρομείο με σύνδεσμο "
+"ενεργοποίησης στη διεύθηνση που μας παρείχατε"
+
+#: templates/userena/signup_complete.html:13
+#, python-format
+msgid ""
+"We will store your signup information for %(userena_activation_days)s days "
+"on our server. "
+msgstr ""
+"Θα αποθηκεύσουμε τις πληροφορίες εγγραφής σας για "
+"%(userena_activation_days)s μέρες στον εξυπηρετητή μας. "
+
+#: templates/userena/signup_complete.html:15
+msgid "You can now use the supplied credentials to signin."
+msgstr ""
+"Μπορείτε τώρα να χρησιμοποιήσετε τα παρεχόμενα αναγνωρηστικά για να "
+"συνδεθείτε."
+
+#: templates/userena/signup_form.html:41
+msgid "Credentials"
+msgstr ""
+
+#: templates/userena/signup_form.html:42 templates/userena/signup_form.html:55
+msgid "Billing information"
+msgstr ""
+
+#: templates/userena/signup_form.html:87
+#, fuzzy
+msgid "Sign up"
+msgstr "Εγγραφή"
+
+#: templates/userena/userena_menu.html:13
+msgid "View profile"
+msgstr "Προβολή προφίλ"
+
+#: templates/userena/userena_menu.html:14
+msgid "Edit details"
+msgstr "Επεξεργασία λεπτομερειών"
+
+#: txcommon/admin.py:10
+msgid ""
+"Required. 30 characters or fewer. Unicode alphanumeric characters only "
+"(letters, digits and underscores)."
+msgstr ""
+"Απαιτούμενο. 30 χαρακτήρες ή λιγότεροι. Αλφαριθμητικοί unicode χαρακτήρες "
+"μόνο (γράμματα, αριθμοί και κάτω παύλες)."
+
+#: txcommon/admin.py:13
+msgid "This value must contain only unicode letters, numbers and underscores."
+msgstr ""
+"Η τιμή αυτή πρέπει να περιέχει μόνο unicode γράμματα, αριθμούς και κάτω "
+"παύλες."
+
+#: txcommon/feeds.py:29
+#, python-format
+msgid "Recent activities by %(user)s"
+msgstr "Πρόσφατη δραστηριότητα του %(user)s"
+
+#: txcommon/feeds.py:32
+#, python-format
+msgid "Recent activities by user %s."
+msgstr "Πρόσφατη δραστηριότητα του χρήστη %s."
+
+#: txcommon/feeds.py:58
+msgid "None"
+msgstr "Κενός"
+
+#: txcommon/models.py:30
+msgid "user"
+msgstr "χρήστης"
+
+#: txcommon/models.py:35
+msgid "Interested in"
+msgstr ""
+
+#: txcommon/models.py:36
+msgid "Tags you may be interested in."
+msgstr ""
+
+#: txcommon/models.py:37 txcommon/migrations/0002_release_06_07.py:27
+#: txcommon/migrations/0004_new_userena_profile.py:93
+msgid "Blog"
+msgstr "Ιστολόγιο"
+
+#: txcommon/models.py:40 txcommon/migrations/0002_release_06_07.py:19
+#: txcommon/migrations/0004_new_userena_profile.py:81
+msgid "About yourself"
+msgstr "Σχετικά με τον εαυτό σας"
+
+#: txcommon/models.py:42
+msgid "Short description of yourself (140 chars)."
+msgstr "Σύντομη περιγραφή του εαυτού σας (140 χαρακτήρες)."
+
+#: txcommon/models.py:43 txcommon/migrations/0002_release_06_07.py:18
+#: txcommon/migrations/0004_new_userena_profile.py:78
+msgid "Looking for work?"
+msgstr "Αναζήτηση για εργασία;"
+
+#: txcommon/notifications.py:12
+msgid "New project created"
+msgstr "Δημιουργία νέου έργου"
+
+#: txcommon/notifications.py:13
+msgid "when a new project is created"
+msgstr "όταν ένα νέο έργο έχει δημιουργηθεί"
+
+#: txcommon/notifications.py:19
+msgid "Project modified"
+msgstr "Μεταβολή έργου"
+
+#: txcommon/notifications.py:20
+msgid "when a project is changed"
+msgstr "όταν ένα έργο έχει αλλάξει"
+
+#: txcommon/notifications.py:26
+msgid "Project deleted"
+msgstr "Διαγραφή έργου"
+
+#: txcommon/notifications.py:27
+msgid "when a project is deleted"
+msgstr "όταν ένα έργο έχει διαγραφεί"
+
+#: txcommon/notifications.py:33
+msgid "Requested submit access to project"
+msgstr "Αίτηση πρόσβασης υποβολής σε έργο"
+
+#: txcommon/notifications.py:34
+msgid "when a user request access to submit files to a project"
+msgstr "όταν ένας χρήστης ζητά πρόσβαση για την υποβολή αρχείων σε ένα έργο"
+
+#: txcommon/notifications.py:41
+msgid "Denied submit access to project"
+msgstr "Άρνηση αίτησης πρόσβασης υποβολής σε έργο"
+
+#: txcommon/notifications.py:42
+msgid "when a maintainer denies a user access to submit files to a project"
+msgstr ""
+"όταν ένας συντηρητής δεν επιτρέπει την πρόσβαση ενός χρήστη για την υποβολή "
+"αρχείων σε ένα έργο"
+
+#: txcommon/notifications.py:49
+msgid "Withdrew request for submit access to project"
+msgstr "Απόσυρση αίτησης πρόσβασης υποβολής σε έργο"
+
+#: txcommon/notifications.py:50
+msgid ""
+"when a user withdraws the request for access to submit files to a project"
+msgstr ""
+"όταν ένας χρήστης αποσύρει την αίτηση για πρόσβαση για την υποβολή αρχείων "
+"σε ένα έργο"
+
+#: txcommon/notifications.py:57
+msgid "Granted submit access to project"
+msgstr "Αποδοχή αίτησης πρόσβασης υποβολής σε έργο"
+
+#: txcommon/notifications.py:58
+msgid "when a maintainer grants a user access to submit files to a project"
+msgstr ""
+"όταν ένας συντηρητής χορηγεί σε ένα χρήστη την πρόσβαση για την υποβολή "
+"αρχείων σε ένα έργο"
+
+#: txcommon/notifications.py:65
+msgid "Revoked submit access to project"
+msgstr "Ανάκληση πρόσβασης υποβολής σε έργο"
+
+#: txcommon/notifications.py:66
+msgid ""
+"when a maintainer revokes the access of an user to submit files to a project"
+msgstr ""
+"όταν ένας συντηρητής ανακαλεί την πρόσβαση ενός χρήστη για την υποβολή "
+"αρχείων σε ένα έργο"
+
+#: txcommon/notifications.py:76
+msgid "Release added to project"
+msgstr "Προσθήκη έκδοσης σε έργο"
+
+#: txcommon/notifications.py:77
+msgid "when a release is added to a project"
+msgstr "όταν μια έκδοση προστίθεται σε ένα έργο"
+
+#: txcommon/notifications.py:83
+msgid "Release modified"
+msgstr "Μεταβολή έκδοσης"
+
+#: txcommon/notifications.py:84
+msgid "when a release of a project is modified"
+msgstr "όταν μια έκδοση ενός έργου έχει μεταβληθεί"
+
+#: txcommon/notifications.py:89
+msgid "Release deleted"
+msgstr "Διαγραφή έκδοσης"
+
+#: txcommon/notifications.py:90
+msgid "when a release of a project is deleted"
+msgstr "όταν μια έκδοση ενός έργου διαγράφεται"
+
+#: txcommon/notifications.py:95
+msgid "Release about to enter the string freeze period"
+msgstr "Έκδοση πρόκειται να μπει σε περίοδο παγώματος αλφαριθμητικών"
+
+#: txcommon/notifications.py:96
+msgid "when a release of a project is about to enter the String Freeze period"
+msgstr ""
+"όταν μια έκδοση ενός έργου πρόκειται να μπε σε περίοδο Παγώματος "
+"Αλφαριθμητικών"
+
+#: txcommon/notifications.py:102
+msgid "Release is in string freeze period"
+msgstr "Έκδοση είναι σε περίοδο παγώματος αλφαριθμητικών"
+
+#: txcommon/notifications.py:103
+msgid "when a release of a project is on enter the String Freeze period"
+msgstr "όταν μια έκδοση ενός έργου είναι σε περίοδο Παγώματος Αλφαριθμητικών"
+
+#: txcommon/notifications.py:109
+msgid "Release about to hit the translation deadline"
+msgstr "Έκδοση πρόκειται να φτάσει στη διορία μεταφράσεων"
+
+#: txcommon/notifications.py:110
+msgid ""
+"when a release of a project is about to hit the Translation Deadline date"
+msgstr "όταν μια έκδοση ενός έργου πρόκειται να φτάσει στη Διορία Μεταφράσεων"
+
+#: txcommon/notifications.py:116
+msgid "Release has hit the translation deadline"
+msgstr "Έκδοση έχει φτάσει στη διορία μεταφράσεων"
+
+#: txcommon/notifications.py:117
+msgid "when a release of a project hits the Translation Deadline date"
+msgstr "όταν μια έκδοση ενός έργου φτάνει στη Διορία Μεταφράσεων"
+
+#: txcommon/notifications.py:123
+msgid "Release string freeze breakage"
+msgstr "Σπάσιμο παγώματος αλφαριθμητικών έκδοσης"
+
+#: txcommon/notifications.py:124
+msgid "when a release of a project has a string freeze breakage"
+msgstr "όταν μια έκδοση ενός έργου έχει ένα σπάσιμο παγώματος αλφαρηθμιτικών"
+
+#: txcommon/notifications.py:134
+msgid "New team created"
+msgstr "Δημιουργήθηκε καινούρια ομάδα"
+
+#: txcommon/notifications.py:135
+msgid "when a new translation team is added to a project"
+msgstr "όταν μια νέα ομάδα μετάφρασης προστίθεται σε ένα έργο"
+
+#: txcommon/notifications.py:142
+msgid "Team modified"
+msgstr "Η ομάδα μεταβλήθηκε"
+
+#: txcommon/notifications.py:143
+msgid "when a translation team of a project is modified"
+msgstr "όταν μια ομάδα μεταφράσεων ενός έργου έχει μεταβληθεί"
+
+#: txcommon/notifications.py:150
+msgid "Team removed"
+msgstr "Η ομάδα αφαιρέθηκε"
+
+#: txcommon/notifications.py:151
+msgid "when a translation team of a project is removed"
+msgstr "όταν μια ομάδα μεταφράσεων ενός έργου έχει αφαιρεθεί"
+
+#: txcommon/notifications.py:158
+msgid "Requested team creation"
+msgstr "Ζητήθηκε δημιουργία ομάδας"
+
+#: txcommon/notifications.py:159
+msgid "when the creation of a translation team is requested for a project"
+msgstr "όταν έχει ζητηθεί δημιουργία ομάδας μεταφράσεων για ένα έργο"
+
+#: txcommon/notifications.py:166
+msgid "Denied request for team creation"
+msgstr "Άρνηση αίτησης για δημιουργία ομάδας"
+
+#: txcommon/notifications.py:167
+msgid ""
+"when the creation of a translation team for a project is denied by a "
+"maintainer"
+msgstr "όταν ένας διαχειριστής έργου αρνείται τη δημιουργία ομάδας μεταφράσεων"
+
+#: txcommon/notifications.py:174
+msgid "Requested to join translation team"
+msgstr "Αίτηση συμμετοχής σε ομάδα μεταφράσεων"
+
+#: txcommon/notifications.py:175
+msgid "when a user requests to join a project translation team"
+msgstr ""
+"όταν ένας χρήστης ζητά να συμμετάσχει σε μια ομάδα μετάφρασης ενός έργου"
+
+#: txcommon/notifications.py:182
+msgid "Approved to join translation team"
+msgstr "Αποδοχή συμμετοχής σε ομάδα μεταφράσεων"
+
+#: txcommon/notifications.py:183
+msgid "when a user is approved as a member of a project translation team"
+msgstr ""
+"όταν ένας χρήστης έχει εγκριθεί ως μέλος μιας ομάδας μετάφρασης ενός έργου"
+
+#: txcommon/notifications.py:190
+msgid "Denied to join translation team"
+msgstr "Άρνηση συμμετοχής σε ομάδα"
+
+#: txcommon/notifications.py:191
+msgid "when a user is denied as a member of a project translation team"
+msgstr ""
+"όταν ένας χρήστης απορρίπτεται ως μέλος μιας ομάδας μετάφρασης ενός έργου"
+
+#: txcommon/notifications.py:198
+msgid "Withdrew request to join team"
+msgstr "Απόσυρση αίτησης συμμετοχής σε ομάδα"
+
+#: txcommon/notifications.py:199
+msgid "when a user decides not to join a project translation team"
+msgstr ""
+"όταν ένας χρήστης αποφασίζει να μη συμμετάσχει σε μία ομάδα μετάφρασης ενός "
+"έργου"
+
+#: txcommon/notifications.py:206
+msgid "User left translation team"
+msgstr "Ο χρήστης έφυγε από ομάδα μετάφρασης"
+
+#: txcommon/notifications.py:207
+msgid "when a user leaves a project translation team"
+msgstr "όταν ένας χρήστης αποχωρεί από μία ομάδα μετάφρασης ενός έργου"
+
+#: txcommon/notifications.py:217
+msgid "Weekly project report for maintainers"
+msgstr "Εβδομαδιαία αναφορά έργου για τους συντηρητές"
+
+#: txcommon/notifications.py:218
+msgid "when you receive the weekly report of projects that you maintain."
+msgstr "όταν λαμβάνετε την εβδομαδιαία αναφορά των έργων που συντηρείτε."
+
+#: txcommon/notifications.py:225
+msgid "User nudge"
+msgstr "Σκούντηγμα χρήστη"
+
+#: txcommon/notifications.py:226
+msgid "when a user nudges you"
+msgstr "όταν ένας χρήστης σας ειδοποιεί"
+
+#: txcommon/notifications.py:235
+msgid "Resource created"
+msgstr "Δημιουργήθηκε πόρος"
+
+#: txcommon/notifications.py:236
+msgid "when a new resource is added to a project"
+msgstr "όταν ένας νέος πόρος προστίθεται σε ένα έργο"
+
+#: txcommon/notifications.py:242
+msgid "Resource modified"
+msgstr "Μεταβλήθηκε πόρος"
+
+#: txcommon/notifications.py:243
+msgid "when a resource of a project is changed"
+msgstr "όταν ένας πόρος ενός έργου αλλάζει"
+
+#: txcommon/notifications.py:249
+msgid "Resource deleted"
+msgstr "Διεγράφη πόρος"
+
+#: txcommon/notifications.py:250
+msgid "when a resource of a project is deleted"
+msgstr "όταν ένας πόρος ενός έργου διαγράφεται"
+
+#: txcommon/notifications.py:256
+msgid "Resource translated"
+msgstr "Μεταφράστηκε πόρος"
+
+#: txcommon/notifications.py:257
+msgid "when a translation is sent to a project resource"
+msgstr "όταν μία μετάφραση έχει αποσταλεί σε ένα πόρο ενός έργου"
+
+#: txcommon/notifications.py:264
+msgid "Resource translation updated"
+msgstr "Ανανεώθηκαν μεταφράσεις πόρους"
+
+#: txcommon/notifications.py:265
+msgid "when a resource translation you are watching changes"
+msgstr "όταν ένας πόρος μετάφρασης που παρακολουθείτε άλλαξε"
+
+#: txcommon/views.py:124
+msgid "You can't re-nudge the same user in a short amount of time."
+msgstr ""
+"Δεν μπορείτε να ξαναστείλετε ειδοποίηση στον ίδιο χρήστη σε ένα σύντομο "
+"χρονικό διάστημα."
+
+#: txcommon/views.py:126
+msgid "You can't nudge yourself."
+msgstr "Δεν μπορείτε να στείλετε ειδοποίηση στον εαυτό σας."
+
+#: txcommon/views.py:132
+#, python-format
+msgid "You have nudged '%s'."
+msgstr "Ειδοποιήσατε τον/ην '%s'."
+
+#: txcommon/db/models.py:84
+msgid "Enter 0 or more comma-separated integers in parentheses."
+msgstr ""
+"ΕΙσάγετε 0 ή περισσότερους ακέραιους χωρισμένους με κόμμα στις παρενθέσεις."
+
+#: txcommon/db/models.py:86
+msgid "You must enter at least a pair of parentheses containing nothing."
+msgstr ""
+"Πρέπει να εισάγετε τουλάχιστον ένα ζευγάρι παρενθέσεων που να μην περιέχει "
+"τίποτα."
+
+#: txcommon/migrations/0002_release_06_07.py:20
+#: txcommon/migrations/0004_new_userena_profile.py:60
+msgid "Surname"
+msgstr "Επίθετο"
+
+#: txcommon/migrations/0002_release_06_07.py:21
+#: txcommon/migrations/0004_new_userena_profile.py:63
+msgid "First name"
+msgstr "Όνομα"
+
+#: txcommon/migrations/0002_release_06_07.py:24
+msgid "Native Language"
+msgstr "Μητρική Γλώσσα"
+
+#: txcommon/templatetags/avatars.py:109
+msgid ""
+"You have to provide only the size as an integer (both sides will be equal) "
+"and optionally, the username."
+msgstr ""
+"Πρέπει να προσδιορίσετε μόνο το μέγεθος σαν ακέραιο (και οι δύο πλευρές θα "
+"είναι ίσες) και, προαιρετικά, το όνομα χρήστη."
+
+#: txcommon/templatetags/txcommontags.py:79
+msgid "Home"
+msgstr "Αρχική"
+
+#: txpermissions/views.py:94
+msgid "You added a permission."
+msgstr "Προσθέσατε ένα δικαίωμα."
+
+#: txpermissions/views.py:96
+msgid "You added a permission request."
+msgstr "Προσθέσατε μία αίτηση δικαιώματος."
+
+#: txpermissions/views.py:133
+msgid "You approved the permission request."
+msgstr "Εγκρίνατε την αίτηση δικαιώματος."
+
+#: txpermissions/views.py:151
+msgid "You removed the permission."
+msgstr "Αφαιρέσατε το δικαίωμα."
+
+#: txpermissions/views.py:153
+msgid "You removed the permission request."
+msgstr "Αφαιρέσατε την αίτηση δικαιώματος."
+
+#~ msgid "The expression '%s' is not present in thetranslation."
+#~ msgstr "Η έκφραση '%s' δεν είναι παρούσα στη μετάφραση."
+
+#~ msgid "The expression '%s' is not present in the source string."
+#~ msgstr "Η έκφραση '%s' δεν είναι παρούσα στην πηγαία συμβολοσειρά."
+
+#~ msgid "Native language"
+#~ msgstr "Μητρική γλώσσα"

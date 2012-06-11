@@ -1,0 +1,5 @@
+{{ object.slug }}
+{{ object.name }}
+{{ object.description }}
+{{ object.long_description }}
+{{ object.bug_tracker }}

@@ -1,0 +1,58 @@
+{% extends "projects/base.html" %}
+{% load i18n %}
+{% load txcommontags %}
+
+{% block extra_head %}
+  <script type="text/javascript" src="/admin/jsi18n/"></script>
+  <script type="text/javascript" src="/media/admin/js/core.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.autocomplete.js"></script>
+  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/jquery.autocomplete.css" />
+ {{ form.media }}
+{% endblock %}
+
+{% block title %}
+  {% if not release %}{{ block.super }} | {% trans "Add a release" %}
+  {% else %}{{ block.super }} | {% blocktrans with release.name as release_name %}Edit {{ release_name}}{% endblocktrans %}{% endif %}
+{% endblock %}
+
+{% block breadcrumb %}
+  {% if not release %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project }}</a> &raquo; {% trans "Add a release" %}
+  {% else %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project }}</a> &raquo; {% blocktrans with release.name as release_name %}Edit <em>{{ release_name}}</em> release{% endblocktrans %}{% endif %}
+{% endblock %}
+
+{% block content_title %}
+  {% if not release %}
+    <h2 class="pagetitle">{% trans "Add a release" %}</h2>
+  {% else %}
+    <h2 class="pagetitle">
+      {% blocktrans with release.name as release_name and release.get_absolute_url as release_url %}Editing Release '<a href="{{ release_url }}">{{ release_name }}</a>'{% endblocktrans %}
+    </h2>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="release_create generic_form">
+  {% if form_message %}
+    <p class="message i16 bell">{{ form_message }}</p>
+  {% endif %}
+  <form action='' method='post'>{% csrf_token %}
+  <table>
+  <tbody>
+    {% form_as_table_rows form %}
+  </tbody>
+  </table>
+  <p class="submit"><input type="submit" class="i16 submit buttonized" value="{% trans "Save release" %}" /></p>
+  </form>
+  </div>
+
+{% if release %}  
+	{% if perms.projects.delete_release or is_maintainer %}
+	
+	<h3>{% trans "Delete release from Transifex" %}</h3>
+	<div>
+	  <a class="i16 delete buttonized buttonized_warning" href="{% url release_delete release.project.slug release.slug %}">{% trans "Delete release..." %}</a>
+	</div>
+	{% endif %}
+{% endif %}
+
+{% endblock %}

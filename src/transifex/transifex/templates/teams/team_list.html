@@ -1,0 +1,111 @@
+{% extends "projects/project_menu.html" %}
+{% load i18n %}
+{% load txcommontags %}
+{% load permissions %}
+{% load txpermissions %}
+{% load statistics_resources %}
+
+{% block extra_head %}
+{{ block.super }}
+<script type="text/javascript">
+  $(function(){
+    $("form.submit_form").hide();
+    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+   })
+</script>
+{% endblock %}
+
+{% block title %}{{ block.super }} | {{ project.name }} | {% trans "Translation Teams" %}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project.name }}</a> &raquo; {% trans "Teams" %}{% endblock %}
+
+{% block content_main %}
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+
+<div class="obj_bigdetails">
+
+<div class="project_create generic_form">
+
+{% with project.team_set.all|dictsort:"language.name" as teams %}
+{% if teams %}
+<div class="list">
+<h4>{% trans "Available teams:" %}</h4>
+<ul>
+{% for team in teams %}
+    <li class="i16 team">
+        <a class="name" href="{% url team_detail team.project.slug team.language.code %}">{{ team.language.name }}</a>
+          <span class="details">- {% blocktrans count team.coordinators.all|length as counter %}Coordinator:{% plural %}Coordinators:{% endblocktrans %}
+            {% for c in team.coordinators.all %}
+              <a href="{% url profile_public c.username %}">
+                <img class="border" width="16" height="16" src="{{ c.profile.get_mugshot_url }}" style="vertical-align:bottom"/>
+                {{c}}
+              </a> {% if not forloop.last %},{% endif %}
+            {% endfor %}
+          </span>
+    </li>
+{% endfor %}
+</ul>
+</div>
+{% else %}
+<p>{% trans "No translation team has been created yet. Why don't you start one?" %}</p>
+{% endif %}
+
+{% if perms.projects.change_team or is_maintainer %}
+<div class="addteam" style="text-align: center;">
+    <a class="i16 buttonized add" href="{% url team_create project.slug %}">{% trans "Create a new team" %}</a>
+</div>
+{% endif %}
+
+
+{% with project.teamrequest_set.all|dictsort:"language.name" as teamrequests %}
+{% if teamrequests %}
+<div class="list">
+<h4>{% trans "Requests for new teams:" %}</h4>
+<ul>
+{% for teamrequest in teamrequests %}
+    <li class="i16 team_request">
+        <span class="name notice">{{ teamrequest.language.name }}</span>
+        <span class="details">- Requester: <a href="{% url profile_public teamrequest.user.username %}">{{ teamrequest.user.username }}</a></span>
+
+        {% if is_maintainer %}
+        <form class="microform" method="post" action="{% url team_request_deny teamrequest.project.slug teamrequest.language.code %}">{% csrf_token %}
+            <input name="team_request_deny" class="i16 delete buttonized" type="submit" value="{% trans "Deny" %}"/>
+        </form>
+        <form class="microform" method="post" action="{% url team_request_approve teamrequest.project.slug teamrequest.language.code %}">{% csrf_token %}
+            <input name="team_request_approve" class="i16 submit buttonized" type="submit" value="{% trans "Approve" %}"/>
+        </form>
+        {% endif %}
+
+    </li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+{% endwith %}
+
+
+{% if team_request_form %}
+{% if request.user.is_authenticated and not is_maintainer %}
+<span class="i16 add submit_button buttonized" title="{% trans "Request a new translation team for this project" %}">{% trans "Request a new team" %}</span>
+<form method="post" enctype="multipart/form-data" action="{% url team_request project.slug %}" class="add-permission microform submit_form">{% csrf_token %}
+  <fieldset style="margin-top: 1em;">
+   <legend>Request a new translation team</legend>
+    <table>
+        <tbody>
+        {% form_as_table_rows team_request_form %}
+        </tbody>
+    </table>
+    <p class="submit">
+        <input name="team_request" class="i16 submit buttonized" type="submit" value="{% trans "Request team" %}"/>
+    </p>
+   </fieldset>
+</form>
+{% endif %}
+{% endif %}
+{% endwith %}
+</div>
+
+
+</div>
+{% endblock %}
+

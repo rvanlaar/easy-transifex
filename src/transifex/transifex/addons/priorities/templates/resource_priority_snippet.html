@@ -1,0 +1,4 @@
+{% load i18n %}
+
+<span class="priority_sort nodisplay">{{ priority.level }}</span>
+<img src="{{ STATIC_URL }}priorities/images/{{ priority.display_level }}.png" class="noborder" title="{{ priority.display_level }}"/>

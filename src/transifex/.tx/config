@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.net
+
+[transifex.txo]
+file_filter = transifex/locale/<lang>/LC_MESSAGES/django.po
+source_file = transifex/locale/en/LC_MESSAGES/django.po
+source_lang = en

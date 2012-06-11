@@ -1,0 +1,78 @@
+{% extends "projects/project_settings.html" %}
+{% load i18n %}
+{% load pagination_tags %}
+{% load txcommontags %}
+{% load permissions %}
+{% load txpermissions %}
+
+{% block title %}{{ block.super }} | {{ project.name }} | {% trans "Access Control" %}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project.name }}</a> &raquo; {% trans "Access Control" %}{% endblock %}
+
+
+
+
+{% block content_title %}
+  <h2 class="pagetitle with_description">{% trans "Access Control" %}</h2>
+   
+   <div class="description">
+	<p>{% trans "Manage how people can have submission access to your project" %}</p>
+</div> 
+
+{% endblock %}
+
+
+{% block project_settings_content %}
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+
+<div class="project_create generic_form">
+
+{% if is_maintainer %}
+{% with project_access_control_form as form %}
+
+  <div class="separate">
+    <form name="access_control" action='{% url project_access_control_edit project.slug %}' method='post' class="microform">{% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.path }}"/>
+    <table class="access_control">
+        <tbody>
+
+            {% if form.non_field_errors %}
+                <ul class="fielderrors">{{ form.non_field_errors }}</ul>
+            {% endif %}
+
+            <tr id="{{ form.access_control.name }}" >
+                <td class="fieldp" colspan="3">
+                {{ form.access_control }}
+                {% if form.access_control.errors %}<p class="fielderrors">{% for error in form.access_control.errors %}{{ error }}{% endfor %}</p>{% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.outsource.name }}">
+                <th class="outsource">{{ form.outsource.label }}: <span class="required">*</span></th>
+                <td>
+                {{ form.outsource }}
+                {% if form.outsource.errors %}<p class="fielderrors">{% for error in form.outsource.errors %}{{ error }}{% endfor %}</p>{% endif %}
+                </td>
+                <td><p class="helptext">{{ form.outsource.help_text|safe }}</p></td>
+            </tr>
+
+        </tbody>
+    </table>
+{% if not project.anyone_submit and not project.outsource %}
+   <div class="editlinks">
+        <a class="i16 user" href="{% url project_add_permission project.slug %}">{% trans "Go to the project writers page." %}</a>
+   </div>
+{% endif %}
+    <p class="submit">
+    	<input type="submit" class="i16 submit buttonized" name="submit_access_control" value="{% trans "Save Access Control Settings" %}" />
+    </p>
+    </form>
+  </div>
+{% endwith %}
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}
+

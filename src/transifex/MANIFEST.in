@@ -1,0 +1,34 @@
+
+# Templates
+recursive-include transifex/templates *.html *.txt *.tmpl
+recursive-include transifex/*/templates *.html *.txt *.tmpl
+
+# Settings
+recursive-include transifex/settings *.conf *.conf.sample
+exclude transifex/settings/*-local.conf
+
+# Media
+recursive-include transifex/static/ *.js *.css *.png *.jpg *.gif *.ico
+
+# Fixtures
+recursive-include transifex/*/fixtures *.json
+
+# Addons
+recursive-include transifex/addons/*/templates *.html *.txt *.tmpl
+recursive-include transifex/addons/*/settings *.conf *.conf.sample
+recursive-include transifex/addons/*/static *.js *.css *.png *.jpg *.gif *.ico
+recursive-include transifex/addons/*/fixtures *.json
+
+# Translations
+include transifex/locale/LINGUAS
+recursive-include transifex/locale *.po
+
+# Docs
+include LICENSE README
+recursive-include docs *.txt README
+graft docs/html
+
+# Other
+include bootstrap.py buildout.cfg
+recursive-include build-tools *
+

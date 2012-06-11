@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load pagination_tags %}
+{% load search_filters %}
+{% load resources_common_tags %}
+
+{% block extracss %}
+<link media="screen" href="{{ STATIC_URL }}trans_memory/css/search_translation.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block title %}{{ block.super }} | {% trans "Search Translations" %}{% endblock %}
+
+{% block body_class %}search project_list{% endblock %}
+
+{% block content_title %}
+  <h2 class="pagetitle">
+    {% trans "Search Translations" %} {% if translations.count %}<sup>({{ translations.count }})</sup> {% endif %}
+  </h2>
+{% endblock %}
+
+{% block content %}
+
+<fieldset>
+{% include "search_translation_form.html" %}
+</fieldset>
+
+{% autopaginate translations 25 %}
+
+{% if query %}
+  {% if translations %}
+    <div class="project_list">
+    {% for translation in translations %}
+
+      {% with translation.language as translation_language %}
+
+      {% ifchanged translation_language %}
+        <h3>
+          {% blocktrans with source_language as source_language %}{{ source_language }} &rarr; {{ translation_language }}{% endblocktrans %}
+        </h3>
+      {% endifchanged %}
+
+      <div class="entry">
+        {% with translation.source_entity as source_entity %}
+
+        {% highlight terms as source_highlighted %}
+          {{ source_entity|entity_translation:source_language }}
+        {% endhighlight %}
+
+        <p class="i16 text" title="{% trans "Source string" %}">{{ source_highlighted.highlighted }}</p>
+        <p class="i16 comment" title="{% trans "Translation" %}">{{ translation.string }}</p>
+
+        {% if source_entity.description %}
+        <p class="long_description"><span>{% trans "Description:"</span>{{ source_entity.string }}</p>
+        {% endif %}
+
+        {% with source_entity.resource as resource %}
+        <p class="long_description">
+          <span>{% trans "Location:" %}</span>
+          <a href="{{ resource.project.get_absolute_url}}">{{ resource.project }}</a> &raquo;
+          <a href="{{ resource.get_absolute_url}}">{{ resource.name }}</a>
+        </p>
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+      </div>
+    {% endfor %}
+
+    </div>
+  {% else %}
+      {% trans "Tough luck! No translations obtained." %}
+  {% endif %}
+{% endif %}
+
+<div class="pagination top">{% paginate %}</div>
+
+
+{% endblock %}
+
+{% block content_footer %}
+{% endblock %}

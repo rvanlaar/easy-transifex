@@ -1,0 +1,138 @@
+{% extends "projects/project_menu.html" %}
+{% load i18n %}
+{% load markup %}
+{% load addons %}
+{% load txcommontags %}
+{% load watches_tags %}
+{% load permissions %}
+{% load upload_manager_tags %}
+{% load tx_action_log %}
+
+
+{% block body_class %}{{ block.super }} project_detail{% endblock %}
+
+{% block title %}{{ block.super }} | {{ project.name }}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; {{ project.name }}{% endblock %}
+
+
+{% block content_main %}
+
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+  <div class="obj_bigdetails">
+
+
+  <div class="details clearfix">
+  
+  <div class="separate-header notopmargin clearfix" style="margin-top:0;">
+  	<h3  class="sh-label">{% blocktrans %}Details{% endblocktrans %}</h3>
+  	{% if request.user.is_authenticated %}
+	    {% url notification.views.notices as notices_url %}
+	    {% if notices_url %}
+	      <div class="separate-buttons"><a class="nude-button">{% watch_toggle project %}</a></div>
+	    {% endif %}
+		{% endif %}
+	</div>
+	
+
+    
+  <dl class="definition clearfix">
+    {% if project.homepage %}
+      <dt class="homepage i16">{% trans "Homepage:" %}</dt>
+      <dd><a title="{% blocktrans with project.name as project_name %}Homepage for {{ project_name }}{% endblocktrans %}" href="{{ project.homepage }}" target="_blank" >{{ project.homepage }}</a></dd>
+
+    {% endif %}
+    {% if project.bug_tracker %}
+      <dt class="bug i16">{% trans "Bug tracker:" %}</dt>
+      <dd class="hideover"><a title="{% blocktrans with project.name as project_name %}Bug tracker for {{ project_name }}{% endblocktrans %}" href="{{ project.bug_tracker }}" target="_blank" >{{ project.bug_tracker }}</a></dd>
+    {% endif %}
+    {% if project.tags %}
+      	<dt class="i16 tag">{% trans "Tags:" %}</dt>
+      	<dd class="compact hideover">
+        {% for tag in project.tagsobj.all|slice:"0:6" %}<a class="tag" href="{% url project_tag_list tag=tag %}">{{ tag }}</a> {% endfor %}
+	      </dd>
+    {% endif %}
+
+    {% with project.trans_instructions as instructions_url %}
+    {% if instructions_url %}
+      <dt class="help i16">{% trans "Documentation:" %}</dt>
+      <dd><a title="{% trans "Documentation of the translation procedure of this project" %}" href="{{ instructions_url }}" target="_blank">{% trans "Translation help pages" %}</a></dd>
+    {% endif %}
+    {% endwith %}
+
+    {% hook "additional_project_details.html" %}
+
+    {% with project.maintainers.all as maintainers %}
+    {% if maintainers %}
+	      <dt class="i16 maintainer">{% blocktrans count maintainers|length as counter %}Maintainer:{% plural %}Maintainers:{% endblocktrans %}</dt>
+	      <dd>
+	        {% for m in maintainers|slice:"0:6" %}
+	        <div class="maintainer-detail">
+	          <img class="border" width="16" height="16" src="{{ m.profile.get_mugshot_url }}" style="vertical-align:middle"/>
+	          <a href="{% url profile_public m.username %}">{{m.username}}</a>
+	        </div>
+	        {% endfor %}
+	      </dd>
+    {% endif %}
+    {% endwith %}
+
+</dl>
+
+  {% with project.long_description_html as long_desc %}
+  {% if long_desc %}
+  <div class="long_description">
+    {{ long_desc|truncatewords_html:"100"|safe }}
+  </div>
+  {% endif %}
+  {% endwith %}
+	
+</div>
+
+{% if project.resources.count or not project.releases.count %}
+
+  {% include "projects/resource_list.html" %}
+  {% hook "project.html" overview_top %}
+  {% include "projects/release_list.html" %}
+
+{% else %}
+
+  {% include "projects/release_list.html" %}
+  {% include "projects/resource_list.html" %}
+  {% hook "project.html" overview_top %}
+
+{% endif %}
+
+</div>
+
+<div id="project-history">
+	
+	<div class="separate-header clearfix">
+  	<h3  class="sh-label notopmargin">{% trans 'History' %}</h3>
+	</div>
+	
+	{% get_log 10 as action_log for_object project %}
+	{% if not action_log %}
+	
+	<p class="i16 infomsg">{% trans 'No history recorded yet.' %}</p>
+	
+	{% else %}
+	
+	<ul class="actionlist simple">
+	{% for entry in action_log %}
+	<li class="i16 actionlog">
+	    {{ entry.message|safe }} by {{ entry.user }}. <span class="timestamp">{{ entry.action_time|timesince }} ago.</span>
+	</li>
+	{% endfor %}
+	</ul>
+	{% hook "project.html" overview %}
+	
+	{% endif %}
+</div>
+
+{% endblock %}
+
+{% block content_footer %}
+<div id="content_footer_center">
+</div>
+
+{% endblock %}

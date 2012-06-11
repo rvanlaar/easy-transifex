@@ -1,0 +1,26 @@
+{% extends "projects/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} | {% blocktrans with resource.name as resource_name %}Delete {{ resource_name }}{% endblocktrans %}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; {% blocktrans with resource.name as resource_name %}Delete <em>{{ resource_name}}</em>{% endblocktrans %}{% endblock %}
+
+{% block content_title %}
+    <h2 class="pagetitle">{% blocktrans with resource.name as resource_name %}Say goodbye to <em>{{ resource_name }}</em>?{% endblocktrans %}</h2>
+{% endblock %}
+
+{% block content %}
+
+<p>{% blocktrans with resource.name as resource_name %}
+  Are you sure you want to permanently delete the translation resource '{{ resource_name }}'?
+{% endblocktrans %}</p>
+
+  <form action="{% url resource_delete project_slug=resource.project.slug resource_slug=resource.slug %}" method="post">{% csrf_token %}
+    <input type="submit" class="i16 submit buttonized" value="{% trans "Yes, I'm sure!" %}" />
+  </form>
+
+{% endblock %}
+
+{% block content_footer %}
+
+{% endblock %}

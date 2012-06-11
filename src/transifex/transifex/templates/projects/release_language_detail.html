@@ -1,0 +1,408 @@
+{% extends "projects/project_detail_childs.html" %}
+{% load i18n %}
+{% load statistics_resources %}
+
+{% block extra_head %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url release_language_feed release.project.slug release.slug language.code %}" />
+  <script type="text/javascript" src="{{ STATIC_URL }}js/watch_toggle.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/tablesorted.js"></script>
+  <link media="screen" href="{{ STATIC_URL }}css/tablesorter.css" type="text/css" rel="stylesheet" />
+
+  <script type="text/javascript" src="{{ STATIC_URL }}js/houdini.js"></script>
+  <link media="screen" href="{{ STATIC_URL }}css/houdini.css" type="text/css" rel="stylesheet" />
+
+  <script type="text/javascript">
+    $(function(){
+        // Enable tooltip
+        $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+
+        // Stats table sorter
+        var tablesorter_resource = $(".tablesorter_resource");
+        tablesorter_resource.tablesorter({
+            sortList: [[2,1],[1,0]],
+            widgets: ['zebra'],
+            headers: {
+                2: { sorter: 'percent' },
+                3: { sorter: 'number' },
+                4: { sorter: 'number' }
+            },
+            textExtraction: function(node) {  
+                switch (node.cellIndex){
+                    // Category column
+                    case 0:
+                        var category = $(node).html();
+                        if(category == "None")
+                            return "zzzzzzzzzzzz";
+                        else
+                            return category;
+                    // Stats column
+                    case 2:
+                        return $(".stats_string_resource", node).text();
+                    // Last update column
+                    case 3:
+                        return $("span", node).attr('unixdate');
+                    // Priority column
+                    case 4:
+                        return $(".priority_sort", node).text()
+                    default: return node.innerHTML;
+                }
+            }
+        });
+        var category_is_clicked = false; // holds whether the last click on a table header was on the 'category' header or not
+        var tablesorter_resource_header = $('th', tablesorter_resource); // selects all headers of the table
+        tablesorter_resource_header.click(function() {
+            // set 'category_is_clicked' depending on what was clicked
+            if($(this).attr('id') == 'category_header') {
+                category_is_clicked = true;
+            } else {
+                category_is_clicked = false;
+            }
+        });
+        tablesorter_resource.bind("sortEnd", function(event) {
+            // this is called after the sorting is done
+            if(category_is_clicked) {
+                // if 'category' was clicked
+                var odd = false; // holds whether the current line is to be "painted" as odd or event
+                var last_category = "";
+                $('tr', $(this)).each(function(index, element) {
+                    // iterate over all table lines
+                    var current_category = $('.category_td_class', $(element)).html(); // get new category name
+                    if(current_category != last_category) { // if it is a different category than the last one
+                        last_category = current_category;
+                        odd = ! odd; // toggle the odd value
+                    }
+                    var jq_element = $(element);
+                    jq_element.removeClass(); // remove all classes from the current line
+                    // and add the correct class in order to "paint" appropriately
+                    if(odd) {
+                        jq_element.addClass('odd');
+                    } else {
+                        jq_element.addClass('even');
+                    }
+                });
+            }
+        })
+    });
+  </script>
+
+{% endblock %}
+
+{% block body_class %}{{ block.super }} release_detail{% endblock %}
+
+{% block title %}{{ block.super }} | {{ release.name }} | {{ language.name }}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; <a href="{% url release_detail release.project.slug release.slug %}">{% blocktrans with release.name as release_name %}Release '{{ release_name }}{% endblocktrans %}'</a> &raquo; {{ language.name }}{% endblock %}
+
+{% block content_sec %}
+  <a class="simlink" href="{% url release_language_feed release.project.slug release.slug language.code %}" title="{% trans "Statistics feed for this language and release" %}"><img border="0" src="{{ STATIC_URL }}images/icons/feed.png" /></a>
+{% endblock %}
+
+{% block content_title %}<h2 class="pagetitle">Release '{{ release.name }}':&nbsp;{{ language.name }}</h2>{% endblock %}
+
+{% block content_main %}
+
+<div class="list" style="clear:both">
+{% if stats %}
+
+  <div class="separate-header clearfix">
+  	<h3  class="sh-label">{% blocktrans count resources|length as counter %}Resource under this Release{% plural %}Resources under this Release{% endblocktrans %}</h3>
+	</div>
+
+  <table class="stat_table_font stats_table highlighted tablesorter_resource" style="clear:both;margin-top:0.5em;width:100%">
+  <thead>
+  <tr>
+    <th id="category_header"><span>{% trans "Category" %}</span></th>
+    <th><span>{% trans "Resource" %}</span></th>
+    <th style="width:320px"><span>{% trans "Completion" %}</span></th>
+    <th><span>{% trans "Last Updated" %}</span></th>
+    <th><span>{% trans "Importance" %}</span></th>
+   </tr>
+  </thead>
+  <tbody>
+  {% for stat in stats %}
+    <tr id="stat_row_{{forloop.counter}}" title="{% trans 'click for translation' %}">
+      <td class="category_td_class">{{ stat.resource.category }}</td>
+      <td>
+        <span class="clickable">{{ stat.resource.project.name }} &rarr; {{ stat.resource.name }}</span>
+        {% if stat.lock.valid %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_lock.png" title="{% trans "Locked" %}"/>
+        {% else %}
+          {% if stat.resource.accept_translations %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_green.png" title="{% trans "Accepting translations" %}"/>
+          {% else %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_delete.png" title="{% trans "Not accepting translations at the moment" %}"/>
+          {% endif %}
+        {% endif %}
+      </td>
+      <td>
+        {% with 200 as barwidth %}
+            {% stats_bar_simple stat barwidth %}
+        {% endwith %}
+      </td>
+      <td>
+        {% with stat.last_update as last_update %}
+        <span style="border:0" unixdate="{{ last_update|date:'U' }}">
+          {% with stat.last_committer as last_committer %}
+          {% if last_update %}
+              {{ last_update|timesince }}
+              {% if last_committer %}
+              by {{ last_committer }}
+              {% endif %}
+          {% else %}
+              {% trans "no activity yet" %}
+          {% endif %}
+          {% endwith %}
+        </span>
+        {% endwith %}
+      </td>
+      <td class="priority_level" style="width:100px;text-align:center">
+        <span style="border:0">
+        {% with stat.resource.priority.level as priority_level %}
+        {% with stat.resource.priority.display_level as display_level %}
+            <span class="priority_sort" style="display:none">{{ priority_level }}</span>
+            <img class="res_tipsy_enable" src="{{ STATIC_URL }}priorities/images/{{ display_level }}.png" style="border:0" title="{{ display_level }}"/>
+        {% endwith %}
+        {% endwith %}
+        </span>
+      </td>
+    </tr>
+    <script type="text/javascript">
+        $(".highlighted tr#stat_row_{{forloop.counter}}").click(function(){
+           /* FancyBox Using custom settings */
+           $.fancybox(
+               {
+                'href': '{% url resource_actions stat.resource.project.slug stat.resource.slug language.code %}',
+                'hideOnContentClick': false,
+                'onStart':function(){
+                    // IE8 fix
+                    if(jQuery.browser.msie) {
+                      $('#fancybox-wrap').css('max-width','716px');
+                      $('#fancybox-inner').css('max-width','716px');
+                      $('#fancybox-outer').css('left','50%');
+                    }
+                },
+                'onComplete':function() {
+									$("#fancybox-title").css({'top':'0px', 'bottom':'auto', 'position':'absolute', 'margin':'0', 'width':'100%'}).addClass('ui-corner-top');
+									$("#fancybox-content").addClass('ui-corner-top'); 
+									$("#fancybox-outer").addClass('ui-corner-top'); 
+                    // IE8 fix
+                    if(jQuery.browser.msie){
+                        $('.fancybox-title-outside').css('max-width','716px');
+                    }
+                    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+                    $("a.language_chooser_trigger").toggle(function(){
+                        $("div.language_chooser").css({'visibility':'visible'});
+                    },function(){
+                        $("div.language_chooser").css({'visibility':'hidden'});
+                    });
+                    $("div.language_chooser a").click( function(){
+                        var target_lang_code = $("div.language_chooser select").val();
+                        if ( target_lang_code != "" ) {
+                            request_url = window.location+'l/{{ language.code }}/clone/'+target_lang_code+'/';
+                            window.location = request_url;
+                        } else {
+                            alert('{% trans "Please select a target language first."|escapejs %}');
+                        }
+                    });
+                    if(!$("#download_for_translation a").hasClass('disabled')){
+                        $("#download_for_translation").click(function(){
+                            $.ajax({
+                                url : '{% url lock_and_download_translation stat.resource.project.slug stat.resource.slug language.code %}',
+                                contentType : 'application/json',
+                                type : 'POST',
+                                beforeSend: function(){
+                                $("div#notification-container div").html('{% trans "Trying to lock resource..."|escapejs %}');
+                                $("div#notification-container").fadeIn("fast");
+                                },
+                                complete : function(xmlhttpreq, textStatus) {
+                                    if (textStatus=='success'){
+                                        response = JSON.parse(xmlhttpreq.responseText);
+                                        if(response['status']=='FAILED'){
+                                            $("#download_for_translation").siblings("div.error_notes").text(response['message']);
+                                            $("#download_for_translation").siblings("div.error_notes").show();
+                                        }else{
+                                            if(response['redirect']){
+                                                window.location = response['redirect'];
+                                            }
+                                        }
+                                        $("div#notification-container").fadeOut("fast");
+                                    }
+                                }
+                            });
+                        });
+                    }
+                },
+                'titleShow': true,
+                'titlePosition': 'inside',
+                'title': '{% trans "Translation Details"%}'
+           });
+        });
+    </script>
+  {% endfor %}
+  </tbody>
+  </table>
+ {% endif %}
+ {% if private_stats %}
+ <h3>{% blocktrans count resources|length as counter %}Private Resource that you have access to under this Release{% plural %}Private resources that you have access to under this Release{% endblocktrans %}</h3>
+  <table class="stat_table_font stats_table highlighted tablesorter_resource" style="clear:both;margin-top:0.5em;width:100%">
+  <thead>
+  <tr>
+    <th><span class="i16 comment">{% trans "Resource" %}</span></th>
+    <th style="width:320px"><span class="i16 stats">{% trans "Completion" %}</span></th>
+    <th><span class="i16 clock">{% trans "Last Updated" %}</span></th>
+    <th><span class="i16 ruby">{% trans "Importance" %}</span></th>
+   </tr>
+  </thead>
+  <tbody>
+  {% for stat in private_stats %}
+    <tr id="stat_row_{{forloop.counter}}" title="{% trans 'click for translation' %}">
+        <td>
+        <span class="clickable">{{ stat.resource.project.name }} &rarr; {{ stat.resource.name }}</span>
+        {% if stat.lock.valid %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_lock.png" title="{% trans "Locked" %}"/>
+        {% else %}
+          {% if stat.resource.accept_translations %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_green.png" title="{% trans "Accepting translations" %}"/>
+          {% else %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_delete.png" title="{% trans "Not accepting translations at the moment" %}"/>
+          {% endif %}
+        {% endif %}
+        </td>
+        <td>
+        {% with 200 as barwidth %}
+            {% stats_bar_simple stat barwidth %}
+        {% endwith %}
+        </td>
+        <td>
+        {% with stat.last_update as last_update %}
+        <span style="border:0" unixdate="{{ last_update|date:'U' }}">
+          {% with stat.last_committer as last_committer %}
+          {% if last_update %}
+              {{ last_update|timesince }}
+              {% if last_committer %}
+              by {{ last_committer }}
+              {% endif %}
+          {% else %}
+              {% trans "no activity yet" %}
+          {% endif %}
+          {% endwith %}
+        </span>
+        {% endwith %}
+        </td>
+        <td class="priority_level" style="width:100px;text-align:center">
+        <span style="border:0">
+        {% with stat.resource.priority.level as priority_level %}
+        {% with stat.resource.priority.display_level as display_level %}
+            <span class="priority_sort" style="display:none">{{ priority_level }}</span>
+            <img class="tipsy_enable" src="{{ STATIC_URL }}priorities/images/{{ display_level }}.png" style="border:0" title="{{ display_level }}"/>
+        {% endwith %}
+        {% endwith %}
+        </span>
+        </td>
+    </tr>
+    <script type="text/javascript">
+        $(".highlighted tr#stat_row_{{forloop.counter}}").click(function(){
+           /* FancyBox Using custom settings */
+           $.fancybox(
+               {
+                'href': '{% url resource_actions stat.resource.project.slug stat.resource.slug language.code %}',
+                'hideOnContentClick': false,
+                'onStart':function(){
+                    // IE8 fix
+                    if(jQuery.browser.msie) {
+                      $('#fancybox-wrap').css('max-width','716px');
+                      $('#fancybox-inner').css('max-width','716px');
+                      $('#fancybox-outer').css('left','50%');
+                    }
+                },
+                'onComplete':function() {
+									$("#fancybox-title").css({'top':'0px', 'bottom':'auto', 'position':'absolute', 'margin':'0', 'width':'100%'}).addClass('ui-corner-top');
+									$("#fancybox-content").addClass('ui-corner-top'); 
+									$("#fancybox-outer").addClass('ui-corner-top'); 
+                    // IE8 fix
+                    if(jQuery.browser.msie){
+                        $('.fancybox-title-outside').css('max-width','716px');
+                    }
+                    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+                    $("a.language_chooser_trigger").toggle(function(){
+                        $("div.language_chooser").css({'visibility':'visible'});
+                    },function(){
+                        $("div.language_chooser").css({'visibility':'hidden'});
+                    });
+                    $("div.language_chooser a").click( function(){
+                        var target_lang_code = $("div.language_chooser select").val();
+                        if ( target_lang_code != "" ) {
+                            request_url = window.location+'l/{{ language.code }}/clone/'+target_lang_code+'/';
+                            window.location = request_url;
+                        } else {
+                            alert('{% trans "Please select a target language first."|escapejs %}');
+                        }
+                    });
+                    if(!$("#download_for_translation a").hasClass('disabled')){
+                        $("#download_for_translation").click(function(){
+                            $.ajax({
+                                url : '{% url lock_and_download_translation stat.resource.project.slug stat.resource.slug language.code %}',
+                                contentType : 'application/json',
+                                type : 'POST',
+                                beforeSend: function(){
+                                $("div#notification-container div").html('{% trans "Trying to lock resource..."|escapejs %}');
+                                $("div#notification-container").fadeIn("fast");
+                                },
+                                complete : function(xmlhttpreq, textStatus) {
+                                    if (textStatus=='success'){
+                                        response = JSON.parse(xmlhttpreq.responseText);
+                                        if(response['status']=='FAILED'){
+                                            $("#download_for_translation").siblings("div.error_notes").text(response['message']);
+                                            $("#download_for_translation").siblings("div.error_notes").show();
+                                        }else{
+                                            if(response['redirect']){
+                                                window.location = response['redirect'];
+                                            }
+                                        }
+                                        $("div#notification-container").fadeOut("fast");
+                                    }
+                                }
+                            });
+                        });
+                    }
+                },
+                'titleShow': true,
+                'titlePosition': 'inside',
+                'title': '{% trans "Translation Details"%}'
+           });
+        });
+    </script>
+  {% endfor %}
+  </tbody>
+  </table>
+ {% endif %}
+
+
+ {% if empty_rlstats or empty_private_rlstats %}
+  <br />
+   The following resources don't have any translations in {{ language.name }} and also don't have a team associated with this language:</span>
+  <table class="stat_table_font stats_table highlighted tablesorter_resource" style="clear:both;margin-top:0.5em;width:100%">
+  <tbody>
+  {% for resource in empty_rlstats %} 
+    <tr title="{% trans 'click for resource details' %}">
+        <td style="padding-left:1em;">
+          <span>{{ forloop.counter }}) <a href="{% url resource_detail resource.project.slug resource.slug %}">{{ resource.project.name}} &rarr; {{ resource.name }}</a></span>
+        </td>
+	</tr>
+  {% endfor %}
+  {% if empty_private_rlstats %}
+   {% for resource in empty_private_rlstats %} 
+    <tr title="{% trans 'click for resource details' %}">
+      <td>
+       <span>{{ forloop.counter }}) <a href="{% url resource_detail resource.project.slug resource.slug %}">{{ resource.project.name}} &rarr; {{ resource.name }}</a> (private)</span>
+      </td>
+    </tr>
+   {% endfor %}
+  {% endif %}
+  </tbody>
+  </table>
+ {% endif %}
+   
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "projects/project_menu.html" %}
+{% load i18n %}
+{% load addons %}
+{% load permissions %}
+
+{% block content_title %}
+  <h2 class="pagetitle with_description">
+  {% if not project %}
+    {% trans "New project" %}
+  {% else %}
+    {% blocktrans with project.name as project_name %}Edit {{ project_name }}{% endblocktrans %}
+  {% endif %}
+  </h2>
+   
+  <div class="description">
+		<p>{% if not project %}
+    	{% trans "Create a new project on Transifex" %}
+  		{% else %}
+    	{% trans "Edit your Project" %}
+  		{% endif %}
+    </p>
+	</div>
+{% endblock %}
+
+{% block extrajs %}
+{{ block.super }}
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(".tx-form #id_project-maintainers_text").parents(".tx-form-field").addClass("txf-maintainers");
+	});
+</script>
+{% endblock %}
+
+{% block content_main %}
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+
+<div class="grid_4 alpha side-menu left-side" style="height:100%;">
+	{% comment %}Dirty hack. Will use django-guardian in the future.{% endcomment %}
+	<ul style="height:100%;">
+		{% url project_edit project.slug as url_project_edit %}
+		<li class="inner-item {% if site_section.0 == 'projects' and site_section.3 == 'edit' and not site_section.4 %}active{% endif %}"><a href="{{ url_project_edit }}">{% trans "Edit Project" %}</a></li>
+		{% url project_delete project.slug as url_project_delete %}
+		<li class="inner-item {% if site_section.0 == 'projects' and site_section.3 == 'delete' %}active{% endif %}"><a href="{{ url_project_delete }}">{% trans "Delete project" %}</a></li>
+
+    {% if is_maintainer %}
+		{% url project_access_control_edit project.slug as url_project_access_control_edit %}
+		<li class="inner-item {% if site_section.0 == 'projects' and site_section.3 == 'edit' and site_section.4 == 'access' %}active{% endif %}"><a href="{{ url_project_access_control_edit }}">{% trans "Access Control" %}</a></li>
+    {% endif %}
+
+		{% hook "project.html" settings_menu %}
+	</ul>
+</div>
+
+
+
+<div class="grid_12 psettings-content omega">{% block psettings_header %}{% endblock %}{% block project_settings_content %}{% endblock %}</div>
+
+{% endblock %}

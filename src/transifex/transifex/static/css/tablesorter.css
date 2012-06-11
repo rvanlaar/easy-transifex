@@ -1,0 +1,161 @@
+/* tables */
+table.tablesorter {
+
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  padding: 4px;
+  color:#444444;
+}
+table.tablesorter thead tr .header {
+  background-image: url('../images/icons/tablesorter/bg.gif');
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  padding-right: 20px;
+}
+table.tablesorter tbody td {
+  background-color: #FFF;
+}
+table.tablesorter tbody tr.odd td {
+  background-color:#F7F8F8;
+}
+table.tablesorter thead tr .headerSortUp {
+  background-image: url('../images/icons/tablesorter/asc.gif');
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url('../images/icons/tablesorter/desc.gif');
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+  background-color: #E9E9E9;
+}
+
+table.tablesorter th {
+  text-align: left;
+  padding: 0.3em 0.3em;
+  font-size: 95%;
+  border-bottom: 3px solid #E3EAEE;
+  color: #444;;
+  background-color: #f5f5f5;
+}
+
+table.tablesorter td {
+  text-align: left;
+  font-size: 100%;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.8em;
+  border-bottom: 1px solid #E3EAEE;
+  height: 24px;
+}
+
+table.tablesorter.withair td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* tablesorter resource version */
+table.tablesorter_resource,
+table.tablesorter_resource_list {
+
+}
+table.tablesorter_resource thead tr th, table.tablesorter_resource tfoot tr th,
+table.tablesorter_resource_list thead tr th, table.tablesorter_resource_list tfoot tr th,
+ {
+  padding: 0.5em;
+  color:#444444;
+}
+table.tablesorter_resource thead tr .header,
+table.tablesorter_resource_list thead tr .header {
+  background-image: url('../images/icons/tablesorter/bg.gif');
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  padding-right: 20px;
+  padding: 0.5em;
+}
+
+table.tablesorter_resource tbody tr,
+table.tablesorter_resource_list tbody tr {
+  background-color: #FFF;
+}
+
+table.tablesorter_resource tbody tr.odd,
+table.tablesorter_resource_list tbody tr.odd  {
+  background-color:#F7F8F8;
+}
+
+table.tablesorter_resource tbody tr:hover, table.tablesorter_resource tbody tr.odd:hover,
+table.tablesorter_resource_list tbody tr:hover, table.tablesorter_resource_list tbody tr.odd:hover  {
+  background-color: #f5faf5 !important;
+}
+
+table.tablesorter_resource tbody tr:hover, table.tablesorter_resource tbody tr.odd:hover{
+  cursor:pointer;
+}
+
+table.tablesorter_resource tbody tr.nocursor:hover, table.tablesorter_resource tbody tr.odd.nocursor:hover{
+  cursor:default;
+}
+
+table.tablesorter_resource thead tr .headerSortUp,
+table.tablesorter_resource_list thead tr .headerSortUp {
+  background-image: url('../images/icons/tablesorter/asc.gif');
+}
+
+table.tablesorter_resource thead tr .headerSortDown,
+table.tablesorter_resource_list thead tr .headerSortDown {
+  background-image: url('../images/icons/tablesorter/desc.gif');
+}
+
+table.tablesorter_resource thead tr .headerSortDown, table.tablesorter_resource thead tr .headerSortUp,
+table.tablesorter_resource_list thead tr .headerSortDown, table.tablesorter_resource_list thead tr .headerSortUp {
+  background-color: #E9E9E9;
+}
+
+table.tablesorter_resource th,
+table.tablesorter_resource_list th {
+  text-align: left;
+  border-bottom: 3px solid #E3EAEE;
+  color: #444;;
+  background-color: #f5f5f5;
+  line-height: 1.8em;
+  height: 24px;
+}
+
+table.tablesorter_resource td,
+table.tablesorter_resource_list td {
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.8em;
+  height: 24px;
+}
+
+table.tablesorter_resource.withair td,
+table.tablesorter_resource_list.withair td {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/* Pager support for client-side pagination. */
+
+div.pager {
+  font-size: 95%;
+  color: #0D4C8C;
+}
+
+div.pager span.page-number {
+  margin: 3px;
+  padding: 0px 2px;
+  cursor: pointer;
+  border-bottom:1px dotted #AAAAAA;
+}
+
+div.pager span.page-number:hover {
+  border-bottom:1px solid #AAAAAA;
+  text-decoration:none;
+}
+
+div.pager span.page-number.active {
+ color:#B65D0E;
+}

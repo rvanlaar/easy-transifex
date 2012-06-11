@@ -1,0 +1,343 @@
+{% extends "projects/project_menu.html" %}
+{% load i18n %}
+{% load cache %}
+{% load pagination_tags %}
+{% load txcommontags %}
+{% load permissions %}
+{% load txpermissions %}
+{% load addons %}
+{% load statistics_resources %}
+
+{% block extra_head %}
+<script type="text/javascript">
+  $(function(){
+    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+    $(".tablesorter_resource").tablesorter({
+        widgets: ['zebra'],
+        headers: {
+            1: { sorter: 'percent' },
+            2: { sorter: 'number' },
+            3: { sorter: 'number' }
+        },
+        textExtraction: function(node) {  
+            switch (node.cellIndex){
+                // Stats column
+                case 1:
+                    return $(".stats_string_resource", node).text();
+                // Last update column
+                case 2:
+                    return $("span", node).attr('unixdate');
+                // Priority column
+                case 3:
+                    return $(".priority_sort", node).text()
+                default: return node.innerHTML;
+            }
+        } 
+    });
+   })
+</script>
+{% endblock %}
+
+{% block title %}{{ block.super }} | {{ project.name }}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project.name }}</a> &raquo;
+<a href="{% url team_list team.project.slug %}">{% trans "Teams" %}</a> &raquo; {{ team.language.name }}
+{% endblock %}
+
+
+{% block project_header %}
+{{block.super}}<h2 class="pagetitle with_description">&nbsp;/&nbsp;</h2>
+<h2 class="pagetitle">
+{% blocktrans with team.language.name as language_name and team.language.code as language_code %}Translation Teams - {{ language_name }} <sup class="entry_metalink">{{ language_code }}</sup>{% endblocktrans %}</h2>
+{% endblock%}
+
+{% block content_main %}
+{% get_permission "project_perm.submit_translations" for request.user and team as "can_submit_translations" %}
+{% get_permission "project_perm.coordinate_team" for request.user and project,team.language as "is_coordinator" %}
+
+<div class="obj_bigdetails">
+
+{% if perms.projects.change_team or is_coordinator %}
+<p class="clearfix">
+    <a class="i16 nude-button edit right" href="{% url team_update team.project.slug team.language.code %}">{% trans "Edit team" %}</a>
+</p>
+{% endif %}
+
+ <div class="team_detail">
+  <dl class="definition clearfix">
+    {% if team.mainlist %}
+      <dt class="i16 email">{% trans "Mainlist:" %}</dt>
+      <dd>{{ team.mainlist|mungify:team.mainlist }} </a></dd>
+    {% endif %}
+
+    {% with team.coordinators.all as coordinators %}
+    {% if coordinators %}
+      <dt class="i16 coordinators">{% blocktrans count coordinators|length as counter %}Coordinator:{% plural %}Coordinators:{% endblocktrans %}</dt>
+      <dd>
+        {% for c in coordinators|slice:"0:6" %}
+          <img class="border" width="16" height="16" src="{{ c.profile.get_mugshot_url }}" style="vertical-align:middle"/>
+          {% if c.first_name and c.last_name %}
+            {{ c.first_name }} {{ c.last_name }}
+            (<a href="{% url profile_public c.username %}">{{ c.username }}</a>)
+          {% else %}
+            <a href="{% url profile_public c.username %}">{{ c.username }}</a>
+          {% endif %}{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      </dd>
+    {% endif %}
+    {% endwith %}
+
+    {% if request.user.is_authenticated and not perms.projects.submit_translations and not can_submit_translations and not user_access_request %}
+      <dt class="i16 user">{% trans "Become a translator:" %}</dt>
+      <dd>
+        <form method="post" action="{% url team_join_request team.project.slug team.language.code %}" class="microform">{% csrf_token %}
+            <input name="team_join" class="i16 team_join buttonized" type="submit" title="{% trans "Join this Team" %}"  value="{% trans "Join this Team" %}">
+        </form>
+      </dd>
+   {% endif %}
+
+  </dl>
+</div>
+
+{% if team_access_requests %}
+<div class="list ">
+
+  <div class="separate-header clearfix">
+  	<h3  class="sh-label">{% trans "People waiting for team membership approving:" %}</h3>
+	</div>
+	
+<ul>
+{% for access_request in team_access_requests|dictsort:"user.username" %}
+    <li>
+        <img class="border" width="16" height="16" src="{{ access_request.user.profile.get_mugshot_url }}" style="vertical-align:middle"/>
+        <a href="{% url profile_public access_request.user.username %}">
+            {{ access_request.user }}
+        </a>
+        {% if is_coordinator %}
+        <form class="microform" method="post" action="{% url team_join_approve access_request.team.project.slug access_request.team.language.code access_request.user.username %}">{% csrf_token %}
+            <input name="team_join_approve" class="i16 submit buttonized" type="submit" value="{% trans "Approve" %}"/>
+        </form>
+
+        <form class="microform" method="post" action="{% url team_join_deny access_request.team.project.slug access_request.team.language.code access_request.user.username %}">{% csrf_token %}
+            <input name="team_join_deny" class="i16 delete buttonized" type="submit" value="{% trans "Deny" %}"/>
+        </form>
+        {% endif %}
+
+        {% ifequal request.user.pk access_request.user.pk %}
+        <form class="microform" method="post" action="{% url team_join_withdraw access_request.team.project.slug access_request.team.language.code %}">{% csrf_token %}
+            <input name="team_join_withdraw" class="i16 delete buttonized" type="submit" value="{% trans "Withdraw" %}"/>
+        </form>
+        {% endifequal %}
+    </li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+
+
+<div class="list" style="clear:both">
+
+  <div class="separate-header notopmargin clearfix" style="margin-top:0;">
+  	<h3  class="sh-label">{% blocktrans count resources|length as counter %}Team Translating Resource{% plural %}Team Translating Resources{% endblocktrans %}</h3>
+	</div>
+	
+ {% if statslist %}
+
+  <table class="stat_table_font stats_table highlighted tablesorter_resource" style="clear:both;margin-top:0.5em;width:99%;margin-left:auto;margin-right:auto;">
+  <thead>
+  <tr>
+    <th><span>{% trans "Resource" %}</span></th>
+    <th style="width:320px"><span>{% trans "Completion" %}</span></th>
+    <th><span>{% trans "Last Updated" %}</span></th>
+    <th><span>{% trans "Importance" %}</span></th>
+   </tr>
+  </thead>
+  <tbody>
+  {% for stat in statslist %}
+
+  <tr id="stat_row_{{forloop.counter}}" title="{% trans 'click for translation' %}">
+  {% cache 604800 team_details team.id stat.resource.id LANGUAGE_CODE %}
+        <td>
+        <span class="clickable">{{ stat.resource.project.name }} &rarr; {{ stat.resource.name }}</span>
+        {% if stat.lock.valid %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_lock.png" title="{% trans "Locked" %}"/>
+        {% else %}
+          {% if stat.resource.accept_translations %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_green.png" title="{% trans "Accepting translations" %}"/>
+          {% else %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_delete.png" title="{% trans "Not accepting translations at the moment" %}"/>
+          {% endif %}
+        {% endif %}
+        </td>
+        <td>
+        {% with 200 as barwidth %}
+            {% stats_bar_simple stat barwidth %}
+        {% endwith %}
+        </td>
+  {% endcache %}
+        <td>
+        {% with stat.last_update as last_update %}
+          <span style="border:0" unixdate="{{ last_update|date:'U' }}">
+          {% with stat.last_committer as last_committer %}
+          {% if last_update %}
+              {{ last_update|date:"M d, h:ia" }}
+              {% if last_committer %}
+              by {{ last_committer }}
+              {% endif %}
+          {% else %}
+              {% trans "no activity yet" %}
+          {% endif %}
+          {% endwith %}
+        </span>
+        {% endwith %}
+        </td>
+        <td class="priority_level" style="width:100px;text-align:center">
+        <span style="border:0">
+        {% with stat.resource.priority.level as priority_level %}
+        {% with stat.resource.priority.display_level as display_level %}
+            <span class="priority_sort" style="display:none">{{ priority_level }}</span>
+            <img class="tipsy_enable" src="{{ STATIC_URL }}priorities/images/{{ display_level }}.png" style="border:0" title="{{ display_level }}"/>
+        {% endwith %}
+        {% endwith %}
+        </span>
+        </td>
+    </tr>
+    <script type="text/javascript">
+        $(".highlighted tr#stat_row_{{forloop.counter}}").click(function(){
+           /* FancyBox Using custom settings */
+           $.fancybox(
+               {
+                'href': '{% url resource_actions team.project.slug stat.resource.slug team.language.code %}',
+                'hideOnContentClick': false,
+                'onStart':function(){
+                    // IE8 fix
+                    if(jQuery.browser.msie) {
+                      $('#fancybox-wrap').css('max-width','716px');
+                      $('#fancybox-inner').css('max-width','716px');
+                      $('#fancybox-outer').css('left','50%');
+                    }
+                },
+                'onComplete':function() {
+		          		$("#fancybox-title").css({'top':'0px', 'bottom':'auto', 'position':'absolute', 'margin':'0', 'width':'100%'}).addClass('ui-corner-top');
+		          		$("#fancybox-content").addClass('ui-corner-top'); 
+		          		$("#fancybox-outer").addClass('ui-corner-top'); 
+                    // IE8 fix
+                    if(jQuery.browser.msie){
+                        $('.fancybox-title-outside').css('max-width','716px');
+                    }
+                    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+                    $("a.language_chooser_trigger").toggle(function(){
+                        $("div.language_chooser").css({'visibility':'visible'});
+                    },function(){
+                        $("div.language_chooser").css({'visibility':'hidden'});
+                    });
+                    $("div.language_chooser a").click( function(){
+                        var target_lang_code = $("div.language_chooser select").val();
+                        if ( target_lang_code != "" ) {
+                            request_url = window.location+'l/{{ team.language.code }}/clone/'+target_lang_code+'/';
+                            window.location = request_url;
+                        } else {
+                            alert("Please select a target language first and then click Go.");
+                        }
+                    });
+                    if(!$("#download_for_translation").hasClass('disabled')){
+                    $("#download_for_translation").click(function(){
+                        $.ajax({
+                            url : '{% url lock_and_download_translation project.slug stat.resource.slug team.language.code %}',
+                            contentType : 'application/json',
+                            type : 'POST',
+                            beforeSend: function(){
+                            $("div#notification-container div").html('{% trans "Trying to lock resource..."|escapejs %}');
+                            $("div#notification-container").fadeIn("fast");
+                            },
+                            complete : function(xmlhttpreq, textStatus) {
+                                if (textStatus=='success'){
+                                    response = JSON.parse(xmlhttpreq.responseText);
+                                    if(response['status']=='FAILED'){
+                                        $("#download_for_translation").siblings("div.error_notes").text(response['message']);
+                                        $("#download_for_translation").siblings("div.error_notes").show();
+                                    }else{
+                                        if(response['redirect']){
+                                            window.location = response['redirect'];
+                                        }
+                                    }
+                                    $("div#notification-container").fadeOut("fast");
+                                }
+                            }
+                        });
+                    });
+                    }
+                },
+                'titleShow': true,
+                'titlePosition': 'inside',
+                'title': '{% trans "Translation Details"|escapejs %}'
+           });
+        });
+    </script>
+  {% endfor %}
+  </table>
+ {% else %}
+  <p>{% trans "No resources are registered for this project yet." %}</p>
+ {% endif %}
+</div>
+
+{% if project.resources.count or not project.releases.count %}
+  {% include "projects/release_list.html" %}
+{% endif %}
+
+{% with team_all as members %}
+{% if members %}
+<div class="list" style="clear:both">
+
+  <div class="separate-header notopmargin clearfix" style="margin-top:0;">
+  	<h3  class="sh-label">{% trans "Team Members" %}</h3>
+	</div>
+
+<ul>
+{% for m in members|dictsort:"username" %}
+    <li>
+        <img class="border" width="16" height="16" src="{{ m.profile.get_mugshot_url }}" style="vertical-align:middle"/>
+        <a href="{% url profile_public m.username %}">
+            {{ m }}
+        </a>
+        {% if m in team_reviewers %}
+          <sup>Reviewer</sup>
+        {% endif %}
+        {% ifequal request.user.pk m.pk %}
+        <form class="microform" method="post" action="{% url team_leave team.project.slug team.language.code %}">{% csrf_token %}
+            <input name="team_leave" class="i16 user_delete" type="submit" value="{% trans "Leave" %}"/>
+        </form>
+        {% endifequal %}
+    </li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
+{% endwith %}
+</div>
+
+{% hook "team_detail.html" extra_content %}
+
+<h3>{% trans 'History' %}</h3>
+{% load tx_action_log %}
+{% get_log 5 as action_log for_object team %}
+{% if not action_log %}
+<p>{% trans 'None available' %}</p>
+{% else %}
+<ul class="actionlist simple">
+{% for entry in action_log %}
+    <li class="i16 actionlog">
+    {{ entry.message|safe }} by {{ entry.user }} {{ entry.action_time|timesince }} ago.
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
+
+
+{% block content_footer %}
+  <div id="content_footer_center">
+
+  </div>
+{% endblock %}

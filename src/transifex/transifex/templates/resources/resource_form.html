@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load txcommontags %}
+{% load permissions %}
+{% load txpermissions %}
+
+{% block breadcrumb %}
+
+{{block.super}} »
+<a href="{% url project_list_recent %}">{% trans "Projects" %}</a> »
+<a href="{% url project_detail resource.project.slug %}">{{resource.project}}</a> »
+Edit {{resource}}
+{% endblock %}
+
+{% block title %}
+    {{ block.super }} | Edit {{ resource}}
+{% endblock %}
+
+{% block content_title %}
+  <h2 class="pagetitle">
+  {% if resource %}
+    {% blocktrans with resource.name as resource_name %}Edit {{ resource_name }}{% endblocktrans %}
+  {% endif %}
+  </h2>
+{% endblock %}
+
+{% block content_main %}
+
+
+<div class="separate-header clearfix">
+	<h3  class="sh-label">{% trans "Edit the details of the translation resource" %}</h3>
+</div>
+
+
+<div class="project_create generic_form">
+  <form action='' method='post' enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        <tbody>
+        {% form_as_table_rows resource_form %}
+        {% form_as_table_rows url_form %}
+        </tbody>
+    </table>
+	<br />
+	{% blocktrans %}
+	<div class="message">
+		<p>To enable automatic "fetching" of your source language strings by
+		Transifex, enter a URL to your source file (e.g. POT file). Refer to
+		<a href="http://help.transifex.net/user-guide/projects.html#projects-and-resources">the documentation</a>
+		for more information.</p>
+
+		<p><b>Warning</b>: Transifex will overwrite the existing source strings
+		and translations with the ones found in the linked file. This may lead
+		to <b>loss of translations</b>, so make sure the URL links to the
+		correct file before submitting the form.
+		</p>
+		</blink>
+	</div>
+	{% endblocktrans %}
+	<br />
+    <input type="submit" class="i16 submit buttonized" value="{% trans "Save translation resource" %}" />
+  </form>
+</div>
+
+ {% get_permission "project_perm.maintain" for request.user and resource.project as "is_maintainer" %}
+    {% if perms.projects.delete_resource or is_maintainer or request.user.is_superuser %}
+
+		<div class="separate-header clearfix">
+			<h3  class="sh-label">{% trans "Delete resource from Transifex" %}</h3>
+		</div>
+
+    <div>
+      <a class="i16 delete buttonized buttonized_warning" href="{% url resource_delete project_slug=resource.project.slug resource_slug=resource.slug %}">{% trans "Delete resource" %}</a>
+    </div>
+    {% endif %}
+{% endblock %}
+

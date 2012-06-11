@@ -1,0 +1,41 @@
+{% load i18n %}
+<div class="searchform" style="border-bottom:1px solid #ddd;">
+  <form action="{% url search_translations %}" method="GET" class="search_projects">
+    <table>
+    <tr>
+    <td>
+      <label for="tq">{% trans "Search for a string:" %}</label><br/>
+      <input class="query withbgimage" type="text" name="tq" size="30" value="{{ query|escape }}">
+    </td>
+    <td>
+      <label for="source_lang">{% trans "From:" %}</label>
+      <br/>
+      <label for="target_lang">{% trans "To:" %}</label>
+    </td>
+    <td>
+    <select name="source_lang" class="query withbgimage" placeholder="Choose language" >
+        {% for language in languages %}
+            {% ifequal language.code source_language.code %}
+                <option value="{{ language.code }}" selected="selected">{{ language.name }}</option>
+            {% else %}
+                <option value="{{ language.code }}">{{ language.name }}</option>
+            {% endifequal %}
+        {% endfor %}
+    </select>
+    <br />
+    <select name="target_lang" class="query withbgimage" placeholder="Choose language" >
+        <option value="">Any Language</option>
+        {% for language in languages %}
+          {% ifequal language.code target_language_code %}
+            <option value="{{ language.code }}" selected="selected">{{ language.name }}</option>
+          {% else %}
+            <option value="{{ language.code }}">{{ language.name }}</option>
+          {% endifequal %}
+        {% endfor %}
+    </select>
+    </td>
+    <td>
+    <input class="i16 submit buttonized" type="submit" value="{% trans "Search" %}">
+    </td></tr></table>
+  </form>
+</div>

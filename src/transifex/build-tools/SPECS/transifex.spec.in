@@ -1,0 +1,207 @@
+%define confdir %{_sysconfdir}/%{name}
+
+Name:       transifex
+Version:    [[version]]
+Release:    1%{?dist}
+Summary:    A system for distributed translation submissions
+
+Group:      Applications/Internet
+License:    GPLv2
+URL:        http://transifex.org
+Source0:    transifex-[[version]].tar.gz
+Source1:    django-settings.py.in
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildArch:  noarch
+
+BuildRequires:  python-sphinx gettext python-markdown
+
+BuildRequires:  Django django-contact-form django-pagination django-tagging
+BuildRequires:  django-notification django-profile Django-south django-piston
+BuildRequires:  django-authority django-ajax-selects
+#BuildRequires:  django-authority django-ajax-selects django-filter django-sorting
+
+Requires:   mercurial >= 1.3 python-urlgrabber intltool >= 0.37.1
+Requires:   python-markdown python-pygments python-polib >= 0.4.2
+
+Requires:   Django django-contact-form django-pagination django-tagging
+Requires:   django-notification django-profile Django-south django-piston
+Requires:   django-authority django-ajax-selects
+#Requires:   django-authority django-ajax-selects django-filter django-sorting
+
+%description
+Transifex is a web-system that facilitates the process of submitting
+translations in remote and disparate version control systems (VCS).
+
+%package extras
+Summary:    Additional support for Transifex
+Group:      Applications/Internet
+Requires:   transifex = %{version}
+Requires:   cvs pysvn bzrtools git
+
+%description extras
+This package adds extra options to Transifex.
+
+  * cvs support
+  * svn support
+  * bzr support
+  * git support
+
+%prep
+%setup -q
+sed -e 's!share/locale!.*/locale!' /usr/lib/rpm/find-lang.sh > my-find-lang.sh
+
+%build
+cd transifex
+rm -rf .hg* build-tools
+rm -r vcs/tests
+python manage.py syncdb --noinput    # Setup DB tables
+python manage.py migrate             # Setup more DB tables
+python manage.py txcreatelanguages   # Create a standard set of languages
+python manage.py txcreatenoticetypes # Create a standard set of notice types
+python manage.py txcompilemessages   # Create message catalogs for i18n
+cd ..
+cd docs
+make html
+cd ..
+
+%install
+rm -rf $RPM_BUILD_ROOT
+cd transifex
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}
+find -mindepth 1 -maxdepth 1 -type d \( \( -name .hg -o \
+    -name build-tools -o -name docs -o -name settings \) -prune -o \
+    -print \) | xargs cp -a -t $RPM_BUILD_ROOT/%{_datadir}/%{name}
+cp -a *.py $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -a *.db.sqlite $RPM_BUILD_ROOT%{_datadir}/%{name}
+find $RPM_BUILD_ROOT%{_datadir}/%{name}/locale -name \*.po -exec rm {} +
+
+for vcs in cvs svn bzr hg git tar
+do
+    mkdir -p $RPM_BUILD_ROOT%{_localstatedir}/lib/%{name}/scratchdir/sources/"$vcs"
+done
+
+mkdir -p $RPM_BUILD_ROOT%{_localstatedir}/log/%{name}
+
+install -d -m 0755 $RPM_BUILD_ROOT/%{confdir}
+
+cp -a settings/*.conf $RPM_BUILD_ROOT/%{confdir}
+
+sed -i -e 's!^\(LOG_PATH = \).*$!\1"%{_localstatedir}/log/%{name}"!' \
+    $RPM_BUILD_ROOT/%{confdir}/10-base.conf
+
+sed -e 's!\[\[confpath\]\]!%{confdir}!' %{SOURCE1} > \
+    $RPM_BUILD_ROOT%{_datadir}/%{name}/settings.py
+
+cd ..
+
+sh my-find-lang.sh $RPM_BUILD_ROOT django transifex.lst
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+if grep -q '\[\[SECRETKEY\]\]' %{confdir}/10-base.conf
+then
+    key=$(python << EOF
+import random
+print ''.join(chr(random.randint(35, 126)) for x in xrange(40)).replace('&',
+    '\&')
+EOF
+)
+    sed -i -e "s!\[\[SECRETKEY\]\]!$key!" \
+        %{confdir}/10-base.conf
+fi
+
+%files -f transifex.lst
+%defattr(-,root,root,-)
+%doc LICENSE README docs/html
+%dir %{confdir}
+%config(noreplace) %{confdir}/10-base.conf
+%config(noreplace) %{confdir}/20-engines.conf
+%config(noreplace) %{confdir}/30-site.conf
+%config(noreplace) %{confdir}/40-apps.conf
+%config(noreplace) %{confdir}/50-project.conf
+%config(noreplace) %{confdir}/60-vcs.conf
+%config(noreplace) %{confdir}/65-tarball.conf
+%config(noreplace) %{confdir}/70-translation.conf
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/__init__.py
+%{_datadir}/%{name}/__init__.py[co]
+%{_datadir}/%{name}/manage.py
+%exclude %{_datadir}/%{name}/manage.py[co]
+%{_datadir}/%{name}/settings.py
+%{_datadir}/%{name}/settings.py[co]
+%{_datadir}/%{name}/urls.py
+%{_datadir}/%{name}/urls.py[co]
+%{_datadir}/%{name}/transifex.db.sqlite
+%{_datadir}/%{name}/actionlog
+%{_datadir}/%{name}/codebases
+%{_datadir}/%{name}/external
+%{_datadir}/%{name}/languages
+%dir %{_datadir}/%{name}/locale
+%{_datadir}/%{name}/locale/LINGUAS
+%{_datadir}/%{name}/projects
+%{_datadir}/%{name}/releases
+%{_datadir}/%{name}/repowatch
+%{_datadir}/%{name}/simpleauth
+%{_datadir}/%{name}/simplelock
+%{_datadir}/%{name}/site_media
+%{_datadir}/%{name}/submissions
+%{_datadir}/%{name}/tarball
+%{_datadir}/%{name}/templates
+%{_datadir}/%{name}/txcommon
+%{_datadir}/%{name}/translations
+%{_datadir}/%{name}/txcollections
+%{_datadir}/%{name}/txpermissions
+%dir %{_datadir}/%{name}/vcs
+%{_datadir}/%{name}/vcs/*.py
+%{_datadir}/%{name}/vcs/*.py[co]
+%dir %{_datadir}/%{name}/vcs/lib
+%{_datadir}/%{name}/vcs/lib/*.py
+%{_datadir}/%{name}/vcs/lib/*.py[co]
+%dir %{_datadir}/%{name}/vcs/migrations
+%{_datadir}/%{name}/vcs/migrations/*.py
+%{_datadir}/%{name}/vcs/migrations/*.py[co]
+%dir %{_datadir}/%{name}/vcs/lib/support
+%{_datadir}/%{name}/vcs/lib/support/__init__.py
+%{_datadir}/%{name}/vcs/lib/support/__init__.py[co]
+%{_datadir}/%{name}/vcs/lib/support/commands.py
+%{_datadir}/%{name}/vcs/lib/support/commands.py[co]
+%{_datadir}/%{name}/vcs/lib/support/hg.py
+%{_datadir}/%{name}/vcs/lib/support/hg.py[co]
+%dir %{_datadir}/%{name}/vcs/lib/types
+%{_datadir}/%{name}/vcs/lib/types/__init__.py
+%{_datadir}/%{name}/vcs/lib/types/__init__.py[co]
+%{_datadir}/%{name}/vcs/lib/types/dummy.py
+%{_datadir}/%{name}/vcs/lib/types/dummy.py[co]
+%{_datadir}/%{name}/vcs/lib/types/hg.py
+%{_datadir}/%{name}/vcs/lib/types/hg.py[co]
+%{_datadir}/%{name}/webtrans
+%dir %{_localstatedir}/lib/%{name}
+%dir %{_localstatedir}/lib/%{name}/scratchdir
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/hg
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/tar
+
+%files extras
+%defattr(-,root,root,-)
+%doc LICENSE README
+%config(noreplace) %{confdir}/80-vcs-extras.conf
+%{_datadir}/%{name}/vcs/lib/support/cvs.py
+%{_datadir}/%{name}/vcs/lib/support/cvs.py[co]
+%{_datadir}/%{name}/vcs/lib/types/cvs.py
+%{_datadir}/%{name}/vcs/lib/types/cvs.py[co]
+%{_datadir}/%{name}/vcs/lib/types/svn.py
+%{_datadir}/%{name}/vcs/lib/types/svn.py[co]
+%{_datadir}/%{name}/vcs/lib/types/bzr.py
+%{_datadir}/%{name}/vcs/lib/types/bzr.py[co]
+%{_datadir}/%{name}/vcs/lib/support/git.py
+%{_datadir}/%{name}/vcs/lib/support/git.py[co]
+%{_datadir}/%{name}/vcs/lib/types/git.py
+%{_datadir}/%{name}/vcs/lib/types/git.py[co]
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/cvs
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/svn
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/bzr
+%dir %{_localstatedir}/lib/%{name}/scratchdir/sources/git
+
+%changelog

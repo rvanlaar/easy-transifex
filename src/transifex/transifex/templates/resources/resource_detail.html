@@ -1,0 +1,368 @@
+{% extends "projects/project_menu.html" %}
+{% load i18n %}
+{% load cache %}
+{% load statistics_resources %}
+{% load permissions %}
+{% load truncate %}
+{% load upload_manager_tags %}
+
+{% block extra_head %}
+{% get_permission "project_perm.maintain" for request.user and resource.project as "is_maintainer" %}
+<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/ui.tabs.outside.css" />
+<link media="screen" href="{{ STATIC_URL }}css/tablesorter.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/tablesorted.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+
+        {% if request.user.is_authenticated %}
+        $("#new_translation1").click( function (){
+            $("#new_translation_box1").slideToggle();
+        });
+
+        $("#start_new_translation").click( function() {
+            var target_lang_code = $("#target_language_span > select").val();
+            var translate_url_tmpl = '{% url translate_resource resource.project.slug resource.slug 111111111 %}'
+
+            if ( target_lang_code != "" ) {
+                window.location = translate_url_tmpl.replace('111111111', target_lang_code);
+            } else {
+                alert('{% trans "Please select a target language first."|escapejs %}');
+            }
+        });
+        {% endif %}
+
+        $(".tablesorter_resource").tablesorter({
+            // sortList: [[1,1]],
+            widgets: ['zebra'],
+            headers: {
+                1: { sorter: 'percent' },
+                2: { sorter: 'number' }
+            },
+            textExtraction: function(node) {
+                switch (node.cellIndex){
+                    // Stats column
+                    case 1:
+                        return $(".stats_string_resource", node).text();
+                    // Last update column
+                    case 2:
+                        return $("span", node).attr('unixdate');
+                    default: return node.innerHTML;
+                }
+            }
+        });
+
+        {% if is_maintainer %}
+        var resource_priority_cycle_url = '{% url cycle_resource_priority resource.project.slug resource.slug %}';
+        $("a.resource_priority_trigger").click(function(){
+            $(this).load(resource_priority_cycle_url, function(response, status, xhr) {
+                if (status == "error") {
+                    var msg = "Sorry but there was an error: ";
+                    alert(msg + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+        {% endif %}
+
+    });
+</script>
+{% endblock %}
+
+{% block breadcrumb %}
+ {{ block.super }}
+ » <a href="{% url project_detail project.slug %}">{{ project.name|truncate_chars_middle:"40" }}</a>
+ » <a href="{% url resource_detail project.slug resource.slug %}">{{ resource.name|truncate_chars_middle:"30" }}</a>
+{% endblock %}
+
+{% block title %}
+{{ block.super }} |
+{% trans "Projects" %} |
+{{project}}
+{{resource}}
+{% endblock %}
+
+{% block body_class %}project_list{% endblock %}
+
+{% block header_menu %}{% endblock %}
+
+{% block project_header %}
+{{block.super}}<h2 class="pagetitle{% if short_desc %} with_description{% endif %}">&nbsp;/&nbsp;</h2><h2 class="pagetitle with_description">{{ resource.name }}</h2>
+{% endblock%}
+
+{% block content_main %}
+  {% get_permission "project_perm.maintain" for request.user and resource.project as "is_maintainer" %}
+
+  <div class="obj_bigdetails ui-tabs-panel">
+ {% comment %}
+  <!--{% if resource.project.private %}
+  <span id="private_project_banner" class="ui-corner-all">
+    {% trans "Private Project"%}
+    <img style="vertical-align:top" src="{{ STATIC_URL }}images/icons/lock.png" title="Private Project">
+  </span>
+  {% endif %}-->
+ {% endcomment %}
+
+
+<div id="resource_details">
+
+  <div class="separate-header notopmargin clearfix" style="margin-top:0;">
+  	<h3  class="sh-label">{% blocktrans %}Details{% endblocktrans %}</h3>
+  	{% if perms.projects.edit_resource or is_maintainer or request.user.is_superuser %}
+  	<div class="separate-buttons"><a class="i16 edit nude-button" href="{% url resource_edit project_slug=resource.project.slug resource_slug=resource.slug %}">{% trans "Edit resource" %}</a></div>
+  	{% endif %}  
+	</div>
+
+
+{% cache 604800 resource_details resource.project.slug resource.slug LANGUAGE_CODE %}
+
+
+  <dl class="definition clearfix">
+
+      <dt class="i16 stringnum">{% trans "Total Strings" %}</dt>
+      <dd>
+        {{ resource.total_entities }}
+        <span class="words big_number">({{ resource.wordcount }} {% trans "words" %})</span>
+      </dd>
+
+      <dt class="i16 accept_translation">{% trans "Accepting " %}</dt>
+      <dd>
+        {% if resource.accept_translations %}
+            <img class="noborder" src="{{ STATIC_URL }}images/icons/accept.png" />
+        {% else %}
+            <img class="noborder" src="{{ STATIC_URL }}images/icons/delete.png" />
+        {% endif %}
+      </dd>
+      
+    {% if resource.priority %}
+    {% with resource.priority.level as priority_level %}
+    {% with resource.priority.display_level as display_level %}
+      <dt class="i16 ruby">{% trans "Priority Level" %}</dt>
+      <dd>
+        {% if is_maintainer %}
+            <a class="resource_priority_trigger" style="cursor:pointer">
+            <img src="{{ STATIC_URL }}priorities/images/{{ display_level }}.png" class="noborder" title="{{ display_level }}"/>
+            </a>
+        {% else %}
+            <img class="res_tipsy_enable" src="{{ STATIC_URL }}priorities/images/{{ display_level }}.png" class="noborder" title="{{ display_level }}"/>
+        {% endif %}
+      </dd>
+    {% endwith %}
+    {% endwith %}
+    {% endif %}
+    {% with resource.releases.all as releases %}
+    {% if releases %}
+
+       <dt class="i16 release">{% blocktrans count releases|length as counter %}Release:{% plural %}Releases:{% endblocktrans %}</dt>
+       <dd class="compact">
+         <ul class="links">
+            {% for release in releases %}
+                <li><a class="release" href="{% url release_detail project_slug=release.project.slug release_slug=release.slug %}">{{ release.full_name }}</a></li>
+            {% endfor %}
+        </ul>
+       </dd>
+
+    {% endif %}
+    {% endwith %}
+  </dl>
+</div>
+
+{% get_permission "project_perm.submit_translations" for request.user and resource.project,1 as "can_submit_translation" %}
+{% get_permission "project_perm.maintain" for request.user and resource.project as "is_maintainer" %}
+<div class="separate-header  clearfix">
+	<h3  class="sh-label">{% blocktrans with resource.available_languages|length as num_of_langs %}Available languages ({{ num_of_langs }}){% endblocktrans %}</h3>
+	{% if can_submit_translation and resource.accept_translations or is_maintainer %}  
+  <div class="separate-buttons"><a id="new_translation1" class="i16 nude-button add tipsy_enable linkstyle" title="{% blocktrans %}If you cannot see your language, click the button below to translate( You must belong to a language team of this project, to be able to translate! ){% endblocktrans %}">{% trans "Add new translation" %}</a></div>
+	{% endif %}
+</div>
+
+
+<div class="list clear">
+
+
+{% if can_submit_translation and resource.accept_translations or is_maintainer %}
+
+<div id="new_translation_box1" class="no-display">
+
+{% comment %}
+    I kept this in order to remember to fix the languages in the templatetags.
+    The change should respect the below permissions!!!
+
+    <select name="translation_languages" class="language">
+        <option value="">{% trans "Select Language" %}</option>
+        {% if is_maintainer or request.user.is_superuser %}
+          {% for language in languages %}
+              <option value="{{ language.code }}">{{ language.name }}</option>
+          {% endfor %}
+        {% else %}
+          {% for team in user_teams %}
+              <option value="{{ team.language.code }}">{{ team.language.name }}</option>
+          {% endfor %}
+        {% endif %}
+    </select>
+{% endcomment %}
+
+{% upload_resource_translation_button request resource '' 'button-global' 'True' %}
+</div>
+
+{% endif %}
+
+
+<table class="stat_table_font stats_table highlighted tablesorter_resource" style="clear:both;margin-top:0.5em;width:99%;margin-left:auto;margin-right:auto;">
+  <thead>
+  <tr>
+    <th><span>{% trans "Language" %}</span></th>
+    <th class="completion_cell"><span>{% trans "Completion" %}</span></th>
+    <th><span>{% trans "Last Updated" %}</span></th>
+   </tr>
+{% for stat in statslist %}
+    {% ifequal forloop.counter 2 %}
+        </thead>
+      <tbody>
+    {% endifequal %}
+    <tr id="stat_row_{{forloop.counter}}" title="{% trans 'click for translation' %}">
+        {% cache 604800 resource_details_lang resource.project.slug resource.slug stat.language.code LANGUAGE_CODE %}
+        <td>
+          <span class="clickable">{{ stat.language.name }}</span>
+          <span class="locale">({{ stat.language.code }})</span>
+          {% ifequal resource.source_language stat.language %}
+             <span style="padding-left:1em"><em>{% trans "(source language)" %}</em></span>
+          {% endifequal %}
+          {% if stat.lock.valid %}
+            <img class="tipsy_enable bullet" src="{{ STATIC_URL }}images/icons/bullet_lock.png" title="{% trans "Locked" %}"/>
+          {% endif %}
+        </td>
+        <td>
+          {% with 200 as barwidth %}
+            {% stats_bar_simple stat barwidth %}
+          {% endwith %}
+        </td>
+        {% endcache %}
+        <td>
+        {% with stat.last_update as last_update %}
+          <span style="border:0" unixdate="{{ last_update|date:'U' }}">
+          {% with stat.last_committer as last_committer %}
+          {% if last_update %}
+              {{ last_update|date:"M d, h:ia" }}
+              {% if last_committer %}
+              by {{ last_committer }}
+              {% endif %}
+          {% else %}
+              {% trans "no translations yet" %}
+          {% endif %}
+          {% endwith %}
+        </span>
+        {% endwith %}
+        </td>
+    </tr>
+    <script type="text/javascript">
+        $(".highlighted tr#stat_row_{{forloop.counter}}").click(function(){
+           /* FancyBox Using custom settings */
+           $.fancybox(
+               {
+                'href': '{% url resource_actions resource.project.slug resource.slug stat.language.code %}',
+                'hideOnContentClick': false,
+                'onStart':function(){
+                    // IE8 fix
+                    if(jQuery.browser.msie) {
+                      $('#fancybox-wrap').css('max-width','716px');
+                      $('#fancybox-inner').css('max-width','716px');
+                      $('#fancybox-outer').css('left','50%');
+                    }
+                },
+                'onComplete':function() {	
+	            		$("#fancybox-title").css({'top':'0px', 'bottom':'auto', 'position':'absolute', 'margin':'0', 'width':'100%'}).addClass('ui-corner-top');
+	            		$("#fancybox-content").addClass('ui-corner-top'); 
+	            		$("#fancybox-outer").addClass('ui-corner-top'); 
+                    // IE8 fix
+                    if(jQuery.browser.msie){
+                        $('.fancybox-title-outside').css('max-width','716px');
+                    }
+                    $(".tipsy_enable").tipsy({'html':true, 'gravity':'s'});
+                    $("a.language_chooser_trigger").toggle(function(){
+                        $("div.language_chooser").css({'visibility':'visible'});
+                    },function(){
+                        $("div.language_chooser").css({'visibility':'hidden'});
+                    });
+                    $("div.language_chooser a").click( function(){
+                        var target_lang_code = $("div.language_chooser select").val();
+                        if ( target_lang_code != "" ) {
+                            request_url = window.location+'l/{{ stat.language.code }}/clone/'+target_lang_code+'/';
+                            window.location = request_url;
+                        } else {
+                            alert('{% trans "Please select a target language first."|escapejs %}');
+                        }
+                    });
+                    if(!$("#download_for_translation a").hasClass('disabled')){
+                    $("#download_for_translation").click(function(){
+                        $.ajax({
+                            url : '{% url lock_and_download_translation resource.project.slug resource.slug stat.language.code %}',
+                            contentType : 'application/json',
+                            type : 'POST',
+                            beforeSend: function(){
+                            $("div#notification-container div").html('{% trans "Trying to lock resource..."|escapejs %}');
+                            $("div#notification-container").fadeIn("fast");
+                            },
+                            complete : function(xmlhttpreq, textStatus) {
+                                if (textStatus=='success'){
+                                    response = JSON.parse(xmlhttpreq.responseText);
+                                    if(response['status']=='FAILED'){
+                                        $("#download_for_translation").siblings("div.error_notes").text(response['message']);
+                                        $("#download_for_translation").siblings("div.error_notes").show();
+                                    }else{
+                                        if(response['redirect']){
+                                            window.location = response['redirect'];
+                                        }
+                                    }
+                                    $("div#notification-container").fadeOut("fast");
+                                }
+                            }
+                        });
+                    });
+                    }
+                },
+                'titleShow': true,
+                'titlePosition': 'inside',
+                'title': '{{ resource.project.name|truncate_chars:"30" }} &raquo; {{ resource.name|truncate_chars:"30" }} &raquo; {{ stat.language.name|truncate_chars:"20" }}'
+           });
+        });
+    </script>
+    {% if forloop.counter == 1 and forloop.last %}
+        </thead>
+      <tbody>
+    {% endif %}
+{% endfor %}
+  </tbody>
+</table>
+
+
+
+{% endcache %}
+
+</div>
+
+</div>
+
+<div class="separate-header clearfix">
+	<h3  class="sh-label">{% trans 'History' %}</h3>
+</div>
+
+{% load tx_action_log %}
+{% get_log 5 as action_log for_object resource %}
+{% if not action_log %}
+<p>{% trans 'No actions recorded yet :)' %}</p>
+{% else %}
+<ul class="actionlist simple">
+{% for entry in action_log %}
+    <li class="i16 actionlog">
+    {{ entry.message|safe }} by {{ entry.user }} <span class="timestamp">{{ entry.action_time|timesince }} ago.</span>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
+
+{% block content_footer %}
+  <div id="content_footer_center">
+
+  </div>
+{% endblock %}

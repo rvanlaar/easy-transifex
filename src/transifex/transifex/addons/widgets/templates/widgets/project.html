@@ -1,0 +1,11 @@
+{% load i18n %}
+{% block menu %}
+{% if project.private %}
+{% else %}
+<li class="ui-state-default {% if not perms.projects.change_project or not is_maintainer %} last {% endif %} {% if project_widgets %}ui-tabs-selected ui-state-active active selected{% endif %}">
+    <a id="tab-link-widgets" href="{% url project_widgets project.slug %}">
+        <span>{% trans "Widgets" %}</span>
+	</a></li>
+{% endif %}
+{% endblock %}
+

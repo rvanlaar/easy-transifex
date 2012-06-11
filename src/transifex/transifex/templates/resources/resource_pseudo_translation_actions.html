@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load truncate %}
+{% load permissions %}
+{% load txcommontags %}
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#download_pseudo_file").click(function(){
+            if(!$('input:radio[name=pseudo_type]:checked').val()){
+                alert('{% trans "Please, select a pseudo type!"|escapejs %}');
+                return false;
+            }
+        });
+    });
+</script>
+
+{% block extracss %}
+	<style>
+		.actions_popup{width750px;}
+		.tx-form fieldset{margin:1em 0 2em 0;width:600px;}
+		.tx-form #download_pseudo_file {margin:10px 0;}
+	</style>
+{% endblock %}
+
+<div class="actions_popup"> 
+    <div class="tx-form">
+      <form action='{% url apiv2_pseudo_content project.slug resource.slug %}' method='get'>{% csrf_token %}
+				<fieldset>
+		      {% for field in form %}
+		        <div>
+		          {{ field.errors }}
+		          {{ field.label_tag }}
+		          {{ field }}
+		        </div>
+		      {% endfor %}
+				</fieldset>
+        <input type="hidden" name='file' value="true" />
+        <input id="download_pseudo_file" type="submit" class="i16 submit buttonized" value="{% trans "Download" %}" />
+        <form>
+    </div>
+</div>

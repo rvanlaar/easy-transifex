@@ -1,0 +1,36 @@
+{% extends "projects/project_settings.html" %}
+{% comment %}This is the view under /projects/p/PROJECT_SLUG/timeline{% endcomment %}
+{% load i18n %}
+{% load pagination_tags %}
+{% load sorting_tags %}
+{% load txcommontags %}
+
+{% block basecss %}
+{{ block.super }}
+<link media="screen" href="{{ STATIC_URL }}css/tablesorter.css" type="text/css" rel="stylesheet" />
+<link href="{{ STATIC_URL }}timeline/css/timeline_base.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body_class %}{{ block.super }} project_widgets{% endblock %}
+
+{% block title %}{{ block.super }} | {{ project.name }} | {% trans "Timeline" %}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} &raquo; <a href="{{ project.get_absolute_url }}">{{ project.name }}</a> &raquo; {% trans "Timeline" %}{% endblock %}
+
+{% block project_header %}
+{% with project.description as short_desc %}
+{{block.super}}<h2 class="pagetitle{% if short_desc %} with_description{% endif %}">&nbsp;/&nbsp;</h2><h2 class="pagetitle with_description">&nbsp;{% trans "Timeline" %}</h2>
+{% endwith %}
+{% endblock%}
+
+{% block project_settings_content %}
+
+<div class="obj_bigdetails ui-tabs-panel">
+<h3>{% trans "Filter results:" %}</h3>
+<p>
+{% include "timeline/timeline_base.html" %}
+</p>
+</div>
+
+{% endblock %}
+

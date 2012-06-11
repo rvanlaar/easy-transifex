@@ -1,0 +1,108 @@
+{% extends "projects/base.html" %}
+{% load i18n %}
+{% load addons %}
+{% load txcommontags %}
+{% load permissions %}
+{% load watches_tags %}
+{% load txpermissions %}
+
+{% block extrajs %}
+  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/ui.tabs.outside.css" />
+  <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/jquery.autocomplete.css" />
+  <link media="screen" href="{{ STATIC_URL }}css/tablesorter.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="{{ STATIC_URL }}js/ui.core.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/ui.tabs.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.qtip-1.0.0-rc2.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.autocomplete.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/file_submit.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/tablesorted.js"></script>
+  {% if project %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url project_feed param=project.slug %}" />
+  {% endif %}
+
+<script type="text/javascript">
+
+function toggle_access_control(){
+    var access_control = $("input[name='access_control']:checked").val();
+    if (access_control != 'outsourced_access'){
+        $("tr#outsource").hide();
+    }else{
+        $("tr#outsource").show();
+    }
+}
+
+$(document).ready(
+    function ()
+    {
+        $("#id_anyone_submit").change(function(){
+            $(this).parents("form").submit();
+            })
+
+        $("input[name='access_control']").change(function(){
+            toggle_access_control();
+        });
+
+        toggle_access_control();
+
+    }
+);
+</script>
+{% endblock %}
+
+{% block content_title %}
+{% if project %}
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+{% with project.description as short_desc %}
+{% block project_header %}
+<h2 class="pagetitle with_description" style="display:inline-block;">{{ project.name }}</h2>
+{% endblock %}
+
+{% block current_description %}
+{% if short_desc %}
+  <p class="description belowheader">{% firstof project.description|escape project.name|escape %}</p>
+{% endif %}
+{% endblock %}
+{% endwith %}
+
+{% if project.private %}
+<span id="private_project_banner" class="ui-corner-all" style="display:inline-block;">
+{% trans "Private Project"%}
+<img style="vertical-align:top" src="{{ STATIC_URL }}images/icons/lock.png" title="Private Project">
+</span>
+{% endif %}
+
+{% block header_menu %}
+<div id="project-tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+
+    <li class="ui-state-default ui-corner-top {% if project_overview %}ui-tabs-selected ui-state-active{% endif %}">
+       <a id="tab-link-1" href="{% url project_detail project_slug=project.slug %}">
+         <span>{% trans "Project Overview" %}</span>
+       </a>
+    </li>
+
+    <li class="ui-state-default ui-corner-top {% if project_team_page %}ui-tabs-selected ui-state-active{% endif %}">
+       <a id="tab-link-3" href="{% url team_list project.slug %}">
+         <span>{% trans "Teams" %}</span>
+       </a>
+    </li>
+    
+     {% hook "project.html" menu %}
+    
+    {% if perms.projects.change_project or is_maintainer %}
+    <li class="ui-state-default ui-corner-top {% ifequal request.path url_project_edit %}ui-tabs-selected ui-state-active{% endifequal %}">
+       <a id="tab-link-3" href="{% url project_edit project_slug=project.slug %}">
+         <span>{% trans "Project Settings" %}</span>
+       </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+{% endblock %}
+{% endif %}
+
+{% endblock %}
+
+{% block content_main %}{% endblock %}
+
+{% block content_footer %}{% endblock %}

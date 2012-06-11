@@ -1,0 +1,134 @@
+{% load i18n %}
+
+{% comment %}
+
+Expected context vars:
+    name: StorageFile field name from the form
+    names: List of StorageFileField field names - [language, storagefile]
+    rendered_fields: List of HTML rendered field of StorageFileField - [language, storagefile]
+    storagefile: StorageFile object, when it exists
+
+{% endcomment %}
+
+{{ rendered_fields.0 }}
+{{ rendered_fields.1 }}
+<input id="{{ name }}-id-uuid" type="hidden" name="{{ name }}-uuid" value="{{ storagefile.uuid }}" />
+<span id="{{ name }}-upload_button" class="i16 send_file buttonized" style="line-height:1em; {% if storagefile %}display:none;{% endif %} margin-left:1em;">{% trans "Upload file" %}</span>
+<span id="{{ name }}-uploaded_file" class="i16 delete buttonized" style="line-height:1.12em;{% if not storagefile %}display:none;{% endif %} margin-left:1em;">{{ storagefile.name }}</span>
+
+<script type="text/javascript">
+/*
+TODO: Write it using Classes
+*/
+
+function show_uploadedfile(file, uuid){
+    /*
+    Handle and add events of top of a uploaded file.
+    */
+    $("#{{ name }}-upload_button").hide();
+    $("#{{ name }}-uploaded_file").html(file);
+    $("#{{ name }}-uploaded_file").show();
+    $("#{{ name }}-uploaded_file").hover(function () {
+      $(this).addClass("underline");
+    }, function () {
+      $(this).removeClass("underline");
+    });
+
+    $("#{{ name }}-uploaded_file").unbind("click").click(function() {
+        $.ajax({
+            url : sprintf('{{ api_storagefile_url }}', uuid),
+            type : 'DELETE',
+            beforeSend: function(){
+            $("div#notification-container div").html(sprintf("Deleting '%s'", file));
+            $("div#notification-container").fadeIn("fast");
+            },
+            complete : function(xmlhttpreq, textStatus) {
+                $("#{{ name }}-uploaded_file").hide();
+                $("#{{ name }}-upload_button").show();
+                $("input[name='{{ names.1 }}']").val('');
+                $("input[name='{{ name }}-uuid']").val('');
+                $("div#notification-container").fadeOut("fast");
+                first_select_language(update_language=true);
+            }
+        });
+    });
+}
+
+function first_select_language(update_language){
+    /*
+    Make sure user can see the upload button only if a language is already selected.
+    */
+    if($("select[name='{{ names.0 }}'] option:selected").val()!=''){
+        if($("input[name={{ names.1 }}]").val()!=''){
+            $("#{{ name }}-uploaded_file").show();
+            if(update_language==true){
+                $.ajax({
+                    url : sprintf('{{ api_storagefile_url }}',  $("#{{ name }}-id-uuid").val()),
+                    contentType : 'application/json',
+                    type : 'POST',
+                    data : JSON.stringify({
+                        'language':$("select[name='{{ names.0 }}'] option:selected").val()
+                    }),
+                    beforeSend: function(){
+                    $("div#notification-container div").html(
+                        sprintf("Updating language info for uploaded file."));
+                    $("div#notification-container").fadeIn("fast");
+                    },
+                    complete : function(xmlhttpreq, textStatus) {
+                        $("div#notification-container").fadeOut("fast");
+                    }
+                });
+            }
+        }else{
+            $("#{{ name }}-upload_button").show();
+        }
+    }else{
+        $("#{{ name }}-upload_button").hide();
+    }
+}
+
+
+jQuery(document).ready(function($){
+
+    /* Bind ajax upload button */
+    new AjaxUpload("{{ name }}-upload_button", {
+        action: "{% url api.storage %}",
+        responseType: "json",
+        onSubmit : function(file, extension) {
+            this.setData({
+                'language': $("[name='{{ names.0 }}']").val(),
+                });
+
+            $("div#notification-container div").html(sprintf("Uploading '%s'", file));
+            $("div#notification-container").fadeIn("fast");
+            this.disable();
+        },
+        onComplete : function(file, response) {
+            if(typeof(response['status']) !== 'undefined' && response['status'] == "Created"){
+                storagefile = response['files'][0]
+                show_uploadedfile(file, storagefile['uuid'])
+                $("input[name={{ names.1 }}]").val(storagefile['id']);
+                $("#{{ name }}-id-uuid").val(storagefile['uuid']);
+                $("#{{ name }}-id-uuid").trigger('change');
+                $("#create-resource-btn").fadeIn("slow");
+            }else{
+                if (typeof(response['message']) !== 'undefined')
+                    alert(response['message']);
+            }
+            $("div#notification-container").fadeOut("fast");
+            this.enable();
+        }
+    });
+
+    {% if storagefile %}
+        show_uploadedfile('{{ storagefile.name }}', '{{ storagefile.uuid }}');
+    {% endif %}
+
+    $("[name='{{ names.0 }}']").change(function () {
+        first_select_language(update_language=true);
+    });
+
+    first_select_language(update_language=false);
+
+});
+</script>

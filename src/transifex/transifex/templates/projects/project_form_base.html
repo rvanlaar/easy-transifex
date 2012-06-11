@@ -1,0 +1,104 @@
+{% extends "projects/base.html" %}
+{% load i18n %}
+{% load txcommontags %}
+{% load permissions %}
+{% load txpermissions %}
+
+{% block title %}
+  {% if not project %}{{ block.super }} | {% trans "Add a project" %}
+  {% else %}{{ block.super }} | {% blocktrans with project.name as project_name %}Edit {{ project_name}}{% endblocktrans %}{% endif %}
+{% endblock %}
+
+{% block breadcrumb %}
+  {% if not project %}{{ block.super }} &raquo; {% trans "Add a project" %}
+  {% else %}{{ block.super }} &raquo; {% blocktrans with project.name as project_name %}Edit <em>{{ project_name}}</em>{% endblocktrans %}{% endif %}
+{% endblock %}
+
+{% block extra_head %}
+  <link type="text/css" href="{{ STATIC_URL }}css/ui.tabs.css" rel="stylesheet" />
+  <link media="screen" href="{{ STATIC_URL }}css/jquery.autocomplete.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="{{ STATIC_URL }}js/ui.core.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/ui.tabs.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.qtip-1.0.0-rc2.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.autocomplete.js"></script>
+<script type="text/javascript">
+$(document).ready(
+    function ()
+    {
+        {% if not project.id %}
+            tooltip('#tab-link-2', "{% trans "Access control will be enabled once the project is created" %}");
+        {% endif %}
+
+        // Tabs
+        $("#project-tabs").tabs({
+            //spinner: false,
+            fx: { opacity: "toggle", duration: "fast"},
+            {% if not project.id %}
+            disabled: [1],
+            {% endif %}
+
+            {% if project_permission %}
+            selected: 1,
+            {% endif %}
+        });
+
+         // If in the permission page for *requesting* (not add) a permission,
+         // remove link to project details.
+         {% if project_permission and not approved %}
+         $("#project-tabs").tabs('remove', 0 )
+         {% endif %}
+
+
+        // Make it load the pages as normal links instead of load via Ajax
+        $("#project-tabs").bind('tabsselect',
+            function(event, ui) {
+                url = $.data(ui.tab, 'load.tabs')
+                if( url ) {
+                    location.href = url;
+                    return false;
+                }
+                return true;
+            });
+
+        $("#id_anyone_submit").change(function(){
+            $(this).parents("form").submit();
+            })
+    }
+);
+</script>
+{% endblock %}
+
+{% block content_title %}
+  {% if not project %}
+    <h2 class="pagetitle">{% trans "Add a project" %}</h2>
+  {% else %}
+    <h2 class="pagetitle">
+      {% blocktrans with project.name as project_name and project.get_absolute_url as project_url %}Editing <a href="{{ project_url }}">{{ project_name }}</a>{% endblocktrans %}
+    </h2>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="project_create generic_form">
+{% if form_message %}
+<p class="message i16 bell">{{ form_message }}</p>
+{% endif %}
+<div id="project-tabs">
+<ul>
+    <li><a id="tab-link-1" href="{% if project_permission %}{% url project_edit project_slug=project.slug %}{% endif %}#tab-1"><span>{% trans "Details" %}</span></a></li>
+    <li><a id="tab-link-2" href="{% if project_permission %}{% else %}{% if project %}{% txadd_url_for_obj project %}{% endif %}{% endif %}#tab-2"><span>{% trans "Access Control" %}</span></a></li>
+</ul>
+
+{% get_permission "project_perm.maintain" for request.user and project as "is_maintainer" %}
+
+{% if project_permission %}
+    {% include "projects/project_form_permissions.html" %}
+{% else %}
+    {% include "projects/project_form.html" %}
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}

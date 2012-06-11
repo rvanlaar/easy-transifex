@@ -1,0 +1,29 @@
+{% extends "projects/project_detail_childs.html" %}
+{% load i18n %}
+
+{% block title %}{% with release.project as project %}
+  {{ block.super }}
+  | {% blocktrans with release.name as release_name %}Delete {{ release_name }}{% endblocktrans %}
+{% endwith %}{% endblock %}
+
+{% block breadcrumb %}{% with release.project as project %}{{ block.super }}
+&raquo; {% blocktrans with release.name as release_name %}Delete {{ release_name }}{% endblocktrans %}
+{% endwith %}{% endblock %}
+
+{% block content_title %}
+  <h2 class="pagetitle">{% blocktrans with release.name as release_name %}Say goodbye to <em>{{ release_name }}</em>?{% endblocktrans %}</h2>
+{% endblock %}
+
+{% block content %}
+
+<p>{% blocktrans with release.project.name as project_name and release.name as release_name %}Are you sure you want to permanently delete the release '{{ release_name }}' which works on {{ project_name }}?{% endblocktrans %}</p>
+
+  <form action='' method='post'>{% csrf_token %}
+    <input type="submit" class="i16 submit buttonized" value="{% trans "Yes, I'm sure!" %}" />
+  </form>
+
+{% endblock %}
+
+{% block content_footer %}
+
+{% endblock %}

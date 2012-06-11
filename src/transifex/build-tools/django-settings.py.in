@@ -1,0 +1,9 @@
+import os.path
+import glob
+
+conffiles = glob.glob(os.path.join('[[confpath]]', '*.conf'))
+
+conffiles.sort()
+
+for f in conffiles:
+    execfile(f)

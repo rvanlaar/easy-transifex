@@ -1,0 +1,15 @@
+{% if helptext %}
+    {% if icon %}
+        <img id="{{ code_name }}_icon" src="{{ STATIC_URL }}images/icons/help.png" class="noborder">
+    {% endif %}
+
+    <script type="text/javascript">
+        $(function(){
+            {% if icon %}
+                tooltip('#{{ code_name }}_icon','{{ helptext }}')
+            {% else %}
+                tooltip('#{{ code_name }}','{{ helptext }}')
+            {% endif %}
+        });
+    </script>
+{% endif %}
