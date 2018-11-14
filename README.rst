@@ -1,3 +1,9 @@
+DEPRECATED
+==========
+
+Transifex had stopped opensource development of their server software. The last release was Jan 8 2012.
+This project is now officially deprecated.
+
 Description
 ===========
 
